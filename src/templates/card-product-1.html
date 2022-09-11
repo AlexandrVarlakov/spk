@@ -1,0 +1,79 @@
+<!--
+
+    data-calcmethod = 1  - скрываем вес  при расчете
+    data-calc = 2  - Показываем вес  при расчете
+
+
+    data-total-state - нет свойства, обычный вид
+    data-total-state = "0" - нет в наличии 
+    data-total-state = "1" - мало  
+
+    data-id="28368237" - id товара 
+    data-weight="0.56" - вес упаковки
+    data-total="12" количество товара
+    data-price="199" - цена за упаковку
+
+    data-promo="1" - окрашивает цену в оранжевый цвет
+    data-promo - отсутсвие никак не влияет
+-->
+
+<div class="product-card"  data-id="28368237" data-weight="0.56" data-total="12" data-price="199"  data-calcmethod="1" >
+    
+
+    <div class="product-card__inner">
+        <div class="pc-slider">
+            <div class="pc-slider__swiper swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide pc-slider__slide">
+                        <img src="assets/img/products/sosiski/1.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide pc-slider__slide">
+                        <img src="assets/img/products/sosiski/2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="pc-slider__pagination">
+
+            </div>
+            
+        </div>
+        <div class="product-card__about">
+            <p class="product-card__product-name">Сосиски Молочные</p>
+
+            <div class="product-card__props">
+                <div class="product-card__weight">0,56 кг </div>
+                <p class="product-card__state-qty">В наличии</p>
+            </div>
+        </div>
+        <div class="product-card__buy-block">
+            <div class="product-card__buy-block--inner">
+                <p class="product-card__price">199 ₽</p>
+
+                <button class="product-card__add-cart">
+                    <img src="assets/img/icons/add-card-btn.svg" alt="">
+                </button>
+
+                <div class="product-card__buy-panel">
+                    <button class="product-card__qty-control product-card__minus" >
+                        <img src="assets/img/icons/minus.svg" alt="">
+                    </button>
+                    <div class="product-card__buy-stat">
+                        <p class="product-card__bp-top">
+                            <span class="product-card__calc-qty-group"><span class="product-card__calc-qty">#</span> шт.</span> 
+                            <span class="product-card__calc-weight-group">~<span class="product-card__calc-weight">0,75</span> кг</span>
+                        </p>
+                        <p class="product-card__bp-bottom"><span class="product-card__calc-summ">#</span>₽</p>
+                    </div>
+                    <button class="product-card__qty-control product-card__plus">
+                        <img src="assets/img/icons/plus.svg" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="product-card__add-favorite">
+        
+    </button>
+</div>

@@ -1,0 +1,221 @@
+.desktop-catalog{
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0px;
+    background: rgba(18, 18, 18, 0.5);
+    z-index: 800;
+    padding: 71px 30px 0;
+    display: none;
+    justify-content: center;
+    opacity: 0;
+}
+
+.desktop-catalog__inner--non-visible-area{
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+}
+
+.desktop-catalog__inner{
+    max-width: 1420px;
+    width: 100%;
+    position: relative;
+}
+
+.desktop-catalog.open{
+    display: flex;
+    align-items: flex-start;
+    animation: showDesktopMenu 300ms forwards;
+}
+
+@keyframes showDesktopMenu {
+    to{
+        opacity: 1;
+    }
+}
+
+.dc-parent{
+    padding: 18px 0px 21px;
+    background: #FFFFFF;
+    border-radius: 0px 0px 18px 18px;
+    width: 33.33%;
+    position: relative;
+    transition: 200ms;
+    
+    
+    max-height: 540px;
+
+    & > .dc-parent__inner > li{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 700;
+        font-size: 18px;
+        padding: 14px 30px;
+        color: #121212;
+        cursor: pointer;
+        
+
+        transition: 300ms;
+
+        &:hover{
+            //   
+        }
+    }
+
+    
+}
+
+
+
+
+.dc-parent.has-child{
+    border-radius: 0px 0px 0px 18px;
+}
+.dc-child.has-child{
+    border-radius: 0px;
+}
+
+.dc-parent__inner{
+    max-height: 500px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        width: 6px;               /* ширина scrollbar */
+    }
+    &::-webkit-scrollbar-track {
+        background: #FFFFFF;        /* цвет дорожки */
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #ECEBE9;    /* цвет плашки */
+        border-radius: 20px;       /* закругления плашки */
+        border: 3px solid #ECEBE9;  /* padding вокруг плашки */
+    }
+
+    scrollbar-width: thin;          /* "auto" или "thin"  */
+    scrollbar-color: #ECEBE9 #FFFFFF;
+}
+
+.dc-parent__item.mouseenter, .dc-parent__item.openclick{
+    
+    & > span{
+        color: #2DA0A6;
+    }
+
+    & > .dc-child{
+        display: block;
+    }
+
+}
+
+
+.dc-child__scroll-container{
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        width: 6px;               /* ширина scrollbar */
+    }
+    &::-webkit-scrollbar-track {
+        background: #FFFFFF;        /* цвет дорожки */
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #ECEBE9;    /* цвет плашки */
+        border-radius: 20px;       /* закругления плашки */
+        border: 3px solid #ECEBE9;  /* padding вокруг плашки */
+    }
+
+    scrollbar-width: thin;          /* "auto" или "thin"  */
+    scrollbar-color: #ECEBE9 #FFFFFF;
+
+    max-height: 500px;
+}
+
+
+.dc-child__inner{
+    
+    //max-height: calc(100vh - 70px);
+    padding: 18px 0 21px;
+    max-height: 540px;
+    //overflow: hidden;
+    
+}
+.dc-child{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% + 0px);
+    transform: translate(100%, 0);
+    min-height: 100%;
+    padding-right: 0px;
+    
+    transition: 200ms;
+
+    background: #FFFFFF;
+    border-radius: 0px 0px 18px 0px;
+    
+    display: none;
+    
+    opacity: 0;
+    animation: showDMChild 300ms forwards;
+
+    
+    .dc-child__inner > .dc-child__scroll-container > li{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 700;
+        font-size: 18px;
+        padding: 14px 30px;
+
+        padding-left: 60px;
+        color: #121212;
+        cursor: pointer;
+       
+        a{
+            color: #121212;
+            transition: 300ms;
+            &:hover{
+                color: #2DA0A6;
+            }
+        }
+        transition: 300ms;
+
+        &:hover{
+            //
+        } 
+    }
+
+    &::before{
+        content: "";
+        position: absolute;
+        background: #ECEBE9;
+        left: 2px;
+        top: 0;
+        width: 1px;
+        height: 100%;
+    }
+}
+
+
+.dc-child__item.mouseenter, .dc-child__item.openclick{
+    
+    span{
+        color: #2DA0A6;
+    }
+    & > .dc-child{
+        display: block;
+    }
+}
+
+
+
+
+@keyframes showDMChild{
+    to{
+        opacity: 1;
+        transform: translate(100%, 0);
+        z-index: 1;
+    }
+}

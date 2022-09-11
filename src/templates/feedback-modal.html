@@ -1,0 +1,71 @@
+<div class="modal feedback-modal">
+    <div class="modal__close"></div>
+    <div class="modal__body">
+        <h3 class="modal__title">Обратная связь</h3>
+
+        <p class="modal__subtitle">Вы можете оставить нам сообщение.
+            Мы ответим как можно скорее удобным 
+            для вас способом.</p>
+
+        <form class="c-form feedback-form" enctype="multipart/form-data">
+
+            <div class="c-form__line width-100 select-line">
+                <div class="c-form__inp-wrap">
+
+                    <select select-one class="c-form__select select-feedback-type">
+                        <option value="1" selected>Позвоните мне по телефону</option>
+                        <option value="2">Напишите мне на почту</option>
+                        <option value="3">Напишите мне в whatsapp</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="c-form__line width-100 type-connect-phone">
+                <div class="c-form__inp-wrap">
+                    <input type="text" class="c-form__input-text c-form__input" placeholder="" minlength="16" required name="phone">
+                    <p class="c-form__placeholder">Номер телефона</p>
+                </div>
+            </div>
+
+            <div class="c-form__line width-100 hide type-connect-email">
+                <div class="c-form__inp-wrap">
+                    <input type="email" class="c-form__input-text c-form__input" placeholder="" required name="email">
+                    <p class="c-form__placeholder">Email</p>
+                </div>
+            </div>
+
+            <div class="c-form__line width-100">
+                <div class="c-form__inp-wrap">
+                    <textarea class="c-form__input-text c-form__textarea" placeholder="" name="message"></textarea>
+                    <p class="c-form__placeholder">Комментарий</p>
+
+                    <div class="c-from__add-file-wrap">
+                        <input type="file" name="photo" class="feedback-file"  accept="image/*">
+                        <div class="c-from__add-file">
+                            <img src="assets/img/icons/paper-clip.svg" alt="">
+                            <p class="c-from__add-file--name">Прикрепить файл</p>
+                            
+                            
+
+
+                        </div>
+                        <div class="c-from__add-file--clear">
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="c-form__line width-100">
+                <div class="c-form__inp-wrap">
+                    <button class="c-form__btn">Отправить</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="modal__footer">
+        <p>Нажимая на кнопку вы даёте согласие на сбор 
+            и обработку <a href="#">персональных данных</a></p>
+    </div>
+</div>
