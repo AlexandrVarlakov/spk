@@ -907,8 +907,10 @@ let brands = new Swiper(".brands__swiper", {
 
 /* Карта*/
 
+const iMap = document.querySelector('#i-map');
 
-ymaps.ready(init);
+if ( iMap ){
+  ymaps.ready(init);
 function init () {
     // Создание экземпляра карты и его привязка к контейнеру с
     // заданным id ("map").
@@ -970,14 +972,10 @@ function init () {
             });
         }
     );
-
-
-    
-    
-    
-    
-    
+   
+  }
 }
+
 
 
 
