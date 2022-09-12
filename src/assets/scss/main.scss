@@ -146,6 +146,8 @@ ul{
 			padding: 0;
 			font-size: 13px;
 			border: none;
+
+			text-align: right;
 		}
 	}
 	@media (max-width: 1024px){
@@ -462,6 +464,7 @@ ul{
 @import 'units/pages/ideas';
 @import 'units/pages/idea-page';
 @import 'units/pages/promos';
+@import 'units/pages/special';
 
 
 @import 'units/swiper/swiper';
@@ -475,6 +478,7 @@ ul{
 @import 'units/components/breadcrumbs';
 @import 'units/components/pagination';
 @import 'units/components/soc-links';
+@import 'units/components/article';
 
 @import 'units/sliders/popular-products';
 
