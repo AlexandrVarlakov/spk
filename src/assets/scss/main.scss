@@ -38,7 +38,18 @@ main{
 		padding-top: 80px;
 		
 	}
+
+	padding-bottom: 90px;
+	@media (max-width: 1024px){
+		padding-bottom: 60px;
+	}
+	
 }
+
+main.index{
+	padding-bottom: 0;
+}
+
 
 a{
 	text-decoration: none;
@@ -417,6 +428,26 @@ ul{
 	}
 }
 
+
+.prop-img-16-9{
+	width: 100%;
+}
+.prop-img-16-9__inner{
+	width: 100%;
+	padding-bottom: 56.25%;
+	position: relative;
+	img{
+		 position: absolute;
+		 width: 100%;
+		 max-width: 100%;
+		 height: 100%;
+		 object-fit: cover;
+		 object-position: center;
+	}
+}
+
+
+
 @import 'vars';
 @import 'units/sections/header/header';
 @import 'units/sections/header/desktop-catalog';
@@ -429,6 +460,7 @@ ul{
 @import 'units/pages/index';
 @import 'units/pages/404.scss';
 @import 'units/pages/ideas';
+@import 'units/pages/idea-page';
 @import 'units/pages/promos';
 
 
@@ -442,6 +474,7 @@ ul{
 @import 'units/components/c-form';
 @import 'units/components/breadcrumbs';
 @import 'units/components/pagination';
+@import 'units/components/soc-links';
 
 @import 'units/sliders/popular-products';
 

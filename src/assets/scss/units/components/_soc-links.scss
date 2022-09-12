@@ -1,0 +1,41 @@
+.soc-links{
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 1024px){
+        display: none;
+    }
+}
+
+.soc-links__title{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    
+    color: rgba(18, 18, 18, 0.5);
+    
+    margin-right: 55px;
+}
+
+.soc-links__links-group{
+    display: flex;
+
+    a{
+        margin: 0 5px;
+        background: #EFF3F6;
+        border-radius: 6px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 300ms;
+        img{
+            max-width: 25px;
+            max-height: 25px;
+        }
+        &:hover{
+            background-color: #E5EEF4;
+        }
+    }
+}
