@@ -151,6 +151,16 @@ ul{
 	overflow: hidden
 }
 
+.page-title{
+	margin-bottom: 32px;
+	@media (max-width: 1024px){
+		margin-bottom: 24px;
+	}
+	@media (max-width: 680px){
+		margin-bottom: 18px;
+	}
+}
+
 .h1{
 	
 	font-weight: 500;
@@ -158,6 +168,14 @@ ul{
 	line-height: 120%;	
 	color: #121212;
 	white-space: pre-line;
+
+	@media (max-width: 1024px){
+		font-size: 32px;
+	}
+
+	@media (max-width: 680px){
+		font-size: 20px;
+	}
 	
 }
 
@@ -373,8 +391,12 @@ ul{
 @import 'units/sections/header/hamburger-menu';
 @import 'units/sections/footer/footer';
 @import 'units/sections/mob-nav/mob-nav';
+
+
 @import 'units/pages/index';
 @import 'units/pages/404.scss';
+@import 'units/pages/ideas';
+
 
 @import 'units/swiper/swiper';
 @import 'units/sliders/sliders';
@@ -384,6 +406,8 @@ ul{
 @import 'units/components/ideas';
 @import 'units/components/brands';
 @import 'units/components/c-form';
+@import 'units/components/breadcrumbs';
+@import 'units/components/pagination';
 
 @import 'units/sliders/popular-products';
 

@@ -1,0 +1,34 @@
+.breadcrumbs{
+    margin-bottom: 20px;
+    display: flex;
+    a{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 130%;
+        color: rgba(18, 18, 18, 0.4);
+        position: relative;
+        transition: 300ms;
+
+        
+        &[href]:hover{
+            color: #268E94;;
+        }
+
+
+        &:not(:first-of-type){
+            padding-left: 32px;
+
+            &::before{
+                content: "–";
+                position: absolute;
+                font-size: 14px;
+                color: rgba(18, 18, 18, 0.4);
+                top: 50%;
+                left: 11px;
+                transform: translate(0%, -50%);
+            }
+        }
+
+        
+    }
+}
