@@ -22,7 +22,7 @@
 
 .pagination__pages{
     display: flex;
-
+    justify-content: center;
     margin-top: 40px;
 
     @media (max-width: 1024px){
@@ -33,7 +33,7 @@
     }
 
     @media (max-width: 365px){
-        justify-content: space-between;
+       justify-content: space-between;
     }
 }
 

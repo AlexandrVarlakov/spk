@@ -1015,6 +1015,35 @@ let options = {
   
 
 }
+
+let  optionsPromoDetail = {
+  zIndex: 1000, 
+  
+  background: 'rgba(34, 34, 34, 0.5)', 
+  displayModalContainer: 'flex', 
+  displayModal: 'flex', 
+
+  closeSelectors: ['.modal__close', '.modal__close-btn'], 
+  closeModalOnFogClick: true, 
+  showModalAnimation: 'fadeIn', 
+  closeModalAnimation: 'fadeOutTop',  
+  showModalDuration: '300ms',
+  closeModalDuration: '500ms',
+
+  showFogAnimation: 'fadeIn',
+  closeFogAnimation: 'fadeOut',
+  showFogDuration: '300ms',
+  closeFogDuration: '500ms',
+  documentCanScroll: false, 
+
+  // 'modal-first' - сначала скрывается модальное окно - затем туман
+  // 'along' - анимации закрытия тумана и окна происходят параллельно
+  closeMode: 'modal-first',
+  
+  
+  
+
+}
 /*Конец: Настройки модальных окон*/
 
 
@@ -1123,3 +1152,27 @@ phoneMasks.forEach( (input) => {
 })
 
 /**/
+
+
+/*
+  Страница акции
+  */
+
+const showPromoDetailBtns = document.querySelectorAll('button[data-show-detail]');
+
+if ( showPromoDetailBtns.length ){
+  showPromoDetailBtns.forEach( btn => {
+
+    btn.addEventListener('click', function(event){
+      let targetModal = this.getAttribute('data-show-detail');
+      
+      new easyModal( ".modal[data-modal-name = '" +targetModal+ "']", optionsPromoDetail );
+
+    })
+
+  } )
+}
+
+/*
+  КОНЕЦ: Страница акции
+*/

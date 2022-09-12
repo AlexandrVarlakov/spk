@@ -355,7 +355,7 @@ ul{
 	font-size: 16px;
 	line-height: 130%;
 	color: #FFFFFF;
-	padding: 15px 30px;
+	padding: 19px 30px;
 	background: #2DA0A6;
 	border-radius: 12px;
 	transition: 300ms;
@@ -365,6 +365,24 @@ ul{
 	}
 }
 
+.btn-white{
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 130%;
+	color: #121212;
+	padding: 19px 30px;
+	background: #fff;
+	border: 1px solid #fff;
+	border-radius: 12px;
+	transition: 300ms;
+	text-align: center;
+	&:hover{
+		background-color: transparent;
+		color: #fff;
+	}
+}
+
+
 .btn-transparent{
 	border: 1px solid #ADCBCD;
 	border-radius: 12px;
@@ -372,7 +390,7 @@ ul{
 	font-size: 16px;
 	line-height: 130%;
 	color: #268E94;
-	padding: 15px 30px;
+	padding: 19px 30px;
 	background: transparent;
 	border-radius: 12px;
 	transition: 300ms;
@@ -382,7 +400,22 @@ ul{
 	}
 }
 
-
+.btn-transparent-white{
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	border-radius: 12px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 130%;
+	color: #fff;
+	padding: 19px 30px;
+	background: transparent;
+	border-radius: 12px;
+	transition: 300ms;
+	text-align: center;
+	&:hover{
+		border-color: #fff;
+	}
+}
 
 @import 'vars';
 @import 'units/sections/header/header';
@@ -396,6 +429,7 @@ ul{
 @import 'units/pages/index';
 @import 'units/pages/404.scss';
 @import 'units/pages/ideas';
+@import 'units/pages/promos';
 
 
 @import 'units/swiper/swiper';
