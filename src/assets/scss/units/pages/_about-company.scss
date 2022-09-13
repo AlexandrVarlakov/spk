@@ -1,0 +1,225 @@
+.s-about-company{
+    .h1{
+        margin-bottom: 32px;
+
+        @media (max-width: 1024px){
+            margin-bottom: 24px;
+        }
+        @media (max-width: 680px){
+            margin-bottom: 18px;
+        }
+    }
+}
+
+.sac-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+
+    @media (max-width: 480px){
+        grid-template-columns: 1fr;
+        grid-gap: 32px;
+    }
+
+    margin-bottom: 146px;
+
+    @media (max-width: 1024px){
+        margin-bottom: 80px;
+    }
+    @media (max-width: 680px){
+        margin-bottom: 48px;
+    }
+}
+
+.sac-content__text-block{
+    p{
+        white-space: pre-line; 
+        color: #121212;
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 140%;
+        font-weight: 300;
+        b{
+            font-weight: 500;
+        }
+
+        span{
+            color: rgba(45, 160, 166, 1);
+        }
+
+        @media (max-width: 1024px){
+            font-size: 20px;
+        }
+        @media (max-width: 680px){
+            font-size: 16px;
+        }
+    }
+}
+.sac-content__img-block{
+    justify-self: end;
+    align-self: center;
+
+    img{
+        max-width: 100%;
+    }
+}
+
+.our-brands{
+    h3{
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 130%;
+        color: #121212;
+
+        margin-bottom: 36px;
+
+        @media (max-width: 1024px){
+            margin-bottom: 24px;
+            font-size: 22px;
+        }
+        @media (max-width: 680px){
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
+    }
+}
+
+.ob-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    grid-gap: 20px;
+
+    @media (max-width: 480px){
+        grid-template-columns: 1fr;
+    }
+}
+
+.ob-brand{
+    
+    border: 1px solid rgba(223, 221, 218, 0.8);
+    border-radius: 12px;
+    padding: 0px 40px 50px;
+
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 1024px){
+        padding: 0px 30px 40px;
+    }
+    @media (max-width: 680px){
+        padding: 0px 20px 35px;
+    }
+    
+}
+
+
+.ob-brand__name{
+
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 130%;
+    color: #121212;
+    margin-bottom: 16px;
+    @media  (max-width: 1024px){
+        font-size: 20px;
+    }
+
+    @media  (max-width: 680px){
+        
+        font-size: 17px;
+        margin-bottom: 12px;
+    }
+
+}
+.ob-brand__text{
+    
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 150%;
+    color: #121212;
+
+    @media  (max-width: 1024px){
+        font-size: 14px;
+    }
+}
+
+.ob-brand.spk{
+    .ob-brand__img-block{
+        img{
+            width: 102px;
+            height: 100px;
+
+            @media (max-width: 680px){
+                width: 86px;
+                height: 84px;
+            }
+        }
+    }
+}
+.ob-brand.elicatesse{
+    .ob-brand__img-block{
+        img{
+            width: 218px;
+            height: 126px;
+
+            @media (max-width: 680px){
+                width: 187px;
+                height: 110px;
+            }
+        }
+    }
+}
+.ob-brand.bigsos{
+    .ob-brand__img-block{
+        img{
+            width: 130px;
+            height: 102px;
+
+            @media (max-width: 680px){
+                width: 116px;
+                height: 91px;
+            }
+        }
+    }
+}
+.ob-brand.myasodelov{
+    .ob-brand__img-block{
+        img{
+            width: 165px;
+            height: 81px;
+
+            @media (max-width: 680px){
+                width: 146px;
+                height: 71px;
+            }
+        }
+    }
+}
+.ob-brand.lakidog{
+    .ob-brand__img-block{
+        img{
+            width: 196px;
+            height: 69px;
+
+            @media (max-width: 680px){
+                width: 145px;
+                height: 51px;
+            }
+        }
+    }
+}
+
+
+.ob-brand__img-block{
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    min-height: 170px;
+    img{
+        max-width: 100%;
+    }
+    @media (max-width: 680px){
+        min-height: 120px;
+    }
+}
