@@ -1158,15 +1158,15 @@ phoneMasks.forEach( (input) => {
   Страница акции
   */
 
-const showPromoDetailBtns = document.querySelectorAll('button[data-show-detail]');
+const showPromoDetailBtns = document.querySelectorAll('button[target-modal]');
 
 if ( showPromoDetailBtns.length ){
   showPromoDetailBtns.forEach( btn => {
 
     btn.addEventListener('click', function(event){
-      let targetModal = this.getAttribute('data-show-detail');
+      let targetModal = this.getAttribute('target-modal');
       
-      new easyModal( ".modal[data-modal-name = '" +targetModal+ "']", optionsPromoDetail );
+      new easyModal( ".modal[modal-name = '" +targetModal+ "']", optionsPromoDetail );
 
     })
 
@@ -1175,4 +1175,100 @@ if ( showPromoDetailBtns.length ){
 
 /*
   КОНЕЦ: Страница акции
+*/
+
+
+/*
+  страница Помощь
+*/
+
+const helpTabs = document.querySelectorAll('.help-tabs__tab')
+const helpSheets =  document.querySelectorAll('.help-sheets__sheet')
+
+const selectHelpTabsNode = document.querySelector('.select-help-tabs');
+let selectHelpTabs;
+if ( selectHelpTabsNode ){
+  selectHelpTabs = new Choices(selectHelpTabsNode, {
+    searchEnabled: false,
+    itemSelectText: '',
+    shouldSort: false,
+  });
+
+
+  selectHelpTabsNode.addEventListener( 'change', function(event){
+
+    const activeSheet = document.querySelector('.help-sheets__sheet.current');
+    activeSheet.classList.remove('current');
+
+    let activeIndex = Number( this.value );
+    helpSheets[activeIndex].classList.add('current');
+
+
+    const activeTab = document.querySelector('.help-tabs__tab.current');
+    activeTab.classList.remove('current');
+
+    helpTabs[activeIndex].classList.add('current')
+
+  } )
+
+}
+
+
+
+
+if ( helpTabs.length ){
+  helpTabs.forEach( (tab, index) => {
+
+    tab.addEventListener('click', function(){
+      if ( !tab.classList.contains( 'current' ) ){
+        const activeTab = document.querySelector('.help-tabs__tab.current');
+        const activeIndex = Number( activeTab.getAttribute('data-index') );
+
+        activeTab.classList.remove('current');
+
+        helpSheets[activeIndex].classList.remove('current');
+        
+
+        helpSheets[index].classList.add('current');
+        this.classList.add('current');
+        selectHelpTabs.setChoiceByValue(String( index ));
+      } else {
+        return null
+      }
+
+
+
+    })
+
+
+    let helpInnerSwitcherBtn = document.querySelectorAll('.help-inner-switcher');
+
+    helpInnerSwitcherBtn.forEach( btn => {
+      btn.addEventListener('click', function(){
+
+
+        const activeTab = document.querySelector('.help-tabs__tab.current');
+        const activeSheet = document.querySelector('.help-sheets__sheet.current');
+        activeTab.classList.remove('current');
+        activeSheet.classList.remove('current');
+
+
+        let targetIndex = Number ( this.getAttribute('data-index') );
+        helpTabs[targetIndex].classList.add('current');
+        helpSheets[targetIndex].classList.add('current');
+
+
+        document.querySelector('.select-help-tabs').selectedIndex = targetIndex;
+        
+        selectHelpTabs.setChoiceByValue(String( targetIndex ));
+      })
+    })
+
+  } )
+}
+
+/*
+  Конец:
+  страница Помощь
+
 */

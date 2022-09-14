@@ -1,0 +1,615 @@
+@@include('templates/head.html')
+@@include('templates/header.html')
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=a569dd0f-0a26-4cb0-ba68-768310a472d6" type="text/javascript"></script>
+
+<main>
+    
+    <section class="section">
+        <div class="section__inner">
+            <nav class="breadcrumbs">
+                <a href="index.html">Главная</a>
+                <a >Помощь покупателю</a>
+            </nav>
+
+            <h1 class="h1">Помощь покупателю</h1>
+
+            <div class="help">
+                <div class="help-tabs">
+                    <div class="help-tabs__select-tabs">
+                        <div class="c-form__select-wrap">
+
+                            <select select-one class="c-form__select select-help-tabs">
+                                <option value="0" selected>Доставка</option>
+                                <option value="1">Как сделать заказ</option>
+                                <option value="2">Зоны и стоимость доставки</option>
+                                <option value="3">Дата и время заказа</option>
+                                <option value="4">Оплата заказа</option>
+                                <option value="5">Корректировка заказа</option>
+                                <option value="6">Служба качества</option>
+                                <option value="7">Часто задаваемые вопросы</option>
+                            </select>
+                            <p class="c-form__select-label">Помощь покупателю</p>
+                        </div>
+                    </div>
+                    
+
+
+                    <ul>
+                        <li class="help-tabs__tab current" data-index="0">Доставка </li>
+                        <li class="help-tabs__tab" data-index="1">Как сделать заказ</li>
+                        <li class="help-tabs__tab" data-index="2">Зоны и стоимость доставки</li>
+                        <li class="help-tabs__tab" data-index="3">Дата и время заказа</li>
+                        <li class="help-tabs__tab" data-index="4">Оплата заказа</li>
+                        <li class="help-tabs__tab" data-index="5">Корректировка заказа</li>
+                        <li class="help-tabs__tab" data-index="6">Служба качества</li>
+                        <li class="help-tabs__tab" data-index="7">Часто задаваемые вопросы</li>
+                    </ul>
+                </div>
+
+                
+
+
+                <div class="help-sheets">
+                    <div class="help-sheets__sheet current" data-index="0">
+                        <h2>Доставка</h2>
+
+                        <h3 class="subtitle">Доставка продуктов из интернет-магазина на дом, в офис, на дачу или в любое другое удобное для вас место в Новосибирске.</h3>
+
+                        <div class="help-delivery">
+                            <div class="help-delivery__item">
+                                <div class="help-delivery__img-block">
+                                    <img src="assets/img/help/delivery/1.svg" alt="">
+                                </div>
+
+                                <div class="help-delivery__text-block">
+                                    <h3>Бесплатная доставка</h3>
+                                    <p>Для заказов на сумму от 1 500 рублей (после применения скидок и промокодов) для основной зоны доставки. Для заказов на сумму от 2 500 рублей (после применения скидок и промокодов) для отдаленной зоны доставки.</p>
+                                    <button class="btn help-inner-switcher" data-index="2">Зоны и стоимость доставки</button>
+                                </div>
+                            </div>
+
+                            <div class="help-delivery__item">
+                                <div class="help-delivery__img-block">
+                                    <img src="assets/img/help/delivery/2.svg" alt="">
+                                </div>
+                                <div class="help-delivery__text-block">
+                                    <h3>Заказы на сайте или в мобильной версии</h3>
+                                    <p>Интернет-магазин spkmarket.ru принимает заказы там, где удобно вам. Выбор способа заказа никак не повлияет на скорость доставки, цену товара или наличие ассортимента. Возможна оплата онлайн, наличными или картой курьеру.</p>
+                                    <a href="#" class="btn">Оформить заказ</a>
+                                </div>
+                            </div>
+
+                            <div class="help-delivery__item">
+                                <div class="help-delivery__img-block">
+                                    <img src="assets/img/help/delivery/3.svg" alt="">
+                                </div>
+                                <div class="help-delivery__text-block">
+                                    <h3>Всё свежее</h3>
+                                    <p>Наши сборщики всегда проверяют сроки годности товаров: в доставку попадают самые свежие продукты из тех, что есть на складе. А если чего-то не оказалось, сборщик перезвонит и предложит замену.</p>
+                                    <a href="#" class="btn">Выбрать продукты</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="help-sheets__sheet " data-index="1">
+                        <h2>Как сделать заказ</h2>
+
+                        <div class="help-steps">
+                            <div class="help-steps__step">
+                                <div class="help-steps__step-top">
+                                    <div class="help-steps__step-num">
+                                        <img src="assets/img/help/steps/step-decor.svg" alt="">
+                                        <span>1</span>
+                                    </div>
+
+                                    <div class="help-steps__arrow">
+                                        <img src="assets/img/help/steps/arrow.svg" alt="" class="horiz">
+                                        <img src="assets/img/help/steps/vert-arrow.svg" alt="" class="vert">
+                                    </div>
+                                </div>
+                                <p>Выбирайте любимые продукты, не забывайте про новинки</p>
+                            </div>
+
+                            <div class="help-steps__step">
+                                <div class="help-steps__step-top">
+                                    <div class="help-steps__step-num">
+                                        <img src="assets/img/help/steps/step-decor.svg" alt="">
+                                        <span>2</span>
+                                    </div>
+
+                                    <div class="help-steps__arrow">
+                                        <img src="assets/img/help/steps/arrow.svg" alt="" class="horiz">
+                                        <img src="assets/img/help/steps/vert-arrow.svg" alt="" class="vert">
+                                    </div>
+                                </div>
+                                <p>Нажмите «Перейти к оформлению»</p>
+                            </div>
+
+                            <div class="help-steps__step">
+                                <div class="help-steps__step-top">
+                                    <div class="help-steps__step-num">
+                                        <img src="assets/img/help/steps/step-decor.svg" alt="">
+                                        <span>3</span>
+                                    </div>
+
+                                    <div class="help-steps__arrow">
+                                        <img src="assets/img/help/steps/arrow.svg" alt="" class="horiz">
+                                        <img src="assets/img/help/steps/vert-arrow.svg" alt="" class="vert">
+                                    </div>
+                                </div>
+                                <p>Заполните форму оформления заказа или зайдите в личный кабинет</p>
+                            </div>
+
+                            <div class="help-steps__step">
+                                <div class="help-steps__step-top">
+                                    <div class="help-steps__step-num">
+                                        <img src="assets/img/help/steps/step-decor.svg" alt="" >
+                                        <span>4</span>
+                                    </div>
+
+                                    <div class="help-steps__arrow">
+                                        <img src="assets/img/help/steps/arrow.svg" alt="" class="horiz">
+                                        <img src="assets/img/help/steps/vert-arrow.svg" alt="" class="vert">
+                                    </div>
+                                </div>
+                                <p>Отслеживайте статус заказа в личном кабинете на сайте или в мобильной версии</p>
+                            </div>
+
+                            <div class="help-steps__step">
+                                <div class="help-steps__step-top">
+                                    <div class="help-steps__step-num">
+                                        <img src="assets/img/help/steps/step-decor.svg" alt="" >
+                                        <span>5</span>
+                                    </div>
+                                </div>
+                                <p>Встречайте курьера! 
+                                    В указанную дату и время</p>
+                            </div>
+
+                        </div>
+
+                        <div class="sh-note">
+                            <div class="sh-note__img">
+                                <img src="assets/img/help/info.svg" alt="">
+                            </div>
+                            <div class="sh-note__text-block">
+                                <p>В ассортименте интернет-магазина ООО «Сибирская продовольственная компания» представлена как продукция, имеющая точный вес, так и весовая продукция.
+
+                                    <b>Обратите внимание!</b> При добавлении в корзину весовой продукции количество в корзине указано в штуках, а цена за 1 кг. Фактическая стоимость вашего заказа будет известна после сборки заказа и может отличаться от той, которая будет указана в корзине, как в большую, так и в меньшую сторону. Наш менеджер обязательно свяжется с вами (удобным для вас способом) и уточнит детали заказа.</p>
+                            </div>
+                        </div>
+
+                        <p class="help-sheets__text">По вопросам работы интернет-магазина обращайтесь по телефону <a href="tel:+78001008515">8 800 100 85 15</a>, набрав 1 в тональном режиме (звонок на территории РФ бесплатный).</p>
+                    </div>
+
+                    <div class="help-sheets__sheet " data-index="2">
+                        <h2>Зоны и стоимость доставки</h2>
+
+                        <div class="help-zone">
+                            <div class="help-zone__title">
+                                <img src="assets/img/help/zones/location-green.svg" alt="">
+                                Основная зона доставки
+                            </div>
+                            <p class="help-sheets__text">Заельцовский (включая Карьер Мочище и д. п. Мочище), Калининский (включая м-н Пашино), Центральный, Железнодорожный, Дзержинский, Октябрьский, Первомайский, Ленинский, Кировский районы. </p>
+
+                            <div class="help-zone__prices">
+                                <div>
+                                    <h3>от 1 500 ₽</h3>
+                                    <p>БЕСПЛАТНО для заказов на сумму от 1500 ₽.
+                                        Учитывается сумма после применения всех скидок и промокодов. </p>
+                                </div>
+                                <div>
+                                    <h3>< 1 500 ₽</h3>
+                                    <p>240 ₽ для заказов менее 1 500 ₽. Учитывается сумма после применения всех скидок и промокодов. </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="help-zone">
+                            <div class="help-zone__title">
+                                <img src="assets/img/help/zones/location-orange.svg" alt="">
+                                Отдаленная зона доставки
+                            </div>
+                            <p class="help-sheets__text">Советский район (в том числе Академгородок, ОбьГЭС, Нижняя Ельцовка), п. Мичуринский, п. Кольцово, 
+                                п. Тулинский, с. Верх-Тула, п. Краснообск, п. Элитный, ст. Мочище, п. Кудряшовский, г. Обь, с. Барышево, 
+                                с. Толмачево, мкр. Близкий, с. Каменка.</p>
+
+                                <div class="help-zone__prices">
+                                    <div>
+                                        <h3>от 2 500 ₽</h3>
+                                        <p>БЕСПЛАТНО для заказов на сумму от 2 500 ₽.
+                                            Учитывается сумма после применения всех скидок и промокодов. </p>
+                                    </div>
+                                    <div>
+                                        <h3>< 2 500 ₽</h3>
+                                        <p>360 ₽ для заказов менее 2 500 ₽. Учитывается сумма после применения всех скидок и промокодов. </p>
+                                    </div>
+                                </div>
+                        </div>
+
+                        <div class="i-map">
+                            <div class="i-map__inner" id="i-map">
+            
+                            </div>    
+                        </div>
+
+                        <div class="sh-note">
+                            <div class="sh-note__img">
+                                <img src="assets/img/help/info.svg" alt="">
+                            </div>
+                            <div class="sh-note__text-block">
+                                <p>Курьер доставляет заказ до дверей квартиры/дома/офиса. За 30-60 минут курьер предупреждает вас о прибытии. Курьер может ожидать покупателя в точке приема заказа не более 15 минут.
+
+                                Не забудьте проверить состав заказа и качество товаров при получении в течение 15 минут в присутствии курьера.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="3">
+                        <h2>Дата и время заказа</h2>
+
+                        <p class="help-sheets__text">Вы можете выбрать доставку в следующих временных интервалах</p>
+
+                        <div class="help-time-grid">
+                            <div class="help-time-grid__item">
+                                <img src="assets/img/help/datetime/clock-1.svg" alt="">
+                                <p>10:00 – 14:00</p>
+                            </div>
+                            <div class="help-time-grid__item">
+                                <img src="assets/img/help/datetime/clock-2.svg" alt="">
+                                <p>14:00 – 18:00</p>
+                            </div>
+                            <div class="help-time-grid__item">
+                                <img src="assets/img/help/datetime/clock-3.svg" alt="">
+                                <p>18:00 – 22:00</p>
+                            </div>
+                            
+                        </div>
+
+                        <div class="help-times">
+                            <div class="help-times__item">
+                                <h3>Заказ до 11:00</h3>
+                                <p>При оформлении заказа до 11:00 доставка осуществляется с 14:00 до 22:00 в этот же день или на следующий день в удобный для вас временной интервал.</p>
+                            </div>
+
+                            <div class="help-times__item">
+                                <h3>Заказ до 15:00</h3>
+                                <p>При оформлении заказа до 15:00 доставка осуществляется с 18:00 до 22:00 в этот же день или на следующий день в удобный для вас временной интервал.</p>
+                            </div>
+
+                            <div class="help-times__item">
+                                <h3>Заказ до 18:00</h3>
+                                <p>При оформлении заказа до 18:00 доставка осуществляется на следующий день в удобный для вас временной интервал.</p>
+                            </div>
+
+                            <div class="help-times__item">
+                                <h3>Заказ после 18:00</h3>
+                                <p>При оформлении заказа после 18:00 доставка осуществляется на следующий день с 14:00 до 22:00 или в любой удобный для вас день.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="4">
+                        <h2>Оплата заказа</h2>
+                        <p class="help-sheets__text">Оплата заказа производится при получении заказа (наличный расчет или банковской картой по терминалу) или онлайн в личном кабинете интернет-магазина. При доставке заказа курьер передает покупателю следующий комплект документов.</p>
+
+                        <div class="help-payment">
+                            <div class="help-payment__item">
+                                <div class="help-payment__img-block">
+                                    <img src="assets/img/help/payment/1.svg" alt="">
+                                </div>
+
+                                <div class="help-payment__text-block">
+                                    <h3>При оплате наличными </h3>
+                                    <ul>
+                                        <li>кассовый чек</li>
+                                        <li>накладная</li>
+                                        
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="help-payment__item">
+                                <div class="help-payment__img-block">
+                                    <img src="assets/img/help/payment/2.svg" alt="">
+                                </div>
+                                <div class="help-payment__text-block">
+                                    <h3>При оплате банковской картой</h3>
+                                    <ul>
+                                        <li>кассовый чек</li>
+                                        <li>слип-чек с терминала</li>
+                                        <li>накладная</li>
+                                        
+                                        
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="help-payment__item">
+                                <div class="help-payment__img-block">
+                                    <img src="assets/img/help/payment/3.svg" alt="">
+                                </div>
+                                <div class="help-payment__text-block">
+                                    <h3>При оплате онлайн</h3>
+                                    <ul>
+                                        <li>электронный кассовый чек</li>
+                                        <li>накладная</li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sh-note">
+                            <div class="sh-note__img">
+                                <img src="assets/img/help/info.svg" alt="">
+                            </div>
+                            <div class="sh-note__text-block">
+                                <p>Не уничтожайте чек и накладную до проверки качества товара.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="help-sheets__sheet " data-index="5">
+                        <h2>Корректировка заказа</h2>
+
+                        <div class="help-sheets__text-block">
+                            <h3>Изменение заказа</h3>
+                            <div class="help-sheets__small-text">Если вы хотите изменить заказ: добавить новые наименования продукции либо отказаться от части заказа, вы можете это сделать <b>только до отгрузки его со склада!</b>
+
+                                Отгрузка заказов со склада и передача их курьеру осуществляется:
+                                <ul>
+                                <li><b>В 9:00</b> при доставке с 10:00 до 14:00;</li>
+                                <li><b>В 13:00</b> при доставке с 14:00 до 18:00;</li>
+                                <li><b>В 17:00</b> при доставке с 18:00 до 22:00.</li>
+                                </ul>                                
+                                Вы можете изменить Ваш заказ по телефону горячей линии <a href="tel:+78001008515">8 800 100 85 15</a>, набрав 1 в тональном режиме (звонок 
+                                на территории РФ бесплатный).</div>
+                        </div>
+
+                        <div class="help-sheets__text-block">
+                            <h3>Отказ от покупки заказа или части заказа</h3>
+                            <div class="help-sheets__small-text">Вы можете отменить заказ или отказаться от его части (в соответствии с п. Возврат и обмен некачественного товара в разделе «Служба качества») в любой момент до передачи его вам, в том числе в момент приезда курьера.
+
+                            Просим вас с уважением относиться к работе сотрудников интернет-магазина и по возможности принимать решение об отказе от товара до его отправки.
+
+                            Отгрузка заказов со склада и передача их курьеру осуществляется:
+                            <ul>
+                                <li><b>В 9:00</b> при доставке с 10:00 до 14:00;</li>
+                                <li><b>В 13:00</b> при доставке с 14:00 до 18:00;</li>
+                                <li><b>В 17:00</b> при доставке с 18:00 до 22:00.</li>
+                            </ul>
+                            
+                            
+                            
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="6">
+                        <h2>Служба качества</h2>
+
+                        <div class="help-sheets__text-block">Мы тщательно отслеживаем качество нашей продукции на всех этапах производства. Если у вас все же возникли вопросы по качеству полученной продукции, вы можете обратиться на нашу горячую линию по телефону <a href="tel:+78001008515">8 800 100 85 15</a>, и мы сделаем все, чтобы разрешить ситуацию.</div>
+
+                        <div class="help-sheets__text-block">
+                            <h3>Возврат качественного товара</h3>
+                            <div class="help-sheets__small-text">В соответствии с действующим законодательством (п. 1 ст. 18, п. 1 ст. 25) Закона РФ «О защите прав потребителей» от 07.02.1992 N 2300-1 <b>продовольственные товары надлежащего качества возврату и обмену не подлежат.</b>
+
+                                В соответствие с включением кода ТН ВЭД 2309В в Единый перечень товаров, подлежащих ветеринарному контролю (надзору), утвержденного Решением Комиссии Таможенного союза от 18.06.2010 № 317 продукты, используемый для кормления животных относятся к продовольственным товарам.</div>
+
+                        </div>
+                        <div class="help-sheets__text-block">
+                            <h3>Возврат и обмен некачественного товара</h3>
+                            <div class="help-sheets__small-text">Условия обмена и возврата товара ненадлежащего качества регулируются ст. 18- 24 Закона РФ «О защите прав потребителей» от 07.02.1992 г. № 2300-1.</div>
+                        </div>
+                        
+
+                        <div class="sh-note">
+                            <div class="sh-note__img">
+                                <img src="assets/img/help/info.svg" alt="">
+                            </div>
+                            <div class="sh-note__text-block">
+                                <p class="help-sheets__small-text">Внешний вид товара, а также состав всего заказа должны быть проверены покупателем в момент получения товара при курьере. </p>
+                            </div>
+                        </div>
+
+                        <div class="help-sheets__text-block">
+                            
+                            <div class="help-sheets__small-text">Если Вам был передан товар ненадлежащего качества, и оно не было заранее оговорено продавцом, вы вправе воспользоваться положениями ст. 18 Закона РФ «О защите прав потребителей»: 
+                                
+                                <ul>
+                                    <li>потребовать замены на товар того же наименования;</li>
+                                    <li>отказаться от исполнения договора купли-продажи и потребовать возврата уплаченной за товар суммы. По требованию продавца и за его счет покупатель должен возвратить товар ненадлежащего качества.</li>
+                                </ul>
+                                Для возврата или обмена товара ненадлежащего качества вы можете обратиться к нам по телефону горячей линии: 
+                                <a href="tel:+78001008515">8 800 100 85 15</a>, набрав 2 в тональном режиме (звонок на территории РФ бесплатный) или через форму «ОТПРАВИТЬ СООБЩЕНИЕ» на <a href="#">сайте интернет-магазина.</a>
+                                
+                                При обращении следует указать подробное описание причины возврата или замены данного товара. Обязательно нужно указать ваши контактные данные (ФИО, телефон) и номер заказа. Если потребуются более подробная информация, менеджер обязательно свяжется с вами по указанному номеру телефона (электронной почты).
+                                
+                                Все претензии по товару рассматриваются в течение 10 (десяти) календарных дней с момента их предъявления.
+                                В случае возврата товара ненадлежащего качества, все расходы на доставку и замену товара осуществляются интернет-магазином.</div>
+                        </div>
+                        <div class="sh-note">
+                            <div class="sh-note__img">
+                                <img src="assets/img/help/info.svg" alt="">
+                            </div>
+                            <div class="sh-note__text-block">
+                                <p class="help-sheets__small-text">При оформлении возврата любого товара вам необходимо предъявить чек или накладную.</p>
+                            </div>
+                        </div>
+
+                        <div class="help-sheets__text-block">
+                            <h3>Возврат денежных средств</h3>
+                            <div class="help-sheets__small-text">Возврат денежных средств осуществляется в течение 10 (десяти) календарных дней со дня предъявления покупателем соответствующего требования (скачать <a href="#" download="#">Заявление о возврате денежных средств</a>).
+
+                                <b>При наличном расчете</b> возврат денежных средств осуществляется через кассу ООО «Сибирская продовольственная компания» по адресу: г. Новосибирск, ул. Дуси Ковальчук, 1 при предъявлении документа, удостоверяющего личность.
+                                
+                                <b>В случае оплаты заказа банковской картой</b> возврат средств производится на карту, с которой совершена оплата. Покупатель несет ответственность за достоверность указанных им реквизитов для возврата денежных средств.
+                                
+                                Если у вас возник вопрос, позвоните нам, пожалуйста, по телефону горячей линии: <a href="tel:+78001008515">8 800 100 85 15</a>, набрав 2 в тональном режиме (звонок на территории РФ бесплатный) или напишите нам через форму «ОТПРАВИТЬ СООБЩЕНИЕ» на сайте <a href="#">интернет-магазина.</a></div>
+                        </div>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="7">
+                        <h2>Часто задаваемые вопросы</h2>
+
+                        <div class="easyAccordion ">
+                            <div class="easyAccordion__item" data-state="rolled">
+                                <div class="easyAccordion__header">
+                                    <p class="easyAccordion__header-text">Когда ждать доставку заказа?</p>
+                                    <button class="easyAccordion__btn">
+                                        <img src="assets/img/icons/accordion-arrow.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="easyAccordion__content">
+                                    <div class="easyAccordion__content-inner">
+                                        <p>Мы готовы доставить ваш заказ в день его оформления или в другой удобный для вас день после оформления в интернет-магазине. Временной интервал зависит от времени оформления заказа.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--2-->
+                            <div class="easyAccordion__item" data-state="rolled">
+                                <div class="easyAccordion__header">
+                                    <p class="easyAccordion__header-text">Какие документы прилагаются к заказу?</p>
+                                    <button class="easyAccordion__btn">
+                                        <img src="assets/img/icons/accordion-arrow.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="easyAccordion__content">
+                                    <div class="easyAccordion__content-inner">
+                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero placeat ab officiis, a aliquam, ipsam iste qui debitis sint earum cumque quia magni accusamus obcaecati.</p>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!--3-->
+                            <div class="easyAccordion__item" data-state="rolled">
+                                <div class="easyAccordion__header">
+                                    <p class="easyAccordion__header-text">Я не могу принять заказ в назначенное время</p>
+                                    <button class="easyAccordion__btn">
+                                        <img src="assets/img/icons/accordion-arrow.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="easyAccordion__content">
+                                    <div class="easyAccordion__content-inner">
+                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero placeat ab officiis, a aliquam, ipsam iste qui debitis sint earum cumque quia magni accusamus obcaecati.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!--4-->
+                            <div class="easyAccordion__item" data-state="rolled">
+                                <div class="easyAccordion__header">
+                                    <p class="easyAccordion__header-text">Как хранятся товары и комплектуются заказы?</p>
+                                    <button class="easyAccordion__btn">
+                                        <img src="assets/img/icons/accordion-arrow.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="easyAccordion__content">
+                                    <div class="easyAccordion__content-inner">
+                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero placeat ab officiis, a aliquam, ipsam iste qui debitis sint earum cumque quia magni accusamus obcaecati.</p>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!--5-->
+                            <div class="easyAccordion__item" data-state="rolled">
+                                <div class="easyAccordion__header">
+                                    <p class="easyAccordion__header-text">Что будет, если заказанный товар отсутствует на складе? </p>
+                                    <button class="easyAccordion__btn">
+                                        <img src="assets/img/icons/accordion-arrow.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="easyAccordion__content">
+                                    <div class="easyAccordion__content-inner">
+                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero placeat ab officiis, a aliquam, ipsam iste qui debitis sint earum cumque quia magni accusamus obcaecati.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--6-->
+                            <div class="easyAccordion__item" data-state="rolled">
+                                <div class="easyAccordion__header">
+                                    <p class="easyAccordion__header-text">Что делать, если меня не устроило качество товара?</p>
+                                    <button class="easyAccordion__btn">
+                                        <img src="assets/img/icons/accordion-arrow.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="easyAccordion__content">
+                                    <div class="easyAccordion__content-inner">
+                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero placeat ab officiis, a aliquam, ipsam iste qui debitis sint earum cumque quia magni accusamus obcaecati.</p>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!--7-->
+                            <div class="easyAccordion__item" data-state="rolled">
+                                <div class="easyAccordion__header">
+                                    <p class="easyAccordion__header-text">Может ли измениться стоимость заказа?</p>
+                                    <button class="easyAccordion__btn">
+                                        <img src="assets/img/icons/accordion-arrow.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="easyAccordion__content">
+                                    <div class="easyAccordion__content-inner">
+                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero placeat ab officiis, a aliquam, ipsam iste qui debitis sint earum cumque quia magni accusamus obcaecati.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!--8-->
+                            <div class="easyAccordion__item" data-state="rolled">
+                                <div class="easyAccordion__header">
+                                    <p class="easyAccordion__header-text">Как я могу оплатить заказ?</p>
+                                    <button class="easyAccordion__btn">
+                                        <img src="assets/img/icons/accordion-arrow.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="easyAccordion__content">
+                                    <div class="easyAccordion__content-inner">
+                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero placeat ab officiis, a aliquam, ipsam iste qui debitis sint earum cumque quia magni accusamus obcaecati.</p>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!--9-->
+                            <div class="easyAccordion__item" data-state="rolled">
+                                <div class="easyAccordion__header">
+                                    <p class="easyAccordion__header-text">Какова минимальная сумма заказа?</p>
+                                    <button class="easyAccordion__btn">
+                                        <img src="assets/img/icons/accordion-arrow.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="easyAccordion__content">
+                                    <div class="easyAccordion__content-inner">
+                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero placeat ab officiis, a aliquam, ipsam iste qui debitis sint earum cumque quia magni accusamus obcaecati.</p>
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+
+@@include('templates/welcome-modal.html')
+@@include('templates/feedback-modal.html')
+
+
+@@include('templates/footer.html')
+@@include('templates/foot.html')  

@@ -1,0 +1,161 @@
+@@include('templates/head.html')
+@@include('templates/header.html')
+
+
+<main>
+    
+    <section class="section">
+        <div class="section__inner">
+            <nav class="breadcrumbs">
+                <a href="index.html">Главная</a>
+                <a >Помощь покупателю</a>
+            </nav>
+
+            <h1 class="h1">Помощь покупателю</h1>
+
+            <div class="help">
+                <div class="help-tabs">
+                    <div class="help-tabs__select-tabs">
+                        <div class="c-form__select-wrap">
+
+                            <select select-one class="c-form__select select-help-tabs">
+                                <option value="0" selected>Доставка</option>
+                                <option value="1">Как сделать заказ</option>
+                                <option value="2">Зоны и стоимость доставки</option>
+                                <option value="3">Дата и время заказа</option>
+                                <option value="4">Оплата заказа</option>
+                                <option value="5">Корректировка заказа</option>
+                                <option value="6">Служба качества</option>
+                                <option value="7">Часто задаваемые вопросы</option>
+                            </select>
+                            <p class="c-form__select-label">Помощь покупателю</p>
+                        </div>
+                    </div>
+                    
+
+
+                    <ul>
+                        <li class="help-tabs__tab " data-index="0">Доставка </li>
+                        <li class="help-tabs__tab" data-index="1">Как сделать заказ</li>
+                        <li class="help-tabs__tab" data-index="2">Зоны и стоимость доставки</li>
+                        <li class="help-tabs__tab" data-index="3">Дата и время заказа</li>
+                        <li class="help-tabs__tab current" data-index="4">Оплата заказа</li>
+                        <li class="help-tabs__tab" data-index="5">Корректировка заказа</li>
+                        <li class="help-tabs__tab" data-index="6">Служба качества</li>
+                        <li class="help-tabs__tab" data-index="7">Часто задаваемые вопросы</li>
+                    </ul>
+                </div>
+
+                
+
+
+                <div class="help-sheets">
+                    <div class="help-sheets__sheet " data-index="0">
+                        <h2>Доставка</h2>
+
+                        
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="1">
+                        <h2>Как сделать заказ</h2>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="2">
+                        <h2>Зоны и стоимость доставки</h2>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="3">
+                        <h2>Дата и время заказа</h2>
+                    </div>
+
+                    <div class="help-sheets__sheet current" data-index="4">
+                        <h2>Оплата заказа</h2>
+                        <p class="help-sheets__text">Оплата заказа производится при получении заказа (наличный расчет или банковской картой по терминалу) или онлайн в личном кабинете интернет-магазина. При доставке заказа курьер передает покупателю следующий комплект документов.</p>
+
+                        <div class="help-payment">
+                            <div class="help-payment__item">
+                                <div class="help-payment__img-block">
+                                    <img src="assets/img/help/payment/1.svg" alt="">
+                                </div>
+
+                                <div class="help-payment__text-block">
+                                    <h3>При оплате наличными </h3>
+                                    <ul>
+                                        <li>кассовый чек</li>
+                                        <li>накладная</li>
+                                        
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="help-payment__item">
+                                <div class="help-payment__img-block">
+                                    <img src="assets/img/help/payment/2.svg" alt="">
+                                </div>
+                                <div class="help-payment__text-block">
+                                    <h3>При оплате банковской картой</h3>
+                                    <ul>
+                                        <li>кассовый чек</li>
+                                        <li>слип-чек с терминала</li>
+                                        <li>накладная</li>
+                                        
+                                        
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="help-payment__item">
+                                <div class="help-payment__img-block">
+                                    <img src="assets/img/help/payment/3.svg" alt="">
+                                </div>
+                                <div class="help-payment__text-block">
+                                    <h3>При оплате онлайн</h3>
+                                    <ul>
+                                        <li>электронный кассовый чек</li>
+                                        <li>накладная</li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sh-note">
+                            <div class="sh-note__img">
+                                <img src="assets/img/help/info.svg" alt="">
+                            </div>
+                            <div class="sh-note__text-block">
+                                <p>Не уничтожайте чек и накладную до проверки качества товара.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="5">
+                        <h2>Корректировка заказа</h2>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="6">
+                        <h2>Служба качества</h2>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="7">
+                        <h2>Часто задаваемые вопросы</h2>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+
+@@include('templates/welcome-modal.html')
+@@include('templates/feedback-modal.html')
+
+
+@@include('templates/footer.html')
+@@include('templates/foot.html')  

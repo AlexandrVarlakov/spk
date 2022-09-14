@@ -1,0 +1,189 @@
+@@include('templates/head.html')
+@@include('templates/header.html')
+
+
+<main>
+    
+    <section class="section">
+        <div class="section__inner">
+            <nav class="breadcrumbs">
+                <a href="index.html">Главная</a>
+                <a >Помощь покупателю</a>
+            </nav>
+
+            <h1 class="h1">Помощь покупателю</h1>
+
+            <div class="help">
+                <div class="help-tabs">
+                    <div class="help-tabs__select-tabs">
+                        <div class="c-form__select-wrap">
+
+                            <select select-one class="c-form__select select-help-tabs">
+                                <option value="0" >Доставка</option>
+                                <option value="1" selected>Как сделать заказ</option>
+                                <option value="2">Зоны и стоимость доставки</option>
+                                <option value="3">Дата и время заказа</option>
+                                <option value="4">Оплата заказа</option>
+                                <option value="5">Корректировка заказа</option>
+                                <option value="6">Служба качества</option>
+                                <option value="7">Часто задаваемые вопросы</option>
+                            </select>
+                            <p class="c-form__select-label">Помощь покупателю</p>
+                        </div>
+                    </div>
+                    
+
+
+                    <ul>
+                        <li class="help-tabs__tab " data-index="0">Доставка </li>
+                        <li class="help-tabs__tab current" data-index="1">Как сделать заказ</li>
+                        <li class="help-tabs__tab" data-index="2">Зоны и стоимость доставки</li>
+                        <li class="help-tabs__tab" data-index="3">Дата и время заказа</li>
+                        <li class="help-tabs__tab" data-index="4">Оплата заказа</li>
+                        <li class="help-tabs__tab" data-index="5">Корректировка заказа</li>
+                        <li class="help-tabs__tab" data-index="6">Служба качества</li>
+                        <li class="help-tabs__tab" data-index="7">Часто задаваемые вопросы</li>
+                    </ul>
+                </div>
+
+                
+
+
+                <div class="help-sheets">
+                    <div class="help-sheets__sheet " data-index="0">
+                        <h2>Доставка</h2>
+
+                        
+                    </div>
+
+                    <div class="help-sheets__sheet current" data-index="1">
+                        <h2>Как сделать заказ</h2>
+
+                        <div class="help-steps">
+                            <div class="help-steps__step">
+                                <div class="help-steps__step-top">
+                                    <div class="help-steps__step-num">
+                                        <img src="assets/img/help/steps/step-decor.svg" alt="">
+                                        <span>1</span>
+                                    </div>
+
+                                    <div class="help-steps__arrow">
+                                        <img src="assets/img/help/steps/arrow.svg" alt="" class="horiz">
+                                        <img src="assets/img/help/steps/vert-arrow.svg" alt="" class="vert">
+                                    </div>
+                                </div>
+                                <p>Выбирайте любимые продукты, не забывайте про новинки</p>
+                            </div>
+
+                            <div class="help-steps__step">
+                                <div class="help-steps__step-top">
+                                    <div class="help-steps__step-num">
+                                        <img src="assets/img/help/steps/step-decor.svg" alt="">
+                                        <span>2</span>
+                                    </div>
+
+                                    <div class="help-steps__arrow">
+                                        <img src="assets/img/help/steps/arrow.svg" alt="" class="horiz">
+                                        <img src="assets/img/help/steps/vert-arrow.svg" alt="" class="vert">
+                                    </div>
+                                </div>
+                                <p>Нажмите «Перейти к оформлению»</p>
+                            </div>
+
+                            <div class="help-steps__step">
+                                <div class="help-steps__step-top">
+                                    <div class="help-steps__step-num">
+                                        <img src="assets/img/help/steps/step-decor.svg" alt="">
+                                        <span>3</span>
+                                    </div>
+
+                                    <div class="help-steps__arrow">
+                                        <img src="assets/img/help/steps/arrow.svg" alt="" class="horiz">
+                                        <img src="assets/img/help/steps/vert-arrow.svg" alt="" class="vert">
+                                    </div>
+                                </div>
+                                <p>Заполните форму оформления заказа или зайдите в личный кабинет</p>
+                            </div>
+
+                            <div class="help-steps__step">
+                                <div class="help-steps__step-top">
+                                    <div class="help-steps__step-num">
+                                        <img src="assets/img/help/steps/step-decor.svg" alt="" >
+                                        <span>4</span>
+                                    </div>
+
+                                    <div class="help-steps__arrow">
+                                        <img src="assets/img/help/steps/arrow.svg" alt="" class="horiz">
+                                        <img src="assets/img/help/steps/vert-arrow.svg" alt="" class="vert">
+                                    </div>
+                                </div>
+                                <p>Отслеживайте статус заказа в личном кабинете на сайте или в мобильной версии</p>
+                            </div>
+
+                            <div class="help-steps__step">
+                                <div class="help-steps__step-top">
+                                    <div class="help-steps__step-num">
+                                        <img src="assets/img/help/steps/step-decor.svg" alt="" >
+                                        <span>5</span>
+                                    </div>
+                                </div>
+                                <p>Встречайте курьера! 
+                                    В указанную дату и время</p>
+                            </div>
+
+                        </div>
+
+                        <div class="sh-note">
+                            <div class="sh-note__img">
+                                <img src="assets/img/help/info.svg" alt="">
+                            </div>
+                            <div class="sh-note__text-block">
+                                <p>В ассортименте интернет-магазина ООО «Сибирская продовольственная компания» представлена как продукция, имеющая точный вес, так и весовая продукция.
+
+                                    <b>Обратите внимание!</b> При добавлении в корзину весовой продукции количество в корзине указано в штуках, а цена за 1 кг. Фактическая стоимость вашего заказа будет известна после сборки заказа и может отличаться от той, которая будет указана в корзине, как в большую, так и в меньшую сторону. Наш менеджер обязательно свяжется с вами (удобным для вас способом) и уточнит детали заказа.</p>
+                            </div>
+                        </div>
+
+                        <p class="help-sheets__text">По вопросам работы интернет-магазина обращайтесь по телефону <a href="tel:+78001008515">8 800 100 85 15</a>, набрав 1 в тональном режиме (звонок на территории РФ бесплатный).</p>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="2">
+                        <h2>Зоны и стоимость доставки</h2>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="3">
+                        <h2>Дата и время заказа</h2>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="4">
+                        <h2>Оплата заказа</h2>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="5">
+                        <h2>Корректировка заказа</h2>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="6">
+                        <h2>Служба качества</h2>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="7">
+                        <h2>Часто задаваемые вопросы</h2>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+
+@@include('templates/welcome-modal.html')
+@@include('templates/feedback-modal.html')
+
+
+@@include('templates/footer.html')
+@@include('templates/foot.html')  

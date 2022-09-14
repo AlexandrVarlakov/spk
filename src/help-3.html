@@ -1,0 +1,163 @@
+@@include('templates/head.html')
+@@include('templates/header.html')
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=a569dd0f-0a26-4cb0-ba68-768310a472d6" type="text/javascript"></script>
+
+<main>
+    
+    <section class="section">
+        <div class="section__inner">
+            <nav class="breadcrumbs">
+                <a href="index.html">Главная</a>
+                <a >Помощь покупателю</a>
+            </nav>
+
+            <h1 class="h1">Помощь покупателю</h1>
+
+            <div class="help">
+                <div class="help-tabs">
+                    <div class="help-tabs__select-tabs">
+                        <div class="c-form__select-wrap">
+
+                            <select select-one class="c-form__select select-help-tabs">
+                                <option value="0" >Доставка</option>
+                                <option value="1">Как сделать заказ</option>
+                                <option value="2" selected>Зоны и стоимость доставки</option>
+                                <option value="3">Дата и время заказа</option>
+                                <option value="4">Оплата заказа</option>
+                                <option value="5">Корректировка заказа</option>
+                                <option value="6">Служба качества</option>
+                                <option value="7">Часто задаваемые вопросы</option>
+                            </select>
+                            <p class="c-form__select-label">Помощь покупателю</p>
+                        </div>
+                    </div>
+                    
+
+
+                    <ul>
+                        <li class="help-tabs__tab " data-index="0">Доставка </li>
+                        <li class="help-tabs__tab" data-index="1">Как сделать заказ</li>
+                        <li class="help-tabs__tab current" data-index="2">Зоны и стоимость доставки</li>
+                        <li class="help-tabs__tab" data-index="3">Дата и время заказа</li>
+                        <li class="help-tabs__tab" data-index="4">Оплата заказа</li>
+                        <li class="help-tabs__tab" data-index="5">Корректировка заказа</li>
+                        <li class="help-tabs__tab" data-index="6">Служба качества</li>
+                        <li class="help-tabs__tab" data-index="7">Часто задаваемые вопросы</li>
+                    </ul>
+                </div>
+
+                
+
+
+                <div class="help-sheets">
+                    <div class="help-sheets__sheet " data-index="0">
+                        <h2>Доставка</h2>
+
+                        
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="1">
+                        <h2>Как сделать заказ</h2>
+                    </div>
+
+                    <div class="help-sheets__sheet current" data-index="2">
+                        <h2>Зоны и стоимость доставки</h2>
+
+                        <div class="help-zone">
+                            <div class="help-zone__title">
+                                <img src="assets/img/help/zones/location-green.svg" alt="">
+                                Основная зона доставки
+                            </div>
+                            <p class="help-sheets__text">Заельцовский (включая Карьер Мочище и д. п. Мочище), Калининский (включая м-н Пашино), Центральный, Железнодорожный, Дзержинский, Октябрьский, Первомайский, Ленинский, Кировский районы. </p>
+
+                            <div class="help-zone__prices">
+                                <div>
+                                    <h3>от 1 500 ₽</h3>
+                                    <p>БЕСПЛАТНО для заказов на сумму от 1500 ₽.
+                                        Учитывается сумма после применения всех скидок и промокодов. </p>
+                                </div>
+                                <div>
+                                    <h3>< 1 500 ₽</h3>
+                                    <p>240 ₽ для заказов менее 1 500 ₽. Учитывается сумма после применения всех скидок и промокодов. </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="help-zone">
+                            <div class="help-zone__title">
+                                <img src="assets/img/help/zones/location-orange.svg" alt="">
+                                Отдаленная зона доставки
+                            </div>
+                            <p class="help-sheets__text">Советский район (в том числе Академгородок, ОбьГЭС, Нижняя Ельцовка), п. Мичуринский, п. Кольцово, 
+                                п. Тулинский, с. Верх-Тула, п. Краснообск, п. Элитный, ст. Мочище, п. Кудряшовский, г. Обь, с. Барышево, 
+                                с. Толмачево, мкр. Близкий, с. Каменка.</p>
+
+                                <div class="help-zone__prices">
+                                    <div>
+                                        <h3>от 2 500 ₽</h3>
+                                        <p>БЕСПЛАТНО для заказов на сумму от 2 500 ₽.
+                                            Учитывается сумма после применения всех скидок и промокодов. </p>
+                                    </div>
+                                    <div>
+                                        <h3>< 2 500 ₽</h3>
+                                        <p>360 ₽ для заказов менее 2 500 ₽. Учитывается сумма после применения всех скидок и промокодов. </p>
+                                    </div>
+                                </div>
+                        </div>
+
+                        <div class="i-map">
+                            <div class="i-map__inner" id="i-map">
+            
+                            </div>    
+                        </div>
+
+                        <div class="sh-note">
+                            <div class="sh-note__img">
+                                <img src="assets/img/help/info.svg" alt="">
+                            </div>
+                            <div class="sh-note__text-block">
+                                <p>Курьер доставляет заказ до дверей квартиры/дома/офиса. За 30-60 минут курьер предупреждает вас о прибытии. Курьер может ожидать покупателя в точке приема заказа не более 15 минут.
+
+                                Не забудьте проверить состав заказа и качество товаров при получении в течение 15 минут в присутствии курьера.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="3">
+                        <h2>Дата и время заказа</h2>
+
+
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="4">
+                        <h2>Оплата заказа</h2>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="5">
+                        <h2>Корректировка заказа</h2>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="6">
+                        <h2>Служба качества</h2>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="7">
+                        <h2>Часто задаваемые вопросы</h2>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+
+@@include('templates/welcome-modal.html')
+@@include('templates/feedback-modal.html')
+
+
+@@include('templates/footer.html')
+@@include('templates/foot.html')  

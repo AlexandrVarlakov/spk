@@ -1,0 +1,143 @@
+@@include('templates/head.html')
+@@include('templates/header.html')
+
+
+<main>
+    
+    <section class="section">
+        <div class="section__inner">
+            <nav class="breadcrumbs">
+                <a href="index.html">Главная</a>
+                <a >Помощь покупателю</a>
+            </nav>
+
+            <h1 class="h1">Помощь покупателю</h1>
+
+            <div class="help">
+                <div class="help-tabs">
+                    <div class="help-tabs__select-tabs">
+                        <div class="c-form__select-wrap">
+
+                            <select select-one class="c-form__select select-help-tabs">
+                                <option value="0" >Доставка</option>
+                                <option value="1">Как сделать заказ</option>
+                                <option value="2">Зоны и стоимость доставки</option>
+                                <option value="3" selected>Дата и время заказа</option>
+                                <option value="4">Оплата заказа</option>
+                                <option value="5">Корректировка заказа</option>
+                                <option value="6">Служба качества</option>
+                                <option value="7">Часто задаваемые вопросы</option>
+                            </select>
+                            <p class="c-form__select-label">Помощь покупателю</p>
+                        </div>
+                    </div>
+                    
+
+
+                    <ul>
+                        <li class="help-tabs__tab " data-index="0">Доставка </li>
+                        <li class="help-tabs__tab" data-index="1">Как сделать заказ</li>
+                        <li class="help-tabs__tab" data-index="2">Зоны и стоимость доставки</li>
+                        <li class="help-tabs__tab current" data-index="3">Дата и время заказа</li>
+                        <li class="help-tabs__tab" data-index="4">Оплата заказа</li>
+                        <li class="help-tabs__tab" data-index="5">Корректировка заказа</li>
+                        <li class="help-tabs__tab" data-index="6">Служба качества</li>
+                        <li class="help-tabs__tab" data-index="7">Часто задаваемые вопросы</li>
+                    </ul>
+                </div>
+
+                
+
+
+                <div class="help-sheets">
+                    <div class="help-sheets__sheet " data-index="0">
+                        <h2>Доставка</h2>
+
+                        
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="1">
+                        <h2>Как сделать заказ</h2>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="2">
+                        <h2>Зоны и стоимость доставки</h2>
+                    </div>
+
+                    <div class="help-sheets__sheet current" data-index="3">
+                        <h2>Дата и время заказа</h2>
+
+                        <p class="help-sheets__text">Вы можете выбрать доставку в следующих временных интервалах</p>
+
+                        <div class="help-time-grid">
+                            <div class="help-time-grid__item">
+                                <img src="assets/img/help/datetime/clock-1.svg" alt="">
+                                <p>10:00 – 14:00</p>
+                            </div>
+                            <div class="help-time-grid__item">
+                                <img src="assets/img/help/datetime/clock-2.svg" alt="">
+                                <p>14:00 – 18:00</p>
+                            </div>
+                            <div class="help-time-grid__item">
+                                <img src="assets/img/help/datetime/clock-3.svg" alt="">
+                                <p>18:00 – 22:00</p>
+                            </div>
+                            
+                        </div>
+
+                        <div class="help-times">
+                            <div class="help-times__item">
+                                <h3>Заказ до 11:00</h3>
+                                <p>При оформлении заказа до 11:00 доставка осуществляется с 14:00 до 22:00 в этот же день или на следующий день в удобный для вас временной интервал.</p>
+                            </div>
+
+                            <div class="help-times__item">
+                                <h3>Заказ до 15:00</h3>
+                                <p>При оформлении заказа до 15:00 доставка осуществляется с 18:00 до 22:00 в этот же день или на следующий день в удобный для вас временной интервал.</p>
+                            </div>
+
+                            <div class="help-times__item">
+                                <h3>Заказ до 18:00</h3>
+                                <p>При оформлении заказа до 18:00 доставка осуществляется на следующий день в удобный для вас временной интервал.</p>
+                            </div>
+
+                            <div class="help-times__item">
+                                <h3>Заказ после 18:00</h3>
+                                <p>При оформлении заказа после 18:00 доставка осуществляется на следующий день с 14:00 до 22:00 или в любой удобный для вас день.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="4">
+                        <h2>Оплата заказа</h2>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="5">
+                        <h2>Корректировка заказа</h2>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="6">
+                        <h2>Служба качества</h2>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="7">
+                        <h2>Часто задаваемые вопросы</h2>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+
+@@include('templates/welcome-modal.html')
+@@include('templates/feedback-modal.html')
+
+
+@@include('templates/footer.html')
+@@include('templates/foot.html')  

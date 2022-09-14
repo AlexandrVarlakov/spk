@@ -1,0 +1,240 @@
+@@include('templates/head.html')
+@@include('templates/header.html')
+
+
+<main>
+    
+    <section class="section">
+        <div class="section__inner">
+            <nav class="breadcrumbs">
+                <a href="index.html">Главная</a>
+                <a >Помощь покупателю</a>
+            </nav>
+
+            <h1 class="h1">Помощь покупателю</h1>
+
+            <div class="help">
+                <div class="help-tabs">
+                    <div class="help-tabs__select-tabs">
+                        <div class="c-form__select-wrap">
+
+                            <select select-one class="c-form__select select-help-tabs">
+                                <option value="0" >Доставка</option>
+                                <option value="1">Как сделать заказ</option>
+                                <option value="2">Зоны и стоимость доставки</option>
+                                <option value="3">Дата и время заказа</option>
+                                <option value="4">Оплата заказа</option>
+                                <option value="5">Корректировка заказа</option>
+                                <option value="6">Служба качества</option>
+                                <option value="7" selected>Часто задаваемые вопросы</option>
+                            </select>
+                            <p class="c-form__select-label">Помощь покупателю</p>
+                        </div>
+                    </div>
+                    
+
+
+                    <ul>
+                        <li class="help-tabs__tab " data-index="0">Доставка </li>
+                        <li class="help-tabs__tab" data-index="1">Как сделать заказ</li>
+                        <li class="help-tabs__tab" data-index="2">Зоны и стоимость доставки</li>
+                        <li class="help-tabs__tab" data-index="3">Дата и время заказа</li>
+                        <li class="help-tabs__tab" data-index="4">Оплата заказа</li>
+                        <li class="help-tabs__tab" data-index="5">Корректировка заказа</li>
+                        <li class="help-tabs__tab" data-index="6">Служба качества</li>
+                        <li class="help-tabs__tab current" data-index="7">Часто задаваемые вопросы</li>
+                    </ul>
+                </div>
+
+                
+
+
+                <div class="help-sheets">
+                    <div class="help-sheets__sheet " data-index="0">
+                        <h2>Доставка</h2>
+
+                        
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="1">
+                        <h2>Как сделать заказ</h2>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="2">
+                        <h2>Зоны и стоимость доставки</h2>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="3">
+                        <h2>Дата и время заказа</h2>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="4">
+                        <h2>Оплата заказа</h2>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="5">
+                        <h2>Корректировка заказа</h2>
+                    </div>
+
+                    <div class="help-sheets__sheet" data-index="6">
+                        <h2>Служба качества</h2>
+                    </div>
+
+                    <div class="help-sheets__sheet current" data-index="7">
+                        <h2>Часто задаваемые вопросы</h2>
+
+                        <div class="easyAccordion ">
+                            <div class="easyAccordion__item" data-state="rolled">
+                                <div class="easyAccordion__header">
+                                    <p class="easyAccordion__header-text">Когда ждать доставку заказа?</p>
+                                    <button class="easyAccordion__btn">
+                                        <img src="assets/img/icons/accordion-arrow.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="easyAccordion__content">
+                                    <div class="easyAccordion__content-inner">
+                                        <p>Мы готовы доставить ваш заказ в день его оформления или в другой удобный для вас день после оформления в интернет-магазине. Временной интервал зависит от времени оформления заказа.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--2-->
+                            <div class="easyAccordion__item" data-state="rolled">
+                                <div class="easyAccordion__header">
+                                    <p class="easyAccordion__header-text">Какие документы прилагаются к заказу?</p>
+                                    <button class="easyAccordion__btn">
+                                        <img src="assets/img/icons/accordion-arrow.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="easyAccordion__content">
+                                    <div class="easyAccordion__content-inner">
+                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero placeat ab officiis, a aliquam, ipsam iste qui debitis sint earum cumque quia magni accusamus obcaecati.</p>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!--3-->
+                            <div class="easyAccordion__item" data-state="rolled">
+                                <div class="easyAccordion__header">
+                                    <p class="easyAccordion__header-text">Я не могу принять заказ в назначенное время</p>
+                                    <button class="easyAccordion__btn">
+                                        <img src="assets/img/icons/accordion-arrow.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="easyAccordion__content">
+                                    <div class="easyAccordion__content-inner">
+                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero placeat ab officiis, a aliquam, ipsam iste qui debitis sint earum cumque quia magni accusamus obcaecati.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!--4-->
+                            <div class="easyAccordion__item" data-state="rolled">
+                                <div class="easyAccordion__header">
+                                    <p class="easyAccordion__header-text">Как хранятся товары и комплектуются заказы?</p>
+                                    <button class="easyAccordion__btn">
+                                        <img src="assets/img/icons/accordion-arrow.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="easyAccordion__content">
+                                    <div class="easyAccordion__content-inner">
+                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero placeat ab officiis, a aliquam, ipsam iste qui debitis sint earum cumque quia magni accusamus obcaecati.</p>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!--5-->
+                            <div class="easyAccordion__item" data-state="rolled">
+                                <div class="easyAccordion__header">
+                                    <p class="easyAccordion__header-text">Что будет, если заказанный товар отсутствует на складе? </p>
+                                    <button class="easyAccordion__btn">
+                                        <img src="assets/img/icons/accordion-arrow.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="easyAccordion__content">
+                                    <div class="easyAccordion__content-inner">
+                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero placeat ab officiis, a aliquam, ipsam iste qui debitis sint earum cumque quia magni accusamus obcaecati.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--6-->
+                            <div class="easyAccordion__item" data-state="rolled">
+                                <div class="easyAccordion__header">
+                                    <p class="easyAccordion__header-text">Что делать, если меня не устроило качество товара?</p>
+                                    <button class="easyAccordion__btn">
+                                        <img src="assets/img/icons/accordion-arrow.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="easyAccordion__content">
+                                    <div class="easyAccordion__content-inner">
+                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero placeat ab officiis, a aliquam, ipsam iste qui debitis sint earum cumque quia magni accusamus obcaecati.</p>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!--7-->
+                            <div class="easyAccordion__item" data-state="rolled">
+                                <div class="easyAccordion__header">
+                                    <p class="easyAccordion__header-text">Может ли измениться стоимость заказа?</p>
+                                    <button class="easyAccordion__btn">
+                                        <img src="assets/img/icons/accordion-arrow.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="easyAccordion__content">
+                                    <div class="easyAccordion__content-inner">
+                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero placeat ab officiis, a aliquam, ipsam iste qui debitis sint earum cumque quia magni accusamus obcaecati.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!--8-->
+                            <div class="easyAccordion__item" data-state="rolled">
+                                <div class="easyAccordion__header">
+                                    <p class="easyAccordion__header-text">Как я могу оплатить заказ?</p>
+                                    <button class="easyAccordion__btn">
+                                        <img src="assets/img/icons/accordion-arrow.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="easyAccordion__content">
+                                    <div class="easyAccordion__content-inner">
+                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero placeat ab officiis, a aliquam, ipsam iste qui debitis sint earum cumque quia magni accusamus obcaecati.</p>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!--9-->
+                            <div class="easyAccordion__item" data-state="rolled">
+                                <div class="easyAccordion__header">
+                                    <p class="easyAccordion__header-text">Какова минимальная сумма заказа?</p>
+                                    <button class="easyAccordion__btn">
+                                        <img src="assets/img/icons/accordion-arrow.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="easyAccordion__content">
+                                    <div class="easyAccordion__content-inner">
+                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero placeat ab officiis, a aliquam, ipsam iste qui debitis sint earum cumque quia magni accusamus obcaecati.</p>
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+
+@@include('templates/welcome-modal.html')
+@@include('templates/feedback-modal.html')
+
+
+@@include('templates/footer.html')
+@@include('templates/foot.html')  

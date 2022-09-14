@@ -1,0 +1,235 @@
+$acc-width: 100%;
+$acc-header-bg: #fff;
+$acc-header-hover-bg: #f7f7f7;
+$acc-header-rolled-hover-bg: #f7f7f7;
+$acc-header-deploy-bg: #EB5329;
+$acc-header-deploy-hover-bg: rgba($color: #EB5329, $alpha: .85);
+$acc-border-radius: 7.5px;
+
+
+
+$acc-transition: 500ms;
+
+
+
+$acc-content-bg: #fff;
+
+$acc-items-distance: 3px;
+$acc-item-height: 56px;
+
+$acc-inner-padding: 20px 30px;
+
+//fonts
+$acc-header-deploy-t-color: #fff;
+$acc-header-t-color: #030104;
+
+$acc-header-font-size: 20px;
+$acc-header-font-weight: bold;
+$acc-header-font-family: inherit;
+$acc-header-font-style: normal;
+
+//icon
+$acc-icon-width: 10px;
+$acc-icon-height: 10px;
+
+
+.easyAccordion{
+    box-sizing: border-box;
+    max-width: $acc-width;
+    div, p{
+        box-sizing: border-box;
+        
+    }
+}
+
+
+
+
+.easyAccordion__item[data-state="rolled"]{
+    
+    .easyAccordion__header{
+        &:hover{
+            background: $acc-header-rolled-hover-bg;
+        }
+        
+    }
+
+    
+    
+}
+
+.easyAccordion__item[data-state="deploy"]{
+    .easyAccordion__header{
+        
+        
+        border-radius: $acc-border-radius $acc-border-radius 0 0;
+        
+        
+        
+    }    
+
+    .easyAccordion__header-text{
+        color: #121212;
+    }
+    .easyAccordion__content{
+        height: auto;
+        border-top: 0;
+    }
+
+    .easyAccordion__btn{
+        path{
+            fill: #fff !important;
+        }
+        transform: rotate(180deg);
+    }
+}
+
+.easyAccordion__item[data-animated="true"]{
+    .easyAccordion__header{
+        //background-color: $acc-header-bg;
+        //color: $acc-header-t-color;
+        
+        border-radius: $acc-border-radius;
+        transition: 0s;
+    }
+    .easyAccordion__header-text{
+        //color: $acc-header-t-color;
+    }
+
+    
+
+    .easyAccordion__btn{
+        transition: $acc-transition;
+        transform: rotate(0deg);
+
+        path{
+            fill: #030104 !important;
+        }
+    }
+}
+
+.easyAccordion__item{
+    &:not(:first-of-type){
+        margin-top: 10px;
+    }
+}
+
+.easyAccordion__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 68px;
+    border-radius: $acc-border-radius;
+    
+    background: #EFF3F6;
+    
+
+    padding: 0 28px;
+    position: relative;
+    z-index: 2;
+    
+    cursor: pointer;
+
+    transition: all $acc-transition, border-radius 0ms; 
+
+    @media (max-width: 1024px){
+        padding: 12px 16px;
+
+        align-items: flex-start;
+    }
+        
+}
+.easyAccordion__header-text{
+    margin: 0;
+    padding: 0;
+    
+
+    overflow: hidden;
+    
+
+    
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+
+    @media (max-width: 1024px){
+        font-size: 17px;
+    }
+
+    color: #121212;
+
+}
+.easyAccordion__btn{
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-left: 5px;
+    transition: 300ms;
+
+    flex-shrink: 0;
+}
+
+.easyAccordion__content{
+    
+     
+    border-radius: 0 0 12px 12px;
+    height: 0px;
+    min-height: 0px;
+    
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    background:  #EFF3F6;;
+    transition: 0ms;
+
+    p{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        color: rgba(18, 18, 18, 0.5);
+
+        @media (max-width: 1024px){
+            font-size: 14px;
+            line-height: 120%;
+        }
+    }
+}
+
+.easyAccordion__content-inner{
+    padding: 0 28px 32px;
+
+    @media (max-width: 1024px){
+        padding: 0 16px 16px;
+    }
+    
+}
+
+.hide-content{
+    animation: hideContent $acc-transition forwards;
+    
+}
+
+
+@keyframes hideContent{
+    50%{
+        transform: translateY(-10px);
+    }
+    99%{
+        min-height: 0px; 
+        height: 0px;
+        transform: translateY(-10px);
+    }
+    100%{
+        min-height: 0px; 
+        height: 0px;
+        border-width: 0;
+        transform: translateY(-10px);
+    }
+}
+
+.easyAccordion_ready{
+    .easyAccordion__content{
+        transition: all $acc-transition, border-width 0ms, border-color 0ms;
+    }
+}
