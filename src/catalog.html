@@ -1,0 +1,258 @@
+@@include('templates/head.html')
+@@include('templates/header.html')
+
+
+<main>
+    
+    <section class="section">
+        <div class="section__inner">
+            <nav class="breadcrumbs">
+                <a href="index.html">Главная</a>
+                <a >Каталог</a>
+            </nav>
+
+            <h1 class="h1">Каталог товаров</h1>
+
+            <div class="catalog-category">
+                <div class="catalog-category__nav">
+
+
+                    <!--
+                        .catalog-category__links-group 
+                        по-умолчанию  показывается все пункты списка + кнопка "показать еще" скрыта - display: none
+
+                        При добавлении класса модификатора .collapsible-group
+                        .catalog-category__links-group.collapsible-group
+                        Элементы с 6(5) до конца становятся display: none, становится видимой кнопка "показать еще"
+                    -->
+
+                    <div class="catalog-category__links-group collapsible-group">
+                        <h3>Колбасы</h3>
+
+                        <ul class="cc-list">
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Варёные колбасы</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Ветчины</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Полукопчёные колбасы</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Варёно-копчёные колбасы</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Сырокопчёные колбасы</a></li>
+                            
+
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Варёные колбасы hidden</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Ветчины hidden</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Полукопчёные колбасы hidden</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Варёно-копчёные колбасы hidden</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Сырокопчёные колбасы hidden</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Варёные колбасы hidden</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Ветчины hidden</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Полукопчёные колбасы hidden</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Варёно-копчёные колбасы hidden</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Сырокопчёные колбасы hidden</a></li>
+                        </ul>
+
+                        <button class="catalog-category__show-all">
+                            <span>Показать еще</span>
+                            <img src="assets/img/icons/arrow-open.svg" alt="" >
+                        </button>
+                    </div>
+
+                    <div class="catalog-category__links-group ">
+                        <h3>Сыры</h3>
+
+                        <ul class="cc-list">
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Полутвёрдые сыры</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Рассольные сыры</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Сырный продукт</a></li>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="catalog-category__links-group ">
+                        <h3>Консервы</h3>
+
+                        <ul class="cc-list">
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Мясные консервы</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Каши</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="catalog-category__links-group collapsible-group">
+                        <h3>Мясо</h3>
+
+                        <ul class="cc-list">
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Говядина</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Баранина</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Фарши</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Баранина для запекания</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Субпродукты</a></li>
+                            
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Говядина</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Баранина</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Фарши</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Баранина для запекания</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Субпродукты</a></li>
+                        </ul>
+
+                        <button class="catalog-category__show-all">
+                            <span>Показать еще</span>
+                            <img src="assets/img/icons/arrow-open.svg" alt="" >
+                        </button>
+                    </div>
+
+                    <div class="catalog-category__links-group ">
+                        <h3>Наборы</h3>
+
+                        <ul class="cc-list">
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Подарочные наборы</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Наборы с готовыми решениями</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Гриль-наборы</a></li>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="catalog-category__links-group collapsible-group">
+                        <h3>Мясо</h3>
+
+                        <ul class="cc-list">
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Говядина</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Фарши</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Баранина</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Баранина для запекания</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Субпродукты</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Говядина</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Фарши</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Баранина</a></li>
+                        </ul>
+
+                        <button class="catalog-category__show-all">
+                            <span>Показать еще</span>
+                            <img src="assets/img/icons/arrow-open.svg" alt="" >
+                        </button>
+                    </div>
+
+                    <div class="catalog-category__links-group ">
+                        <h3>Для любимцев</h3>
+
+                        <ul class="cc-list">
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Лакомства для собак</a></li>
+                            <li class="cc-list__item"><a href="#" class="cc-list__link">Консервы для собак</a></li>                            
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="catalog-category__category-list">
+                    <div class="subcategory-link" style="background-color: #BF573F;">
+
+                        <div class="subcategory-link__inner">
+
+                            <div class="subcategory-link__text-block">
+                                <h3 class="h3">Колбасы</h3>
+                            </div>
+                            
+                            
+                            <img src="assets/img/catalog/1.png" alt=""  class="subcategory-link__img">
+                            <a href="#" class="round-link lg">
+                                <img src="assets/img/icons/link-arrow.svg" alt="">
+                            </a>
+
+                        </div>
+                        
+                    </div>
+
+                    <div class="subcategory-link" style="background-color:  #D98F4E;;">
+                        <div class="subcategory-link__inner">
+                            <div class="subcategory-link__text-block">
+                                <h3 class="h3">Сыры</h3>
+                            </div>
+        
+                            <img src="assets/img/catalog/2.png" alt="" class="subcategory-link__img">
+                            <a href="#" class="round-link lg">
+                                <img src="assets/img/icons/link-arrow.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subcategory-link black-text" style="background-color: #EAEAEA;">
+                        <div class="subcategory-link__inner">
+                            <div class="subcategory-link__text-block">
+                                <h3 class="h3">Консервы</h3>
+                            </div>
+        
+                            <img src="assets/img/catalog/3.png" alt="" class="subcategory-link__img">
+                            <a href="#" class="round-link lg">
+                                <img src="assets/img/icons/link-arrow.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subcategory-link" style="background-color: #8C3E37;;">
+                        <div class="subcategory-link__inner">
+                            <div class="subcategory-link__text-block">
+                                <h3 class="h3">Мясо</h3>
+                            </div>
+        
+                            <img src="assets/img/catalog/4.png" alt="" class="subcategory-link__img">
+                            <a href="#" class="round-link lg">
+                                <img src="assets/img/icons/link-arrow.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subcategory-link" style="background-color: #66A7AB">
+                        <div class="subcategory-link__inner">
+                            <div class="subcategory-link__text-block">
+                                <h3 class="h3">Наборы</h3>
+                            </div>
+        
+                            <img src="assets/img/catalog/5.png" alt="" class="subcategory-link__img">
+                            <a href="#" class="round-link lg">
+                                <img src="assets/img/icons/link-arrow.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subcategory-link " style="background-color: #D9D9D9;">
+                        <div class="subcategory-link__inner">
+                            <div class="subcategory-link__text-block">
+                                <h3 class="h3">Эксклюзивные 
+                                    продукты</h3>
+                            </div>
+        
+                            <img src="assets/img/catalog/6.png" alt="" class="subcategory-link__img">
+                            <a href="#" class="round-link lg">
+                                <img src="assets/img/icons/link-arrow.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subcategory-link transparent black-text" >
+                        <div class="subcategory-link__inner">
+                            <div class="subcategory-link__text-block">
+                                <h3 class="h3">Для домашних любимцев</h3>
+                            </div>
+        
+                            <img src="assets/img/catalog/7.png" alt="" class="subcategory-link__img">
+                            <a href="#" class="round-link lg">
+                                <img src="assets/img/icons/link-arrow.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="section s-brand-catalog">
+        <div class="section__inner">
+            @@include('templates/brands.html')            
+        </div>
+    </section>
+</main>
+
+
+@@include('templates/welcome-modal.html')
+@@include('templates/feedback-modal.html')
+
+
+@@include('templates/footer.html')
+@@include('templates/foot.html')  

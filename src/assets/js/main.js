@@ -1272,3 +1272,85 @@ if ( helpTabs.length ){
   страница Помощь
 
 */
+
+
+/*
+  Каталог категории
+*/
+
+const btnShowAllCats = document.querySelectorAll('.catalog-category__show-all');
+
+
+if (  btnShowAllCats.length  ) {
+
+  btnShowAllCats.forEach( btn => {
+
+    btn.addEventListener('click', function(){
+
+      const parentContainer = this.closest('.catalog-category__links-group');
+      const items = parentContainer.querySelectorAll('.cc-list__item');
+      
+      if ( !this.classList.contains('opened') ){
+        this.classList.add('opened');
+        this.querySelector('span').innerHTML = 'Скрыть';
+        this.setAttribute('disabled', 'disabled');
+
+        function blockBtn(){
+            btn.removeAttribute('disabled');
+            items[items.length - 1].removeEventListener('animationend', blockBtn);
+            console.log('???');
+        }
+
+        items[items.length - 1].addEventListener('animationend', blockBtn)
+
+        if ( items.length > 5 ){
+
+
+          for ( let i = 5; i < items.length; i++){
+            setTimeout( ()=>{
+              items[i].classList.add('show');
+            }, i * 30 )
+            
+          }
+
+        }
+
+
+      } else{
+        this.querySelector('span').innerHTML = 'Показать еще';
+        this.classList.remove('opened');
+
+        if ( items.length > 5 ){
+          this.setAttribute('disabled', 'disabled');
+          function clearClasses(){
+            items.forEach ( item => {
+              item.classList.remove('show');
+              item.classList.remove('hide');
+              btn.removeAttribute('disabled');
+              items[5].removeEventListener('animationend', clearClasses);    
+              
+            } );
+          }
+
+          items[5].addEventListener('animationend', clearClasses);
+
+          for ( let i = items.length - 1; i > 4; i--){
+            setTimeout( ()=>{
+              items[i].classList.add('hide');
+            }, i * 30 )
+            
+          }
+
+        }
+      }
+
+    })
+
+  } )
+
+}
+
+/*
+  Конец: 
+  Каталог категории
+*/
