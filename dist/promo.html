@@ -1207,6 +1207,10 @@
 </footer>
 
 
+
+
+
+
 <script src="assets/js/swiper-bundle.min.js"></script>
 <script src="assets/js/popper.min.js"></script>
 <script src="assets/js/tippy-bundle.umd.js"></script>
@@ -1216,6 +1220,69 @@
 <script src="assets/js/choices.min.js"></script>
 <script src="assets/js/main.js"></script>
 
+
+
+<!--НАВИГАЦИЯ НА ВРЕМЯ ТЕСТИРОВАНИЯ-->
+
+<style>
+    
+    .test-ol li{
+        margin: 10px 0;
+        
+    }
+    .test-ol{
+        padding: 0 20px;
+    }
+    .test-ol li a{
+        color: #000;
+
+        transition: 300ms;
+        
+    }
+
+    .test-ol li a:hover{
+        color: rgb(53, 110, 91);
+    }
+
+</style>
+
+<div class="modal test-modal">
+    <div class="modal__close"></div>
+    <div class="modal__body">
+        <ol class="test-ol">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="404.html">404</a></li>
+            <li><a href="about-company.html">about-company</a></li>
+            <li><a href="catalog.html">catalog</a></li>
+            <li><a href="help.html">help</a></li>
+            <li><a href="idea.html">idea</a></li>
+            <li><a href="ideas.html">ideas</a></li>
+            <li><a href="promo.html">promo</a></li>
+            <li><a href="promo(Акций нет).html">promo(Акций нет)</a></li>
+            <li><a href="special.html">special</a></li>
+            <li><a href="subcatalog.html">subcatalog</a></li>
+        </ol>
+        
+        
+        
+    </div>
+
+    <div class="modal__footer">
+
+    </div>
+</div>
+
+
+<script>
+    let headerLogo =  document.querySelector('.header__logo');
+
+    headerLogo.onclick = function(event){
+        event.preventDefault();
+        new easyModal('.test-modal', options);
+
+    }
+    
+</script>
 
 
 </body>
