@@ -1092,27 +1092,41 @@ callFeedBackModalBtn.addEventListener('click', function(event){
     itemSelectText: '',
   });
 
-  const feedbackFile = document.querySelector('.feedback-file');
-  const addFeedBackFileBtn = document.querySelector('.c-from__add-file');
-  const clearFile = document.querySelector('.c-from__add-file--clear');
 
-  addFeedBackFileBtn.addEventListener('click', function(){
-    feedbackFile.click();
+
+
+
+  const feedbackFile = document.querySelectorAll('.feedback-file');
+  const addFeedBackFileBtn = document.querySelectorAll('.c-from__add-file');
+  const clearFile = document.querySelectorAll('.c-from__add-file--clear');
+
+
+  addFeedBackFileBtn.forEach( ( btn, index) => {
+    btn.addEventListener('click', function(){
+      feedbackFile[index].click();
+    })
+  } )
+
+  feedbackFile.forEach( (f, index) => {
+    f.addEventListener('change', function(){
+      let p = addFeedBackFileBtn[index].querySelector('p');
+      p.innerHTML = this.files[0].name;
+      clearFile[index].classList.add('show');
+    })
   })
 
-  feedbackFile.addEventListener('change', function(){
-    let p = addFeedBackFileBtn.querySelector('p');
-    p.innerHTML = this.files[0].name;
-    clearFile.classList.add('show');
+  
+  clearFile.forEach( (btn, index) => {
+    btn.addEventListener('click', function(){
+      this.classList.remove('show')
+      let p = addFeedBackFileBtn[index].querySelector('p');
+      p.innerHTML = 'Прикрепить файл';
+      feedbackFile[index].value = '';
+    })
   })
 
 
-  clearFile.addEventListener('click', function(){
-    this.classList.remove('show')
-    let p = addFeedBackFileBtn.querySelector('p');
-    p.innerHTML = 'Прикрепить файл';
-    feedbackFile.value = '';
-  })
+  
 
 
   selectFeedbackTypeNode.addEventListener('change', function(){
@@ -1354,3 +1368,20 @@ if (  btnShowAllCats.length  ) {
   Конец: 
   Каталог категории
 */
+
+
+/*Страница контакты*/
+
+const selectFeedbackTypeNodePage = document.querySelector('.select-feedback-type-page');
+if ( selectFeedbackTypeNodePage ){
+  const selectFeedbackTypePage = new Choices(selectFeedbackTypeNodePage, {
+    searchEnabled: false,
+    itemSelectText: '',
+  });
+}
+
+
+
+/*
+Конец:
+Страница контакты*/

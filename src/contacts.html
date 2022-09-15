@@ -1,0 +1,161 @@
+@@include('templates/head.html')
+@@include('templates/header.html')
+
+
+<main>
+    
+    <section class="section s-idea">
+        <div class="section__inner">
+            <nav class="breadcrumbs">
+                <a href="index.html">Главная</a>
+                <a >Контакты</a>
+            </nav>
+            <h1 class="h1">Контакты</h1>
+
+            <div class="contacts-page">
+                <div class="contacts-page__contacts-block">
+                    <div class="cp-contact-block">
+                        <a href="tel:+78001008515" class="cp-contact-block__title">8 800 100 85 15</a>
+                        <p class="cp-contact-block__text">Звонок на территории РФ бесплатный.
+                            График работы колл-центра: понедельник-пятница 
+                            с 9:00 до 19:00, суббота выходной, воскресенье 
+                            с 9:00 до 17:00.</p>
+                    </div>
+
+                    <div class="cp-contact-block">
+                        <a href="mailto:spk@rmpr.ru" class="cp-contact-block__title">spk@rmpr.ru</a>
+                        <p class="cp-contact-block__text">Если у вас есть вопросы, напишите нам, мы обязательно ответим.</p>
+                    </div>
+
+                    <div class="cp-contact-block">
+                        <h3 class="cp-contact-block__title">Интернет-магазин</h3>
+                        <p class="cp-contact-block__text">По вопросам работы интернет-магазина, для внесения изменений в заказ обращайтесь в колл-центр по телефону <a href="tel:+78001008515">8-800-100-85-15</a>, набрав 1 
+                            в тональном режиме, или через форму обратной связи.</p>
+                    </div>
+
+                    <div class="cp-contact-block">
+                        <h3 class="cp-contact-block__title">Обмен и возврат</h3>
+                        <p class="cp-contact-block__text">Для возврата или обмена товара ненадлежащего качества обращайтесь в службу качества по телефону <a href="tel:+78001008515">8-800-100-85-15</a>, набрав 2 в тональном режиме, или через форму обратной связи.</p>
+                    </div>
+
+                    <div class="cp-contact-block">
+                        <h3 class="cp-contact-block__title">Адрес офиса</h3>
+                        <address class="cp-contact-block__text">630001, Россия, Новосибирск, 
+                            ул. Дуси Ковальчук, 1</address>
+                    </div>
+
+                    <div class="cp-contact-block">
+                        <h3  class="cp-contact-block__title">Социальные сети</h3>
+                        <div class="f-soc-links">
+                            <a href="https://www.instagram.com" target="_blank">
+                                <img src="assets/img/icons/instagram.svg" alt="" class="fsl-instagram">
+                            </a>
+                            <a href="https://facebook.com" target="_blank">
+                                <img src="assets/img/icons/facebook.svg" alt="">
+                            </a>
+                            <a href="https://www.vk.com" target="_blank">
+                                <img src="assets/img/icons/vk.svg" alt="">
+                            </a>
+                            <a href="https://www.twitter.com" target="_blank">
+                                <img src="assets/img/icons/twitter.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="cp-contact-block">
+                        <h3 class="cp-contact-block__title">Реквизиты</h3>
+                        <p class="cp-contact-block__text">Общество с ограниченной ответственностью «Сибирская продовольственная компания»
+                            ИНН 5405200166, ОГРН 1025401012768
+                            <a href="spk-company.ru">spk-company.ru</a>
+                            <a href="spk-company.ru">spkfood.ru</a></p>
+                    </div>
+                </div>
+                <div class="contacts-page__form-block">
+                    <div class="page-contact-form">
+                        <div class="page-contact-form__body">
+                            <h3 class="page-contact-form__title">Обратная связь</h3>
+                            <p class="page-contact-form__subtitle">Вы можете оставить нам сообщение.
+                                Мы ответим как можно скорее удобным 
+                                для вас способом.</p>
+
+                            <form class="c-form feedback-form" enctype="multipart/form-data">
+
+                                <div class="c-form__line width-100 select-line">
+                                    <div class="c-form__inp-wrap">
+                    
+                                        <div class="c-form__line width-100 select-line">
+                                            <div class="c-form__inp-wrap">
+                            
+                                                <select select-one class="c-form__select select-feedback-type-page">
+                                                    <option value="1" selected>Позвоните мне по телефону</option>
+                                                    <option value="2">Напишите мне на почту</option>
+                                                    <option value="3">Напишите мне в whatsapp</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <div class="c-form__line width-100 type-connect-phone">
+                                    <div class="c-form__inp-wrap">
+                                        <input type="text" class="c-form__input-text c-form__input" placeholder="" minlength="16" required="" name="phone">
+                                        <p class="c-form__placeholder">Номер телефона</p>
+                                    </div>
+                                </div>
+                    
+                                <div class="c-form__line width-100 hide type-connect-email">
+                                    <div class="c-form__inp-wrap">
+                                        <input type="email" class="c-form__input-text c-form__input" placeholder="" required="" name="email">
+                                        <p class="c-form__placeholder">Email</p>
+                                    </div>
+                                </div>
+                    
+                                <div class="c-form__line width-100">
+                                    <div class="c-form__inp-wrap">
+                                        <textarea class="c-form__input-text c-form__textarea" placeholder="" name="message"></textarea>
+                                        <p class="c-form__placeholder">Комментарий</p>
+                    
+                                        <div class="c-from__add-file-wrap">
+                                            <input type="file" name="photo" class="feedback-file" accept="image/*">
+                                            <div class="c-from__add-file">
+                                                <img src="assets/img/icons/paper-clip.svg" alt="">
+                                                <p class="c-from__add-file--name">Прикрепить файл</p>
+                                                
+                                                
+                    
+                    
+                                            </div>
+                                            <div class="c-from__add-file--clear">
+                                                <div></div>
+                                                <div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-form__line width-100">
+                                    <div class="c-form__inp-wrap">
+                                        <button class="c-form__btn">Отправить</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="page-contact-form__footer">
+                            <p>Нажимая на кнопку вы даёте согласие на сбор 
+                                и обработку <a href="#">персональных данных</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+</main>
+
+
+@@include('templates/welcome-modal.html')
+@@include('templates/feedback-modal.html')
+
+
+@@include('templates/footer.html')
+@@include('templates/foot.html')  

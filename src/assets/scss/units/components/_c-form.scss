@@ -105,7 +105,7 @@
 	left: 0;
 	top: 50%;
 	transform: translate(22px, -50%);
-	z-index: 1;
+	z-index: 4;
 }
 .c-form__input-text{
 	width: 100%;
@@ -129,7 +129,7 @@
 
 .c-form__input{
 	position: relative;
-	background-color: transparent;
+	background-color: #fff;
 	z-index: 2;
 }
 
