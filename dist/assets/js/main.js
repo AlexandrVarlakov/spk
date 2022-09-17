@@ -1378,6 +1378,26 @@ if ( selectFeedbackTypeNodePage ){
     searchEnabled: false,
     itemSelectText: '',
   });
+
+
+
+  selectFeedbackTypeNodePage.addEventListener('change', function(){
+    const formNode = this.closest('form');
+  
+    const emailLine = formNode.querySelector('.type-connect-email');
+    const phoneLine = formNode.querySelector('.type-connect-phone');
+  
+    switch (this.value){
+      case '2':
+        emailLine.classList.remove('hide');
+        phoneLine.classList.add('hide');
+      break;
+  
+      default: 
+        phoneLine.classList.remove('hide');
+        emailLine.classList.add('hide');
+    }    
+  });
 }
 
 
@@ -1385,3 +1405,590 @@ if ( selectFeedbackTypeNodePage ){
 /*
 Конец:
 Страница контакты*/
+
+
+/*
+  Страница Список товаров
+*/
+
+
+let showHideFilterBtn = document.querySelectorAll('.pf-filter__sh');
+
+if ( showHideFilterBtn.length ){
+  showHideFilterBtn.forEach( btn => {
+
+    btn.addEventListener('click', function(){
+
+      const parentContainer = this.closest('.pf-filter');
+      const paramsContainerInner =  parentContainer.querySelector('.pf-filter__params--inner');
+      const paramsContainer =  parentContainer.querySelector('.pf-filter__params');
+
+      let self = this;
+
+      this.setAttribute('disabled', 'disabled');
+      if ( !this.classList.contains('close') ){
+        
+        paramsContainer.addEventListener('transitionend', afterRolled)
+        function afterRolled(){
+          self.removeAttribute('disabled');
+          paramsContainer.removeEventListener('transitionend', afterRolled); 
+        }
+        
+        paramsContainer.style.height = paramsContainerInner.clientHeight + 'px';
+        paramsContainer.style.overflow = 'hidden'
+
+        setTimeout(() => {
+          paramsContainer.style.height = '0px';
+          this.classList.add('close');  
+        }, 50);
+        
+
+      } else{
+        
+        function afterDeployed(){
+          paramsContainer.style.overflow = 'initial';
+          self.removeAttribute('disabled');
+          paramsContainer.removeEventListener('transitionend', afterDeployed);  
+        }
+        
+        paramsContainer.addEventListener('transitionend', afterDeployed);
+        paramsContainer.style.height = paramsContainerInner.clientHeight + 'px';
+        this.classList.remove('close');
+        
+        
+      }
+    })
+
+
+  } )
+}
+
+
+let filtersArray = {
+  checkboxes: {},
+  tagSlides: {},
+  count: 0,
+  clearAllTag: false,
+  clearAllTagNode: null,
+  rangeValue: null,
+  rangeNode: null,
+};
+
+
+let proxyFilters = new Proxy(filtersArray, {
+  set(target, prop, value) {
+    const btn = document.querySelector( '.clear-filters' );
+    const swiperWrappper = document.querySelector('.tags-swiper > .swiper-wrapper');
+    const swiperTag = document.querySelector('.tags-swiper');
+    switch (prop){
+      case 'count':
+
+        
+        if ( value  < 0) value = 0
+
+        if ( value ) {
+          btn.removeAttribute('disabled');
+          
+          if ( proxyFilters.clearAllTag === false){
+            proxyFilters.clearAllTagNode = createTag('', 'Очистить все', 'clearAllFilters'); 
+            swiperWrappper.append( proxyFilters.clearAllTagNode );
+            proxyFilters.clearAllTag = true;
+          }
+          swiperTag.classList.add('has-tags');
+        } else{
+          btn.setAttribute('disabled', 'disabled');
+    
+          proxyFilters.clearAllTag = false;
+          if ( proxyFilters.clearAllTagNode ) proxyFilters.clearAllTagNode.remove();
+          
+          proxyFilters.clearAllTagNode = null;
+          swiperTag.classList.remove('has-tags');
+        }
+
+
+        
+        
+        target[prop] = value;
+        
+      break;
+      case 'rangeValue': 
+        target[prop] = value;
+        
+        proxyCheckboxes['range'] = {id: 'range', name: value, type: 'range'};
+                
+      break;  
+
+
+      default: 
+      target[prop] = value;
+    }
+    
+    //console.log('!!!!!!!!!!!!!!!!!!!!', proxyFilters.clearAllTag);
+    
+
+    
+    
+
+    
+
+    return true;
+  },
+  
+
+}); 
+
+
+let proxyCheckboxes = new Proxy(proxyFilters.checkboxes, {
+  
+  set(target, prop, val) {
+    proxyFilters.count++;
+        
+    if ( typeof(val) === "object" ){
+      switch (val.type){
+        case "checkbox": 
+        
+        let tag = createTag(val.id, val.name, val.type);
+        proxySlides[val.id] = tag;
+        
+        proxyFilters.clearAllTagNode.before(tag);  
+        
+        console.log('change!!!');
+        break;
+
+        case "range": 
+        
+          
+          
+          if ( !proxyFilters.rangeNode ){
+            let tag = createTag(val.id, val.name, val.type);
+            proxySlides[val.id] = tag;
+            proxyFilters.clearAllTagNode.before(tag);  
+            proxyFilters.rangeNode = tag;
+          } else {
+            proxyFilters.count =   Object.keys(proxyCheckboxes).length;
+            document.querySelector('[data-id = "range"] .tags-swiper__min-value').innerHTML = val.name[0];
+            document.querySelector('[data-id = "range"] .tags-swiper__max-value').innerHTML = val.name[1];
+            
+          }
+
+
+        break;
+  
+      }
+
+      
+    }
+    
+    
+    target[prop] = val;
+    
+    return true;
+  },
+
+  deleteProperty( target, prop ){      
+    proxyFilters.count--;
+    switch (target[prop].type){
+      case "checkbox": {
+        let checkboxId  = target[prop].id;
+        let cb = document.querySelector('#'+checkboxId);
+        cb.checked = false;
+        
+        proxySlides[target[prop].id].remove();
+        delete proxySlides[target[prop].id];
+        delete target[prop];
+      }
+      
+
+      break;
+      case "range": {
+        
+        if ( proxyFilters.rangeNode ) proxyFilters.rangeNode.remove();
+        
+       
+        delete proxySlides[target[prop].id];
+        proxyFilters.rangeNode = null;
+          
+        resetComponentRangeSlider()
+        
+
+
+      }
+      
+      break;
+
+    }
+    
+    return true;
+
+  }
+
+
+});
+
+let proxySlides = new Proxy(proxyFilters.tagSlides, {
+
+})
+
+
+
+
+const rangeSlider = document.getElementById('range-slider');
+let tagClearAllFilters;
+
+
+const clearFiltersBtn = document.querySelector('.clear-filters');
+
+if ( clearFiltersBtn ){
+
+  clearFiltersBtn.addEventListener('click', function(){
+    let clearAll = document.querySelector('.tags-swiper__tag.clear-all .tags-swiper__close-tag');
+    clearAll.click();
+
+    
+  })
+  
+}
+
+
+if ( rangeSlider ){
+  
+  const inpStartRangeD = document.querySelector('.prices-inp-ranges__input.start-range-d');   
+  const inpEndRangeD = document.querySelector('.prices-inp-ranges__input.end-range-d');  
+  
+  const minValue = Number( inpStartRangeD.getAttribute('min') );
+  const maxValue = Number( inpEndRangeD.getAttribute('max') );
+  const stepRange = Number( inpEndRangeD.getAttribute('data-step') );
+
+
+  IMask(
+    inpStartRangeD, {
+      mask: Number,
+      min: minValue,
+      max: maxValue
+  });
+  
+  IMask(
+    inpEndRangeD, {
+      mask: Number,
+      min: minValue,
+      max: maxValue
+  });
+  
+  
+  noUiSlider.create(rangeSlider, {
+      start: [minValue, maxValue],
+      connect: true,
+      range: {
+          'min': minValue,
+          'max': maxValue
+      },
+      step: stepRange,
+  
+      
+  });
+
+
+  inpStartRangeD.addEventListener('input', function(){
+    let numMin = Number( this.value );
+    let numMax = Number( inpEndRangeD.value );
+    if (numMin > numMax) {
+      numMin = numMax
+
+      this.value = numMin;
+    }
+    rangeSlider.noUiSlider.set([numMin, null])
+    //createRangeTag([numMin, numMax]);
+  })
+
+  inpStartRangeD.addEventListener('blur', function(){
+    
+    if (this.value.length === 0){
+      this.value = 0;
+    }
+
+    
+  })
+
+  inpEndRangeD.addEventListener('input', function(){
+    let numMin = Number( inpStartRangeD.value );
+    let numMax = Number( this.value );
+    if (numMax < numMin) {
+      numMax = numMin
+
+      
+    }
+    rangeSlider.noUiSlider.set([null, numMax])
+    //createRangeTag([numMin, numMax]);
+  })
+
+  inpEndRangeD.addEventListener('blur', function(){
+    
+    if (this.value.length === 0){
+      this.value = maxValue;
+      rangeSlider.noUiSlider.set([null, maxValue])
+    }
+  })
+
+  rangeSlider.noUiSlider.on('slide', function () { 
+    let value = [Math.trunc(this.get()[0]), Math.trunc(this.get()[1])];
+    inpStartRangeD.value = value[0];
+    inpEndRangeD.value = value[1];
+    
+    
+
+    proxyFilters.rangeValue = value;
+    console.log (proxyFilters.rangeValue);
+    //createRangeTag(value);
+
+        
+
+
+  });
+
+}
+
+/*
+function createRangeTag(value){
+  let rangeTag = document.querySelector('.tags-swiper__tag-name.range');
+  let tags = document.querySelectorAll('.swiper-slide.tags-swiper__slide');
+  let swiperWrappper = document.querySelector('.tags-swiper > .swiper-wrapper');
+  
+
+
+  
+  if ( !rangeTag ) {
+    if ( tags.length ){
+      console.log(tagClearAllFilters);
+      tagClearAllFilters.before(createTag(this.id, value, 'range'));
+    } else {
+      tagClearAllFilters = createTag('', 'Очистить все', 'clearAllFilters');
+      
+      swiperWrappper.append(tagClearAllFilters);
+      tagClearAllFilters.before(createTag(this.id, value, 'range'));
+      
+    }
+  } else {
+    let ragneTagMinValue = document.querySelector('.tags-swiper__min-value');
+    let ragneTagMaxValue = document.querySelector('.tags-swiper__max-value');
+    ragneTagMinValue.innerHTML = value[0];
+    ragneTagMaxValue.innerHTML = value[1];
+    
+  }
+}*/
+
+
+
+const filterCheckboxes = document.querySelectorAll('.filter-checkbox');
+
+
+if ( filterCheckboxes.length ){
+
+  let swiperWrappper = document.querySelector('.tags-swiper > .swiper-wrapper');
+  
+
+  filterCheckboxes.forEach( cb => {
+    cb.addEventListener('change', function(){
+
+
+
+      let tagObj = {}
+
+      tagObj.id = this.getAttribute('data-id');
+      tagObj.name = this.value;
+      tagObj.type = 'checkbox';
+
+      
+
+      
+
+      if ( this.checked ) {
+
+        proxyCheckboxes[tagObj.id] = tagObj;
+
+      } else{
+
+        delete proxyCheckboxes[this.getAttribute('data-id')];
+        
+      }
+    })
+  })
+
+}
+
+
+function checkboxUncheck(){
+  let slide = this.closest('.tags-swiper__slide');
+  let slideId = slide.getAttribute('data-id');
+  
+  delete proxyCheckboxes[slideId];
+  
+}
+
+
+function resetComponentRangeSlider(){
+  const inpStartRangeD = document.querySelector('.prices-inp-ranges__input.start-range-d');   
+  const inpEndRangeD = document.querySelector('.prices-inp-ranges__input.end-range-d');  
+  
+  const minValue = Number( inpStartRangeD.getAttribute('min') );
+  const maxValue = Number( inpEndRangeD.getAttribute('max') );
+  inpStartRangeD.value = minValue;
+  inpEndRangeD.value = maxValue;
+  rangeSlider.noUiSlider.set([minValue, maxValue]);
+}
+
+
+function resetRangeSlider(){
+  
+  resetComponentRangeSlider();
+  delete proxyCheckboxes['range'];
+  //proxyFilters.rangeNode.remove();
+  
+}
+
+
+function clearAllFilters(){
+  for ( item in proxyCheckboxes) {
+    delete proxyCheckboxes[item];
+  }
+}
+
+
+function createTag(id, value, type){
+
+  let slide = document.createElement('div');
+  slide.setAttribute('class', 'swiper-slide tags-swiper__slide');
+
+  slide.setAttribute('data-id', id);
+  slide.setAttribute('data-type', type);
+  
+  let tag = document.createElement('div');
+  tag.setAttribute('class', 'tags-swiper__tag');
+  
+  let tagName;
+  if ( type !== 'range' ){
+    tagName = document.createElement('p');
+    tagName.setAttribute('class', 'tags-swiper__tag-name');
+    tagName.innerHTML = value;
+  } else {
+    tagName = document.createElement('div');
+    tagName.setAttribute('class', 'tags-swiper__tag-name range');
+
+    let minRange = document.createElement('p');
+    minRange.classList.add('tags-swiper__min-value');
+    minRange.innerHTML = value[0];
+
+
+    let minRangeSpan = document.createElement('span');
+    minRangeSpan.innerHTML = 'от ';
+
+    let maxRangeSpan = document.createElement('span');
+    maxRangeSpan.innerHTML = ' до ';
+    
+    let maxRange = document.createElement('p');
+    maxRange.classList.add('tags-swiper__max-value');
+    maxRange.innerHTML = value[1];
+
+    tagName.append(minRangeSpan);
+    tagName.append(minRange);
+    tagName.append(maxRangeSpan);
+    tagName.append(maxRange);
+  }
+  
+  
+  let closeTag = document.createElement('div');
+  closeTag.setAttribute('class', 'tags-swiper__close-tag');
+  
+    
+  if (type === 'checkbox'){
+    closeTag.addEventListener('click', checkboxUncheck);
+  } else if (type === 'clearAllFilters'){
+    tag.setAttribute('class', 'tags-swiper__tag clear-all');
+    closeTag.addEventListener('click', clearAllFilters);
+  } else if (type === 'range'){
+    console.log('type^^^^^^^^^^^^^^^', type);
+    closeTag.addEventListener('click', resetRangeSlider);
+  }
+
+  slide.append(tag);
+  tag.append(tagName);
+  tag.append(closeTag);
+
+  return slide;
+}
+
+
+
+
+
+let filterTagsSlider = new Swiper(".tags-swiper", {
+    speed: 1000,
+    
+    slidesPerView: 'auto',
+    spaceBetween: 4,
+    observer: true,
+    observeParents: true,
+    observeSlideChildren: true
+})
+
+
+
+const plSort = document.querySelector('.pl-sort');
+const plSortTitle = document.querySelector('.pl-sort__title');
+const plSortItems = document.querySelectorAll('.pl-sort__list-item');  
+if ( plSort ) {
+
+
+  
+
+
+  plSortTitle.addEventListener('click', function(event){
+    plSort.classList.toggle('open');
+  })
+
+  plSortItems.forEach( (item) => {
+    item.addEventListener('click', function(event){
+      
+      if ( this.classList.contains('checked') ) return null;
+
+      const checkedItem = document.querySelector('.pl-sort__list-item.checked');
+      checkedItem.classList.remove('checked');
+      const text = this.querySelector('span').innerHTML; 
+      this.classList.add('checked');
+      plSortTitle.querySelector('span').innerHTML = text;
+
+
+      plSort.classList.remove('open');
+    })
+  } )
+
+  document.addEventListener('click', function(event){
+    if ( !event.target.closest('.pl-sort') ){
+      plSort.classList.remove('open');
+    } else  {
+      
+    }
+  })
+}
+
+
+
+
+
+/*
+let closeTagBtns = document.querySelectorAll('.tags-swiper__close-tag');
+
+if ( closeTagBtns.length ){
+  closeTagBtns.forEach( btn => {
+
+    btn.addEventListener('click', function(){
+      let slide = this.closest('.tags-swiper__slide');
+      //slide.remove();
+    })
+    
+  } )
+}*/
+
+/*
+Конец:
+Страница Список товаров
+*/

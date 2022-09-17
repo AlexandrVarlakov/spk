@@ -1,0 +1,329 @@
+@@include('templates/head.html')
+@@include('templates/header.html')
+
+
+<main>
+    
+    <section class="section">
+        <div class="section__inner">
+            <nav class="breadcrumbs">
+                <a href="index.html">Главная</a>
+                <a href="catalog.html">Каталог</a>
+                <a href="#">Колбасы</a>
+                <a >Сосиски и сардельки</a>
+            </nav>
+
+
+            <h1 class="h1">Сосиски и сардельки</h1>
+
+
+            <div class="container-products-list">
+                <div class="container-products-list__filters">
+                    <a href="catalog.html" class="cc-prev-page">
+                        <img src="assets/img/icons/arrow-prev-page.svg" alt="">
+                        <span>Колбасы</span>
+
+                    </a>
+                    <div class="products-filters">
+                        <div class="pf-filter">
+                            <button class="pf-filter__sh">
+                                <span>Категория</span>
+                                <img src="assets/img/icons/fillter-arrow.svg" alt="">
+                            </button>
+                            <div class="pf-filter__params">
+                                <div class="pf-filter__params--inner">
+                                    <ul class="pf-f-list">
+                                        <li class="pf-f-list__item">
+                                            <!--
+                                                <input type="checkbox" name="type-product" id="lkjfq" value="Сосиски без копчения">
+
+                                                намеренно задаю кривое имя идентификатора "lkjfq"
+
+                                                id="lkjfq" - id можно задать случайно. В JS он не используется, но необходим для связи checkbox -> label
+                                            -->
+                                            <div class="pf-f-list__checkbox-wrap">
+                                                <input type="checkbox" name="type-product" id="lkjfq" data-id="lkjfq" value="Сосиски без копчения" class="filter-checkbox">
+                                                <label for="lkjfq"><img src="assets/img/icons/filter-checkbox-arrow.svg" alt=""></label>
+                                                <label for="lkjfq">Сосиски без копчения</label>
+                                            </div>
+                                        </li>
+                                        <li class="pf-f-list__item">
+                                            <div class="pf-f-list__checkbox-wrap">
+                                                <input type="checkbox" name="type-product" id="lkjfqa21313sd" data-id="lkjfqa21313sd" value="Сосиски подкопченые" class="filter-checkbox">
+                                                <label for="lkjfqa21313sd"><img src="assets/img/icons/filter-checkbox-arrow.svg" alt=""></label>
+                                                <label for="lkjfqa21313sd">Сосиски подкопченые</label>
+                                            </div>
+                                        </li>
+                                        <li class="pf-f-list__item">
+                                            <div class="pf-f-list__checkbox-wrap">
+                                                <input type="checkbox" name="type-product" id="lkj312fqasd" data-id="lkj312fqasd" value="Сардельки" class="filter-checkbox">
+                                                <label for="lkj312fqasd"><img src="assets/img/icons/filter-checkbox-arrow.svg" alt=""></label>
+                                                <label for="lkj312fqasd">Сардельки</label>
+                                            </div>
+                                        </li>
+
+                                        <li class="pf-f-list__item">
+                                            <div class="pf-f-list__checkbox-wrap">
+                                                <input type="checkbox" name="type-product" id="lk12jfqasd" data-id = "lk12jfqasd" value="Сосиски и сардельки из мяса птицы" class="filter-checkbox">
+                                                <label for="lk12jfqasd"><img src="assets/img/icons/filter-checkbox-arrow.svg" alt=""></label>
+                                                <label for="lk12jfqasd">Сосиски и сардельки из мяса птицы</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pf-filter">
+                            <button class="pf-filter__sh">
+                                <span>Бренд</span>
+                                <img src="assets/img/icons/fillter-arrow.svg" alt="">
+                            </button>
+                            <div class="pf-filter__params">
+                                <div class="pf-filter__params--inner">
+                                    <ul class="pf-f-list">
+                                        <li class="pf-f-list__item">
+                                            
+                                            <div class="pf-f-list__checkbox-wrap">
+                                                <input type="checkbox" name="type-product" id="lkjfq2121213123" data-id="lkjfq2121213123" value="СПК" class="filter-checkbox">
+                                                <label for="lkjfq2121213123"><img src="assets/img/icons/filter-checkbox-arrow.svg" alt=""></label>
+                                                <label for="lkjfq2121213123">СПК</label>
+                                            </div>
+                                        </li>
+                                        <li class="pf-f-list__item">
+                                            <div class="pf-f-list__checkbox-wrap">
+                                                <input type="checkbox" name="type-product" id="lkjfqa213asdas13sd" data-id="lkjfqa213asdas13sd" value="BIGSOS" class="filter-checkbox">
+                                                <label for="lkjfqa213asdas13sd"><img src="assets/img/icons/filter-checkbox-arrow.svg" alt=""></label>
+                                                <label for="lkjfqa213asdas13sd">BIGSOS</label>
+                                            </div>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="pf-filter range">
+                            <button class="pf-filter__sh">
+                                <span>Цена</span>
+                                <img src="assets/img/icons/fillter-arrow.svg" alt="">
+                            </button>
+                            <div class="pf-filter__params">
+                                <div class="pf-filter__params--inner">
+                                    <div class="prices-inp-ranges">
+                                        <div class="prices-inp-ranges__wrap">
+                                            <input type="text" class="prices-inp-ranges__input start-range-d" min="0" max="499" value="0" data-step="1">
+                                            <p class="prices-inp-ranges__placeholder">от</p>
+                                        </div>
+                                        <div class="prices-inp-ranges__wrap">
+                                            <input type="text" class="prices-inp-ranges__input end-range-d" min="1" max="500" value="500" data-step="1">
+                                            <p class="prices-inp-ranges__placeholder">до</p>
+                                        </div>
+                                    </div>
+
+                                    <div id="range-slider"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="pf-filter">
+                            <button class="pf-filter__sh">
+                                <span>Заказ</span>
+                                <img src="assets/img/icons/fillter-arrow.svg" alt="">
+                            </button>
+                            <div class="pf-filter__params">
+                                <div class="pf-filter__params--inner">
+                                    <ul class="pf-f-list">
+                                        <li class="pf-f-list__item">
+                                            
+                                            <div class="pf-f-list__checkbox-wrap">
+                                                <input type="checkbox" name="type-product" id="lkjfq21212131ffn23" data-id="lkjfq21212131ffn23" value="Можно заказать сегодня" class="filter-checkbox">
+                                                <label for="lkjfq21212131ffn23"><img src="assets/img/icons/filter-checkbox-arrow.svg" alt=""></label>
+                                                <label for="lkjfq21212131ffn23">Можно заказать сегодня</label>
+                                            </div>
+                                        </li>
+                                        <li class="pf-f-list__item">
+                                            <div class="pf-f-list__checkbox-wrap">
+                                                <input type="checkbox" name="type-product" id="lkjfqa213asdsacas13sd" data-id="lkjfqa213asdsacas13sd" value="По предварительному заказу" class="filter-checkbox">
+                                                <label for="lkjfqa213asdsacas13sd"><img src="assets/img/icons/filter-checkbox-arrow.svg" alt=""></label>
+                                                <label for="lkjfqa213asdsacas13sd">По предварительному заказу</label>
+                                            </div>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pf-filter">
+                            <button class="pf-filter__sh">
+                                <span>Предложения</span>
+                                <img src="assets/img/icons/fillter-arrow.svg" alt="">
+                            </button>
+                            <div class="pf-filter__params">
+                                <div class="pf-filter__params--inner">
+                                    <ul class="pf-f-list">
+                                        <li class="pf-f-list__item">
+                                            
+                                            <div class="pf-f-list__checkbox-wrap">
+                                                <input type="checkbox" name="type-product" id="kmcsaiem" data-id="kmcsaiem" value="Новинка" class="filter-checkbox">
+                                                <label for="kmcsaiem"><img src="assets/img/icons/filter-checkbox-arrow.svg" alt=""></label>
+                                                <label for="kmcsaiem">Новинка</label>
+                                            </div>
+                                        </li>
+                                        <li class="pf-f-list__item">
+                                            <div class="pf-f-list__checkbox-wrap">
+                                                <input type="checkbox" name="type-product" id="nwo3kmlks"  data-id="nwo3kmlks" value="Хит" class="filter-checkbox">
+                                                <label for="nwo3kmlks"><img src="assets/img/icons/filter-checkbox-arrow.svg" alt=""></label>
+                                                <label for="nwo3kmlks">Хит</label>
+                                            </div>
+                                        </li>
+                                        
+                                        <li class="pf-f-list__item">
+                                            <div class="pf-f-list__checkbox-wrap">
+                                                <input type="checkbox" name="type-product" id="pkasdkwmm" data-id="pkasdkwmm" value="Акция" class="filter-checkbox">
+                                                <label for="pkasdkwmm"><img src="assets/img/icons/filter-checkbox-arrow.svg" alt=""></label>
+                                                <label for="pkasdkwmm">Акция</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="clear-filters" disabled>Очистить фильтры</button>
+                    </div>
+
+
+                    <div class="pl-adv">
+                        <a class="promo-item" href="#">
+                            <div class="promo-item__img">
+                                <img src="assets/img/promo/1.png" alt="">
+                            </div>
+        
+                            <div class="promo-item__text-block">
+                                <h3>Большая распродажа 
+                                    колбас</h3>
+        
+                                <p>Скидки на все колбасные изделия до 45%</p>
+        
+                                
+                                
+                            </div>
+        
+                            
+                        </a>
+                    </div>
+                    
+                </div>
+
+                <div class="container-products-list__products">
+                    <div class="filter-tags">
+                        <div class="tags-swiper swiper">
+                            <div class="swiper-wrapper">
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-list-wrap">
+                        
+                        <div class="pl-top-block">
+                            <p class="pl-top-block__product-on-page">25 товаров</p>
+
+                            <div class="pl-sort">
+                                <div class="pl-sort__title">
+                                    <span>Сначала дороже</span>
+
+                                    <img src="assets/img/icons/sort-arrows.svg" alt="">
+                                </div>
+
+                                <ul class="pl-sort__list">
+                                    <li class="pl-sort__list-item checked">
+                                        <span>Сначала дороже</span>
+                                        <img src="assets/img/icons/green-check-arrow.svg" alt="">
+                                    </li>
+                                    <li class="pl-sort__list-item">
+                                        <span>Сначала дешевле</span>
+                                        <img src="assets/img/icons/green-check-arrow.svg" alt="">
+                                    </li>
+                                    <li class="pl-sort__list-item">
+                                        <span>Новинки</span>
+                                        <img src="assets/img/icons/green-check-arrow.svg" alt="">
+                                    </li>
+                                    <li class="pl-sort__list-item">
+                                        <span>По умолчанию</span>
+                                        <img src="assets/img/icons/green-check-arrow.svg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="product-list">
+                            @@include('templates/card-product-1.html')
+                            @@include('templates/card-product-2.html')
+                            @@include('templates/card-product-3.html')
+                            @@include('templates/card-product-4.html')
+                            @@include('templates/card-product-5.html')
+                            @@include('templates/card-product-6.html')
+                            @@include('templates/card-product-7.html')
+                            @@include('templates/card-product-1.html')
+                            @@include('templates/card-product-2.html')
+                            @@include('templates/card-product-3.html')
+                            @@include('templates/card-product-4.html')
+                            @@include('templates/card-product-5.html')
+                            @@include('templates/card-product-6.html')
+                            @@include('templates/card-product-7.html')
+                            @@include('templates/card-product-1.html')
+                            @@include('templates/card-product-2.html')
+                            @@include('templates/card-product-3.html')
+                            @@include('templates/card-product-4.html')
+                            @@include('templates/card-product-5.html')
+                            @@include('templates/card-product-6.html')
+                            
+                        </div>
+
+                        <div class="pagination">
+                            <div class="pagination__inner">
+            
+                                <a href="#" class="btn-green">Показать ещё 20 товаров</a>
+            
+                                <div class="pagination__pages">
+                                    <a class="pagination__link">1</a>
+                                    <a href="#" class="pagination__link">2</a>
+                                    <a href="#" class="pagination__link">3</a>
+                                    <a href="#" class="pagination__link">4</a>
+                                    <a href="#" class="pagination__link">5</a>
+                                    <a class="pagination__gap">...</a>
+                                    <a href="#" class="pagination__link">Вперед ></a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="section s-i-ideas">
+        <div class="section__inner">
+            
+            @@include('templates/ideas-short.html')
+
+        </div>
+    </section>
+</main>
+
+
+@@include('templates/welcome-modal.html')
+@@include('templates/feedback-modal.html')
+
+
+@@include('templates/footer.html')
+@@include('templates/foot.html')  
