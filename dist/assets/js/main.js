@@ -1415,6 +1415,33 @@ if ( selectFeedbackTypeNodePage ){
 let showHideFilterBtn = document.querySelectorAll('.pf-filter__sh');
 
 if ( showHideFilterBtn.length ){
+
+  window.addEventListener('resize', function(){
+    
+    if ( document.documentElement.clientWidth > 1024){
+      let opened = document.querySelectorAll('.pf-filter__sh.open');
+      if ( opened.length ){
+        opened.forEach( btn => {
+          btn.classList.remove('open');
+          btn.nextElementSibling.removeAttribute('style');
+          
+        } )
+      }
+    } else{
+      let closed = document.querySelectorAll('.pf-filter__sh.close');
+      if ( closed.length ){
+        closed.forEach( btn => {
+          btn.classList.remove('close');
+          btn.nextElementSibling.removeAttribute('style');
+          
+        } )
+      }
+    }
+  })
+
+
+
+
   showHideFilterBtn.forEach( btn => {
 
     btn.addEventListener('click', function(){
@@ -1426,36 +1453,70 @@ if ( showHideFilterBtn.length ){
       let self = this;
 
       this.setAttribute('disabled', 'disabled');
-      if ( !this.classList.contains('close') ){
-        
-        paramsContainer.addEventListener('transitionend', afterRolled)
-        function afterRolled(){
-          self.removeAttribute('disabled');
-          paramsContainer.removeEventListener('transitionend', afterRolled); 
-        }
-        
-        paramsContainer.style.height = paramsContainerInner.clientHeight + 'px';
-        paramsContainer.style.overflow = 'hidden'
 
-        setTimeout(() => {
-          paramsContainer.style.height = '0px';
-          this.classList.add('close');  
-        }, 50);
+      if ( document.documentElement.clientWidth > 1024  ){
+        if ( !this.classList.contains('close') ){
+          
+          paramsContainer.addEventListener('transitionend', afterRolled)
+          function afterRolled(){
+            self.removeAttribute('disabled');
+            paramsContainer.removeEventListener('transitionend', afterRolled); 
+          }
+          
+          paramsContainer.style.height = paramsContainerInner.clientHeight + 'px';
+          paramsContainer.style.overflow = 'hidden'
+
+          setTimeout(() => {
+            paramsContainer.style.height = '0px';
+            this.classList.add('close');  
+          }, 50);
+          
+
+        } else{
+          
+          function afterDeployed(){
+            paramsContainer.style.overflow = 'initial';
+            self.removeAttribute('disabled');
+            paramsContainer.removeEventListener('transitionend', afterDeployed);  
+          }
+          
+          paramsContainer.addEventListener('transitionend', afterDeployed);
+          paramsContainer.style.height = paramsContainerInner.clientHeight + 'px';
+          this.classList.remove('close');
+          
+          
+        }
+
         
 
-      } else{
-        
-        function afterDeployed(){
-          paramsContainer.style.overflow = 'initial';
-          self.removeAttribute('disabled');
-          paramsContainer.removeEventListener('transitionend', afterDeployed);  
+      } else {
+        if ( !this.classList.contains('open') ){
+          
+          paramsContainer.addEventListener('transitionend', afterRolled)
+          function afterRolled(){
+            self.removeAttribute('disabled');
+            paramsContainer.removeEventListener('transitionend', afterRolled); 
+          }
+          
+          
+          setTimeout(() => {
+            paramsContainer.style.height = paramsContainerInner.clientHeight + 'px';
+            this.classList.add('open'); 
+          }, 50);
+        } else{
+            
+            paramsContainer.addEventListener('transitionend', afterRolled)
+            function afterRolled(){
+              self.removeAttribute('disabled');
+              paramsContainer.removeEventListener('transitionend', afterRolled); 
+            }
+            
+            
+            setTimeout(() => {
+              paramsContainer.style.height = 0 + 'px';
+              this.classList.remove('open');
+            }, 50);
         }
-        
-        paramsContainer.addEventListener('transitionend', afterDeployed);
-        paramsContainer.style.height = paramsContainerInner.clientHeight + 'px';
-        this.classList.remove('close');
-        
-        
       }
     })
 
@@ -1509,6 +1570,8 @@ let proxyFilters = new Proxy(filtersArray, {
         
         
         target[prop] = value;
+
+        
         
       break;
       case 'rangeValue': 
@@ -1521,6 +1584,7 @@ let proxyFilters = new Proxy(filtersArray, {
 
       default: 
       target[prop] = value;
+      
     }
     
     //console.log('!!!!!!!!!!!!!!!!!!!!', proxyFilters.clearAllTag);
@@ -1530,7 +1594,7 @@ let proxyFilters = new Proxy(filtersArray, {
     
 
     
-
+    
     return true;
   },
   
@@ -1626,7 +1690,17 @@ let proxyCheckboxes = new Proxy(proxyFilters.checkboxes, {
 });
 
 let proxySlides = new Proxy(proxyFilters.tagSlides, {
+  set(target, prop, val){
+    document.querySelector('.mob-open-filter__filter-count').innerHTML = Object.keys(proxySlides).length + 1;
+    target[prop] = val;
+    return true;
+  },
+  deleteProperty( target, prop ){
+    document.querySelector('.mob-open-filter__filter-count').innerHTML = Object.keys(proxySlides).length - 1;
 
+    delete target[prop];
+    return true;
+  }
 })
 
 
@@ -1926,8 +2000,8 @@ let filterTagsSlider = new Swiper(".tags-swiper", {
     slidesPerView: 'auto',
     spaceBetween: 4,
     observer: true,
-    observeParents: true,
-    observeSlideChildren: true
+    //observeParents: true,
+    //observeSlideChildren: true
 })
 
 
@@ -1937,8 +2011,13 @@ const plSortTitle = document.querySelector('.pl-sort__title');
 const plSortItems = document.querySelectorAll('.pl-sort__list-item');  
 if ( plSort ) {
 
+  const hideMobFilters = document.querySelectorAll('.hide-mob-filter');
 
-  
+  hideMobFilters.forEach( btn => {
+    btn.addEventListener('click', function(){
+      document.querySelector('.container-products-list__filters').classList.remove('open');
+    })
+  } )
 
 
   plSortTitle.addEventListener('click', function(event){
@@ -1970,7 +2049,16 @@ if ( plSort ) {
   })
 }
 
+let btnOpenMobFilter = document.querySelector('.mob-open-filter');
 
+if ( btnOpenMobFilter ){
+  btnOpenMobFilter.addEventListener('click', function(){
+    document.querySelector('.container-products-list__filters').classList.add('open')
+  })
+
+
+  
+}
 
 
 
