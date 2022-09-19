@@ -576,6 +576,13 @@ if ( cardProductSliders.length ){
 }
 
 
+
+
+
+
+
+
+
 //Добавление в корзину
 const addProductToCartBtns = document.querySelectorAll('.product-card__add-cart');
 
@@ -2060,23 +2067,198 @@ if ( btnOpenMobFilter ){
   
 }
 
-
-
-/*
-let closeTagBtns = document.querySelectorAll('.tags-swiper__close-tag');
-
-if ( closeTagBtns.length ){
-  closeTagBtns.forEach( btn => {
-
-    btn.addEventListener('click', function(){
-      let slide = this.closest('.tags-swiper__slide');
-      //slide.remove();
-    })
-    
-  } )
-}*/
-
 /*
 Конец:
 Страница Список товаров
 */
+
+/*
+  Страница продукты
+*/
+let ptoductThumbsSlider = new Swiper(".pt-thumb-slider", {
+  speed: 1000,
+  
+  slidesPerView: 3,
+  spaceBetween: 20,
+  direction: 'vertical',
+  /*pagination: {
+      el: '.pagination',
+      clickable: true,
+  },*/
+  
+  navigation: {
+    nextEl: '.pt-thumb-slider__next',
+    prevEl: '.pt-thumb-slider__prev',
+},
+})
+
+const ptSlider = new Swiper(".pt-slider", {
+  speed: 1000,
+  
+  slidesPerView: 1,
+  spaceBetween: 50,
+  
+  pagination: {
+      el: '.product-pagination',
+      clickable: true,
+  },
+  thumbs: {
+    swiper: ptoductThumbsSlider
+  },
+  breakpoints: {
+      320: {
+          
+      },
+      800: {
+          
+      }
+  }
+})
+
+
+
+/*
+  Конец:
+  Страница продукты
+*/
+
+
+/*Страница продукт*/
+
+
+
+const roundAddFavorite = document.querySelectorAll('.round-add-favorite');
+
+if ( roundAddFavorite.length ){
+  roundAddFavorite.forEach( btn => {
+    btn.addEventListener( 'click', function(){
+      this.classList.toggle('favorite');
+    } )
+  } )
+ 
+}
+
+tippy('.pt-product-question', {
+  trigger: "mouseenter click",
+  arrow: false,  
+  placement: 'bottom',
+});
+
+
+
+
+
+const addProductToCartBtn = document.querySelector('.product-add-cart');
+const  productBuyBlock = document.querySelector('.pt-buy-block');  
+
+
+if ( addProductToCartBtn ){
+
+  addProductToCartBtn.addEventListener('click', function(){
+    
+     
+    productBuyBlock.classList.add('product-selected');
+
+    productBuyBlock.setAttribute('data-in-cart', '1');
+    let totalQty = Number( productBuyBlock.getAttribute('data-total') );
+    
+    let calcMethod =  Number( productBuyBlock.getAttribute('data-calcmethod') );
+    let price =  Number( productBuyBlock.getAttribute('data-price') );
+    let weight =  Number( productBuyBlock.getAttribute('data-weight') );
+    if ( totalQty === 1 ){
+      productBuyBlock.querySelector('.product__plus').setAttribute('disabled', 'disabled');
+    }
+    productBuyBlock.querySelector('.product__calc-qty').innerHTML = '1';
+
+    switch ( calcMethod ){
+      case 1: 
+        productBuyBlock.querySelector('.product__calc-summ').innerHTML = price; 
+
+      break; 
+
+      case 2: 
+          productBuyBlock.querySelector('.product__calc-summ').innerHTML =  (weight * price).toFixed(2); 
+          productBuyBlock.querySelector('.product__calc-weight').innerHTML = weight;
+      break; 
+
+    }
+  })
+
+
+  const plusProduct = document.querySelector('.product__plus');
+
+  plusProduct.addEventListener('click', function(){
+    
+    
+      if ( this.hasAttribute('disabled') ) return false;
+      
+      let qtyInCart = Number( productBuyBlock.getAttribute('data-in-cart') );
+      let totalQty = Number( productBuyBlock.getAttribute('data-total') );
+      let calcMethod =  Number( productBuyBlock.getAttribute('data-calcmethod') );
+      let price =  Number( productBuyBlock.getAttribute('data-price') );
+      let weight =  Number( productBuyBlock.getAttribute('data-weight') );
+
+      qtyInCart++;
+
+      if ( qtyInCart === totalQty ) this.setAttribute('disabled', 'disabled');
+      
+      productBuyBlock.setAttribute('data-in-cart', qtyInCart);
+      productBuyBlock.querySelector('.product__calc-qty').innerHTML = qtyInCart;
+
+      switch ( calcMethod ){
+        case 1: 
+          productBuyBlock.querySelector('.product__calc-summ').innerHTML =  qtyInCart * price; 
+          break; 
+
+        case 2: 
+            productBuyBlock.querySelector('.product__calc-summ').innerHTML =  (qtyInCart * weight * price).toFixed(2); 
+            productBuyBlock.querySelector('.product__calc-weight').innerHTML = qtyInCart * weight;            
+        break; 
+
+      }
+
+    
+  })
+
+  const minusProduct = document.querySelector('.product__minus');
+
+  minusProduct.addEventListener('click', function(){
+    
+    let qtyInCart = Number( productBuyBlock.getAttribute('data-in-cart') );
+    let calcMethod =  Number( productBuyBlock.getAttribute('data-calcmethod') );
+    let price =  Number( productBuyBlock.getAttribute('data-price') );
+    let weight =  Number( productBuyBlock.getAttribute('data-weight') );
+
+    qtyInCart--;
+
+    productBuyBlock.querySelector('.product__plus').removeAttribute('disabled');
+
+    if ( qtyInCart > 0 ){
+      productBuyBlock.setAttribute('data-in-cart', qtyInCart);
+      productBuyBlock.querySelector('.product__calc-qty').innerHTML = qtyInCart;
+
+      switch ( calcMethod ){
+        case 1: 
+          productBuyBlock.querySelector('.product__calc-summ').innerHTML =  qtyInCart * price; 
+        break; 
+
+        case 2: 
+          productBuyBlock.querySelector('.product__calc-summ').innerHTML =  (qtyInCart * weight * price).toFixed(2); 
+          productBuyBlock.querySelector('.product__calc-weight').innerHTML = qtyInCart * weight;            
+        break; 
+
+      }
+    } else{
+      productBuyBlock.classList.remove('product-selected');
+      productBuyBlock.setAttribute('data-in-cart', '0');
+    }
+      
+      
+    
+  })
+}
+
+
+/*
+КОНЕЦ:
+Страница продукт*/

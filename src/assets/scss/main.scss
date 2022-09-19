@@ -448,7 +448,30 @@ ul{
 	}
 }
 
+.round-add-favorite{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #D0D0D0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms;
+    svg{
+        transform: translate(0, 1px);
+    }
+    path{
+        transition: 300ms;
+    }
+}
 
+.round-add-favorite.favorite{
+    border-color: #BF573F;
+    path {
+        fill: #BF573F;
+        stroke: #BF573F;
+      }
+}
 
 @import 'vars';
 @import 'units/sections/header/header';
@@ -470,6 +493,7 @@ ul{
 @import 'units/pages/catalog';
 @import 'units/pages/contacts';
 @import 'units/pages/products-list';
+@import 'units/pages/product';
 
 
 @import 'units/swiper/swiper';
