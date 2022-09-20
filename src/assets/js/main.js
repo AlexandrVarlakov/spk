@@ -924,63 +924,35 @@ function init () {
     myMap = new ymaps.Map('i-map', {
         // При инициализации карты обязательно нужно указать
         // её центр и коэффициент масштабирования.
-        center: [45.062356, 38.983003],
-        zoom: 14
+        center: [55.046410, 82.877388],
+        zoom: 12
     }, {
         searchControlProvider: 'yandex#search'
-    });
+    }),
 
-    // Строка с адресом, который необходимо геокодировать
-    var address = 'Россия, Краснодар, улица Шоссе Нефтяников, 18к1';
-    
-    // Ищем координаты указанного адреса
-    // https://tech.yandex.ru/maps/doc/jsapi/2.1/ref/reference/geocode-docpage/
-    var geocoder = ymaps.geocode(address);
+    // Создаём макет содержимого.
+    MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+      '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+  ),
 
+    myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+        hintContent: 'г. Новосибирск, улица Дуси Ковальчук, 1В',
+        balloonContent: 'Сибирская продовольственная компания <br />г. Новосибирск, улица Дуси Ковальчук, 1В '
+    }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#image',
+        // Своё изображение иконки метки.
+        iconImageHref: 'assets/img/icons/map-pin.svg',
+        // Размеры метки.
+        iconImageSize: [44, 44],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [-22, -22]
+    }),
 
-    geocoder.then(
-        function (res) {
-
-            // координаты объекта
-            var coordinates = res.geoObjects.get(0).geometry.getCoordinates();
-
-            // Добавление метки (Placemark) на карту
-
-            MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-                '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-            );
-
-            var placemark = new ymaps.Placemark(
-                coordinates, {
-                    'hintContent': address,
-                    'balloonContent': 'Агроглобал'
-                }, {
-                    // Опции.
-                    // Необходимо указать данный тип макета.
-                    iconLayout: 'default#imageWithContent',
-                    // Своё изображение иконки метки.
-                    iconImageHref: 'assets/img/map/pin.png',
-                    // Размеры метки.
-                    iconImageSize: [77, 86],
-                    // Смещение левого верхнего угла иконки относительно
-                    // её "ножки" (точки привязки).
-                    iconImageOffset: [-36, -86],
-                    // Смещение слоя с содержимым относительно слоя с картинкой.
-                    iconContentOffset: [0, 0],
-                    // Макет содержимого.
-                    iconContentLayout: MyIconContentLayout
-                }
-            );
-
-            myMap.geoObjects.add(placemark);
-
-            myMap.setCenter([45.062356, 38.983003], 14, {
-                checkZoomRange: true
-            });
-        }
-    );
-   
-  }
+  myMap.geoObjects.add(myPlacemark)
+}
 }
 
 
@@ -2262,3 +2234,95 @@ if ( addProductToCartBtn ){
 /*
 КОНЕЦ:
 Страница продукт*/
+
+
+
+/*Кабинет*/
+
+const codeCopyBtns = document.querySelectorAll('.c-bonus__get-code');
+
+codeCopyBtns.forEach( btn => {
+  btn.addEventListener('click', function(){
+    let success = this.nextElementSibling;
+    success.addEventListener('animationend', function(){
+      this.style.display = 'none';
+    })
+    success.style.display = 'inline-block';
+    navigator.clipboard.writeText(this.getAttribute('data-code'));
+  })
+} )
+
+
+$(function(){
+
+	$("#datepicker").datepicker();
+
+});
+
+$.datepicker.regional['ru'] = {
+	closeText: 'Закрыть',
+	prevText: 'Предыдущий',
+	nextText: 'Следующий',
+	currentText: 'Сегодня',
+	monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+	monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'],
+	dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
+	dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
+	dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+	weekHeader: 'Не',
+	dateFormat: 'dd.mm.yy',
+	firstDay: 1,
+	isRTL: false,
+	showMonthAfterYear: false,
+	yearSuffix: ''
+};
+$.datepicker.setDefaults($.datepicker.regional['ru']);
+
+
+
+const calendarIcons = document.querySelectorAll('.c-form__calendar-icon');
+
+if ( calendarIcons.length ) {
+  calendarIcons.forEach( icon => {
+    icon.addEventListener('click', function(){
+      const container = this.closest('.c-form__inp-wrap');
+      container.querySelector('input').focus();
+    })
+  } )  
+  
+}
+
+
+
+const changePasswordBtn = document.querySelector('.change-password');
+if ( changePasswordBtn ){
+  changePasswordBtn.addEventListener('click', function(event){
+    event.preventDefault();
+  })
+}
+
+const cancelPDSaveBtn = document.querySelector('.personal-data-cancel-save');
+if ( cancelPDSaveBtn ){
+  cancelPDSaveBtn.addEventListener('click', function(event){
+    event.preventDefault();
+  })
+}
+
+const savePersonalData = document.querySelector('.personal-data-save');
+
+if ( savePersonalData ){
+  savePersonalData.addEventListener('click', function(event){
+    event.preventDefault();
+  })
+}
+
+
+const personalDataForm = document.querySelector('.personal-data-form');
+
+if ( personalDataForm ){
+  
+}
+
+/*
+КОНЕЦ
+Кабинет*/

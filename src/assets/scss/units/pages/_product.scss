@@ -492,6 +492,18 @@
             right: 0;
             top: 4px
         }
+
+        transition: 300ms;
+        path{
+            transition: 300ms;
+        }
+
+        &:hover{
+            border-color: #BF573F;
+            path{
+                stroke: #BF573F;
+            }
+        }
     }
     
 }
