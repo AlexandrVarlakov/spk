@@ -2298,6 +2298,10 @@ const changePasswordBtn = document.querySelector('.change-password');
 if ( changePasswordBtn ){
   changePasswordBtn.addEventListener('click', function(event){
     event.preventDefault();
+
+    const changePasswordModal = new easyModal('.change-password-modal', options)
+
+    
   })
 }
 
@@ -2323,6 +2327,169 @@ if ( personalDataForm ){
   
 }
 
+
+const showHidePasswordBtns = document.querySelectorAll('.c-form__show-hide-password');
+
+if ( showHidePasswordBtns.length ){
+
+  showHidePasswordBtns.forEach( btn => {
+
+
+    btn.addEventListener('click', function(event){
+      event.preventDefault();
+      const container =  this.closest( '.c-form__inp-wrap' );
+      const inputText = container.querySelector('input[placeholder]');
+      if ( !this.classList.contains('show') ){
+        this.classList.add('show');
+        
+        inputText.type = 'text';
+      }else{
+        this.classList.remove('show');        
+        inputText.type = 'password';
+      }
+
+    })
+
+  } )
+
+}
+
+const newPassword = document.querySelector('input[name="new-password"]');
+
+if (  newPassword  ){
+  const container = newPassword.closest('.c-form__inp-wrap');
+  const errorMsg = container.querySelector('.miss-password');
+
+  newPassword.addEventListener( 'input', function(){
+            
+            
+            let str = this.value;
+            if (str.match(/[a-z]/g) && str.match(/[A-Z]/g) && str.match(/[0-9]/g) && str.match(/[^a-zA-Z\d]/g) && str.length >= 8){
+              errorMsg.classList.remove('show');
+            } else{
+              errorMsg.classList.add('show');
+            }
+
+  })
+}
+
+
+
+const retypePassword = document.querySelector('input[name="retype-password"]');
+
+if (  retypePassword  ){
+  const container = retypePassword.closest('.c-form__inp-wrap');
+  const errorMsg = container.querySelector('.miss-password');
+
+
+
+  retypePassword.addEventListener( 'input', function(){
+            if ( this.value !== newPassword.value ){
+              
+              errorMsg.classList.add('show');
+            } else{
+              errorMsg.classList.remove('show')
+            }
+
+  })
+}
+
+const radioAddresses = document.querySelectorAll('.cal-grid__radio');
+
+if ( radioAddresses.length ){
+
+  radioAddresses.forEach( radio => {
+    radio.addEventListener('click', function(){
+      if ( this.classList.contains('checked') ) return false; 
+      else{
+        document.querySelector('.cal-grid__radio.checked').classList.remove('checked');
+        this.classList.add('checked');
+      }
+
+    })
+  } )
+
+}
+
+
 /*
 КОНЕЦ
 Кабинет*/
+
+
+const inputPlaceholders = document.querySelectorAll('.c-form__placeholder');
+
+if ( inputPlaceholders.length ){
+  inputPlaceholders.forEach( placeholder => {
+    placeholder.addEventListener('click', function(){
+      const container =  placeholder.closest( '.c-form__inp-wrap' );
+
+      let inputText = container.querySelector('input[placeholder]');
+
+      if ( inputText ){
+        inputText.focus();
+        
+      } else {
+        inputText = container.querySelector('textarea');
+        
+        if ( inputText ){
+          
+          inputText.focus();
+        }
+      }
+
+    })
+  } )
+}
+
+
+const selectTimeDeliveryNode = document.querySelector('.select-time');
+
+if ( selectTimeDeliveryNode )  {
+  const selectTimeDelivery = new Choices(selectTimeDeliveryNode, {
+    searchEnabled: false,
+    itemSelectText: '',
+  });
+}
+
+
+
+
+
+
+const cruAddressPage = document.querySelector('.cru-addreses-page');
+
+if ( cruAddressPage ){
+  
+  const selectCityNode = document.querySelector('.select-city');
+
+  
+  if ( selectCityNode ){
+    const selectCity = new Choices(selectCityNode, {
+      searchEnabled: false,
+      itemSelectText: '',
+    });
+  }
+
+  
+
+  const selectStreetNode = document.querySelector('.select-street');
+  
+
+  if (selectStreetNode){
+    const selectStreet = new Choices(selectStreetNode, {
+      searchEnabled: false,
+      itemSelectText: '',
+    });
+  }
+
+  
+}
+
+
+
+
+
+  
+
+  

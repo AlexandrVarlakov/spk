@@ -967,6 +967,8 @@
 </main>
 
 
+
+
 <div class="modal welcome-modal">
     <div class="modal__close"></div>
     <div class="modal__body">
@@ -1082,17 +1084,11 @@
                     <p>бесплатно по России</p>
                 </div>
                 <div class="f-soc-links">
-                    <a href="https://www.instagram.com" target="_blank">
-                        <img src="assets/img/icons/instagram.svg" alt="" class="fsl-instagram">
-                    </a>
-                    <a href="https://facebook.com" target="_blank">
-                        <img src="assets/img/icons/facebook.svg" alt="">
-                    </a>
                     <a href="https://www.vk.com"  target="_blank">
                         <img src="assets/img/icons/vk.svg" alt="">
                     </a>
-                    <a href="https://www.twitter.com" target="_blank">
-                        <img src="assets/img/icons/twitter.svg" alt="">
+                    <a href="https://www.ok.com" target="_blank">
+                        <img src="assets/img/icons/ok.svg" alt="">
                     </a>
                 </div>
             </div>
@@ -1100,7 +1096,7 @@
             <div class="footer__address">
                 <a href="mailto:spk@rmpr.ru">spk@rmpr.ru</a>
                 <address>Россия, Новосибирск, 
-                    ул. Дуси Ковальчук, 1 </address>
+                    ул. Дуси Ковальчук, 1В </address>
                 <p>Доставка с 10:00 до 22:00</p>
             </div>
             <nav class="footer__nav">
@@ -1150,6 +1146,68 @@
         </div>
     </div>
 </footer>
+
+
+
+
+
+<div class="modal change-password-modal">
+    <div class="modal__close"></div>
+    <div class="modal__body">
+        <h3 class="modal__title">Изменить пароль</h3>
+
+        <p class="modal__subtitle">Новый пароль должен быть минимум 
+            8 символов, содержать минимум одну цифру, заглавные и строчные латинские буквы.</p>
+
+
+        <form class="c-form form-change-password">
+            <div class="c-form__line width-100">
+                <div class="c-form__inp-wrap">
+                    <input type="password" class="c-form__input-text c-form__input" placeholder="" minlength="8" required name="old-pasword">
+                    <p class="c-form__placeholder">Старый пароль</p>
+                    <button class="c-form__show-hide-password"></button>
+                    <span class="miss-password">Неверный пароль</span>
+                </div>
+            </div>
+
+            <div class="c-form__line width-100">
+                <div class="c-form__inp-wrap" id="3333333">
+                    <input type="password" class="c-form__input-text c-form__input" placeholder="" minlength="8" required name="new-password">
+                    <p class="c-form__placeholder">Новый пароль</p>
+                    <button class="c-form__show-hide-password"></button>
+                    <span class="miss-password">Новый пароль должен быть минимум 
+                        8 символов, содержать минимум одну цифру, заглавные и строчные латинские буквы.</span>
+                    
+                </div>
+            </div>
+
+            <div class="c-form__line width-100">
+                <div class="c-form__inp-wrap">
+                    <input type="password" class="c-form__input-text c-form__input" placeholder="" minlength="8" required name="retype-password">
+                    <p class="c-form__placeholder">Повторите новый пароль</p>
+                    <button class="c-form__show-hide-password"></button>
+                    <span class="miss-password">Пароли не совпадают</span>
+                </div>
+            </div>
+
+            <div class="c-form__line width-100">
+                <div class="c-form__inp-wrap">
+                    <button class="c-form__btn">Изменить</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+
+    
+</div>
+
+
+
+
+
+
+
 
 
 
@@ -1223,8 +1281,13 @@
             <li><a href="cabinet-personal-data.html">cabinet-personal-data</a></li>
 
             <li><a href="cabinet-addresses.html">cabinet-addresses</a></li>
-            <li><a href="cabinet-my-cart.html">cabinet-my-cart</a></li>
+            <li><a href="cabinet-cru-address.html">cabinet-cru-address(cru - CReate-Update)</a></li>
             <li><a href="cabinet-my-orders.html">cabinet-my-orders</a></li>
+            <li><a href="cabinet-order-edit-address.html">cabinet-order-edit-address</a></li>
+            <li><a href="cabinet-order-edit-date-delivery.html">cabinet-order-edit-date-delivery</a></li>
+            
+
+
             <li><a href="cabinet-favorites.html">cabinet-favorites</a></li>
             <li><a href="cabinet-bonuses.html">cabinet-bonuses</a></li>
             <li><a href="cabinet-feedback.html">cabinet-feedback</a></li>

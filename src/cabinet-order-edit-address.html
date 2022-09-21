@@ -2,21 +2,30 @@
 @@include('templates/header.html')
 
 
-<main>
+<main class="cru-addreses-page">
     
-    <section class="section s-idea">
+    <section class="section">
         <div class="section__inner">
             <nav class="breadcrumbs">
                 <a href="index.html">Главная</a>
-                <a >Мои данные</a>
+                <a >Адреса</a>
             </nav>
-            <h1 class="h1">Мои данные</h1>
+
+            <div class="cc-prev-page-container">
+                <a href="cabinet-addresses.html" class="cc-prev-page transparent">
+                    <img src="assets/img/icons/arrow-prev-page.svg" alt="">
+                    <span>Назад</span>
+
+                </a>
+            </div>
+
+            <h1 class="h1">Мои заказы</h1>
 
             <div class="cabinet">
                 <nav class="cabinet__nav">
                     <ul class="cabinet__nav-list">
                         <li class="cabinet__nav-item ">
-                            <a href="cabinet-personal-data.html" class="cabinet__nav-link current">
+                            <a href="cabinet-personal-data.html" class="cabinet__nav-link ">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0.929688 22C0.929688 22.5522 1.37695 23 1.92969 23C2.48242 23 2.92969 22.5522 2.92969 22C2.92969 18.4712 4.96118 15.3471 8.12775 13.8698C9.22363 14.5819 10.5273 15 11.9287 15C13.3354 15 14.6441 14.5791 15.7426 13.8619C16.6879 14.3082 17.5639 14.9086 18.293 15.6372C19.9932 17.3379 20.9297 19.5977 20.9297 22C20.9297 22.5522 21.377 23 21.9297 23C22.4824 23 22.9297 22.5522 22.9297 22C22.9297 19.0635 21.7852 16.3018 19.707 14.2231C19.0117 13.5274 18.2035 12.9308 17.3364 12.439C18.3306 11.2301 18.9287 9.68372 18.9287 8C18.9287 4.14014 15.7881 1 11.9287 1C8.06934 1 4.92871 4.14014 4.92871 8C4.92871 9.67963 5.52435 11.2222 6.51416 12.4299C3.08136 14.3626 0.929688 17.9738 0.929688 22ZM11.9287 3C14.6855 3 16.9287 5.24316 16.9287 8C16.9287 10.7568 14.6855 13 11.9287 13C9.17188 13 6.92871 10.7568 6.92871 8C6.92871 5.24316 9.17188 3 11.9287 3Z" fill="#B3B3B3"/>
                                 </svg>
@@ -25,7 +34,7 @@
                         </li>
                         
                         <li class="cabinet__nav-item">
-                            <a href="cabinet-addresses.html" class="cabinet__nav-link ">
+                            <a href="cabinet-addresses.html" class="cabinet__nav-link current">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M12 5C10.3457 5 9 6.3457 9 8C9 9.6543 10.3457 11 12 11C13.6543 11 15 9.6543 15 8C15 6.3457 13.6543 5 12 5ZM12 9C11.4487 9 11 8.55127 11 8C11 7.44873 11.4487 7 12 7C12.5513 7 13 7.44873 13 8C13 8.55127 12.5513 9 12 9Z" fill="#B3B3B3"/>
                                     <path d="M12 1C8.14014 1 5 4.14014 5 8C5 13.2427 10.916 22.1768 11.168 22.5547C11.3535 22.833 11.6655 23 12 23C12.3345 23 12.6465 22.833 12.832 22.5547C13.084 22.1768 19 13.2427 19 8C19 4.14014 15.8599 1 12 1ZM12 20.1299C10.3882 17.502 7 11.5537 7 8C7 5.24316 9.24316 3 12 3C14.7568 3 17 5.24316 17 8C17 11.5537 13.6118 17.502 12 20.1299Z" fill="#B3B3B3"/>
@@ -70,8 +79,8 @@
                                     <path d="M12 1.00002C5.93457 1.00002 1 5.93459 1 12C1 18.0654 5.93457 23 12 23C18.0654 23 23 18.0654 23 12C23 5.93459 18.0654 1.00002 12 1.00002ZM12 21C7.03711 21 3 16.9629 3 12C3 7.03712 7.03711 3.00002 12 3.00002C16.9629 3.00002 21 7.03712 21 12C21 16.9629 16.9629 21 12 21Z" fill="#B3B3B3"/>
                                     <path d="M14.5333 9.04201L12.9054 5.57521C12.7403 5.22365 12.3878 5.00002 12.0001 5.00002C11.6124 5.00002 11.2598 5.22365 11.0948 5.57521L9.46687 9.04201L5.84871 9.59572C5.47859 9.65236 5.17098 9.91115 5.05183 10.2666C4.93269 10.6221 5.02254 11.0137 5.28426 11.2822L7.93172 13.9951L7.30476 17.8389C7.24324 18.2168 7.4034 18.5967 7.7159 18.8174C8.02937 19.0381 8.44148 19.0615 8.77547 18.875L12.0001 17.0928L15.2247 18.875C15.3751 18.959 15.5421 19 15.7081 19C15.9102 19 16.1124 18.9385 16.2843 18.8174C16.5968 18.5967 16.7569 18.2168 16.6954 17.8389L16.0684 13.9951L18.7159 11.2822C18.9776 11.0137 19.0675 10.6221 18.9483 10.2666C18.8292 9.91115 18.5216 9.65236 18.1514 9.59572L14.5333 9.04201ZM14.2843 12.96C14.0626 13.1865 13.962 13.5059 14.0128 13.8194L14.3897 16.1289L12.4835 15.0752C12.3331 14.9922 12.1671 14.9502 12.0001 14.9502C11.8331 14.9502 11.6671 14.9922 11.5167 15.0752L9.61043 16.1289L9.98738 13.8194C10.0382 13.5059 9.93758 13.1865 9.7159 12.96L8.07527 11.2783L10.297 10.9385C10.6261 10.8887 10.9093 10.6768 11.0509 10.375L12.0001 8.35353L12.9493 10.375C13.0909 10.6768 13.3741 10.8887 13.7032 10.9385L15.9249 11.2783L14.2843 12.96Z" fill="#B3B3B3"/>
                                 </svg>
-                                Бонусы 
-                                <span>2</span>   
+                                Бонусы  
+                                <span>2</span>  
                             </a>
                         </li>
 
@@ -99,87 +108,100 @@
                     </ul>
                 </nav>
                 <div class="cabinet__content">
-                    <div class="cabinte-personal-data">
-                        <h2 class="h2">Персональные данные</h2>
 
-                        <form class="c-form personal-data-form">
+                    <div class="cabinet-cru-address">
 
-                            <div class="c-form__line">
-                                <div class="c-form__inp-wrap">
-                                    <input type="text" class="c-form__input-text c-form__input" placeholder="" required name="name">
-                                    <p class="c-form__placeholder">Имя и отчество<sup>*</sup></p>
-                                </div>
+                        <a href="cabinet-addresses.html" class="cc-prev-page transparent">
+                            <img src="assets/img/icons/arrow-prev-page.svg" alt="">
+                            <span>Назад</span>
+                        </a>
 
-                                <div class="c-form__inp-wrap">
-                                    <input type="text" class="c-form__input-text c-form__input" placeholder=""  name="surname">
-                                    <p class="c-form__placeholder">Фамилия</p>
-                                </div>
-                            </div>
+                        <h2 class="h2">Заказ №2565425631 <span class="date-delivery">от 15.11.2021</span></h2>
 
-                            <div class="c-form__line">
-                                <div class="c-form__inp-wrap">
-                                    <input type="tel" class="c-form__input-text c-form__input" placeholder=""  required name="phone">
-                                    <p class="c-form__placeholder">Телефон<sup>*</sup></p>
-                                </div>
+                        <form class="c-form edit-address-form">
+                            <h3>Изменение адреса доставки</h3>
 
-                                <div class="c-form__inp-wrap">
-                                    <input type="email" class="c-form__input-text c-form__input" placeholder="" required name="email">
-                                    <p class="c-form__placeholder">Email<sup>*</sup></p>
-                                </div>
-                            </div>
+                            <div class="c-form__line select-line">
+                                <div class="c-form__inp-wrap">                
+                                    <div class="c-form__select-wrap">
 
-                            <div class="c-form__line">
-                                <div class="c-form__inp-wrap">
-                                    <input type="text" class="c-form__input-text c-form__input" id="datepicker" placeholder=""  required name="dateborn">
-                                    <p class="c-form__placeholder">Дата рождения</p>
-                                    <div class="c-form__calendar-icon">
-                                        <img src="assets/img/icons/calendar.svg" alt="">
+                                        <select select-one class="c-form__select select-city" name="city">
+                                            <option value="Новосибирск" >Новосибирск</option>
+                                            <option value="НЕНовосибирск">НЕНовосибирск</option>
+                                            
+                                        </select>
+                                        <p class="c-form__select-label">Город<sup>*</sup></p>
                                     </div>
                                 </div>
 
-                                <div class="c-form__inp-wrap c-form__gender-radios">
-                                    
-                                    <label class="c-radio" for="gender-male">
-                                        <input type="radio" value="0" name="gender" id="gender-male" checked>
-                                        <div class="c-radio__round">        
-                                        </div>
-                                        <p>Мужской</p>
-                                    </label>
+                                <div class="c-form__inp-wrap">                
+                                    <div class="c-form__select-wrap">
 
-                                    <label class="c-radio" for="gender-famale">
-                                        <input type="radio" value="0" name="gender" id="gender-famale" checked>
-                                        <div class="c-radio__round">        
-                                        </div>
-                                        <p>Женский</p>
-                                    </label>
-                                    
+                                        <select select-one class="c-form__select select-street" name="street">
+                                            <option value="Гнесинных" >Гнесинных</option>
+                                            <option value="Другая улица">Другая улица</option>                                            
+                                        </select>
+                                        <p class="c-form__select-label">Улица<sup>*</sup></p>
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="c-form__line">
-                                <div class="c-form__inp-wrap width-100">
-                                    <button class="btn-transparent change-password">Изменить пароль</button>
+                                <div class="c-form__inp-wrap">
+                                    <input type="text" class="c-form__input-text c-form__input" placeholder="" required name="house-number">
+                                    <p class="c-form__placeholder">Дом<sup>*</sup></p>
+                                </div>
+                                <div class="c-form__inp-wrap">
+                                    <input type="text" class="c-form__input-text c-form__input" placeholder=""  name="building">
+                                    <p class="c-form__placeholder">Корпус</p>
+                                </div>
+                            </div>
+
+                            <div class="c-form__line">
+                                <div class="c-form__inp-wrap">
+                                    <div class="c-form__line inner">
+                                        <div class="c-form__inp-wrap">
+                                            <input type="text" class="c-form__input-text c-form__input" placeholder=""  name="flat-number">
+                                            <p class="c-form__placeholder">Квартира/офис *</p>
+                                        </div>
+                                        <div class="c-form__inp-wrap">
+                                            <div class="c-checkbox-container">
+                                                <input type="checkbox" name="private-house" id="private-house" value="Частный дом" class="c-checkbox">
+                                                <label for="private-house"><img src="assets/img/icons/filter-checkbox-arrow.svg" alt=""></label>
+                                                <label for="private-house">Частный дом</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="c-form__inp-wrap">
+                                    <input type="text" class="c-form__input-text c-form__input" placeholder=""  name="intercom">
+                                    <p class="c-form__placeholder">Домофон</p>
+                                </div>
+                            </div>
+
+                            <div class="c-form__line">
+                                <div class="c-form__inp-wrap">
+                                    <input type="text" class="c-form__input-text c-form__input" placeholder="" required name="entrance">
+                                    <p class="c-form__placeholder">Подъезд</p>
+                                </div>
+                                <div class="c-form__inp-wrap">
+                                    <input type="text" class="c-form__input-text c-form__input" placeholder=""  name="floor">
+                                    <p class="c-form__placeholder">Этаж</p>
                                 </div>
                             </div>
 
 
-                            <div class="c-form__line width-100 notification">
-                                <h3>Уведомления</h3>
-                                <div class="c-checkbox-container">
-                                    <input type="checkbox" name="type-product" id="service-notification"  value="Сервисные уведомления" class="c-checkbox">
-                                    <label for="service-notification"><img src="assets/img/icons/filter-checkbox-arrow.svg" alt=""></label>
-                                    <label for="service-notification">Сервисные уведомления</label>
-                                </div>
-
-                                <div class="c-checkbox-container">
-                                    <input type="checkbox" name="type-product" id="news-notification"  value="Уведомления о новых продуктах и акциях" class="c-checkbox">
-                                    <label for="news-notification"><img src="assets/img/icons/filter-checkbox-arrow.svg" alt=""></label>
-                                    <label for="news-notification">Уведомления о новых продуктах и акциях</label>
+                            <div class="c-form__line width-100">
+                                <div class="c-form__inp-wrap">
+                                    <textarea class="c-form__input-text c-form__textarea" placeholder="" name="comment"></textarea>
+                                    <p class="c-form__placeholder">Ваш комментарий для курьера</p>
                                 </div>
                             </div>
+
                             <div class="c-form__line width-100 save-btns-group">
-                                <button class="btn-transparent personal-data-cancel-save">Отменить</button>
-                                <button class="btn-green personal-data-save">Сохранить изменения</button>
+                                <a href="#" class="btn-transparent address-cancel-save">Отменить</a>
+                                <a href="#" class="btn-green address-save">Сохранить изменения</a>
                             </div>
                         </form>
                     </div>
@@ -192,73 +214,9 @@
 </main>
 
 
-
-
 @@include('templates/welcome-modal.html')
 @@include('templates/feedback-modal.html')
 
 
 @@include('templates/footer.html')
-
-
-
-
-
-<div class="modal change-password-modal">
-    <div class="modal__close"></div>
-    <div class="modal__body">
-        <h3 class="modal__title">Изменить пароль</h3>
-
-        <p class="modal__subtitle">Новый пароль должен быть минимум 
-            8 символов, содержать минимум одну цифру, заглавные и строчные латинские буквы.</p>
-
-
-        <form class="c-form form-change-password">
-            <div class="c-form__line width-100">
-                <div class="c-form__inp-wrap">
-                    <input type="password" class="c-form__input-text c-form__input" placeholder="" minlength="8" required name="old-pasword">
-                    <p class="c-form__placeholder">Старый пароль</p>
-                    <button class="c-form__show-hide-password"></button>
-                    <span class="miss-password">Неверный пароль</span>
-                </div>
-            </div>
-
-            <div class="c-form__line width-100">
-                <div class="c-form__inp-wrap" id="3333333">
-                    <input type="password" class="c-form__input-text c-form__input" placeholder="" minlength="8" required name="new-password">
-                    <p class="c-form__placeholder">Новый пароль</p>
-                    <button class="c-form__show-hide-password"></button>
-                    <span class="miss-password">Новый пароль должен быть минимум 
-                        8 символов, содержать минимум одну цифру, заглавные и строчные латинские буквы.</span>
-                    
-                </div>
-            </div>
-
-            <div class="c-form__line width-100">
-                <div class="c-form__inp-wrap">
-                    <input type="password" class="c-form__input-text c-form__input" placeholder="" minlength="8" required name="retype-password">
-                    <p class="c-form__placeholder">Повторите новый пароль</p>
-                    <button class="c-form__show-hide-password"></button>
-                    <span class="miss-password">Пароли не совпадают</span>
-                </div>
-            </div>
-
-            <div class="c-form__line width-100">
-                <div class="c-form__inp-wrap">
-                    <button class="c-form__btn">Изменить</button>
-                </div>
-            </div>
-        </form>
-    </div>
-    
-
-    
-</div>
-
-
-
-
-
-
-
 @@include('templates/foot.html')  

@@ -157,14 +157,14 @@
 
 .c-form__line.save-btns-group{
 	display: block;
-	.personal-data-save{
+	.personal-data-save, .address-save{
 		margin-left: 20px;
 		padding: 16px 30px;
 		@media (max-width: 480px){
 			margin-left: 0;
 		}
 	}
-	.personal-data-cancel-save{
+	.personal-data-cancel-save, .address-cancel-save{
 		font-weight: 700;
 		padding: 16px 30px;
 	}
@@ -178,6 +178,10 @@
 		flex-direction: column;
 	}
 }
+
+
+
+
 
 .c-form__line.hide{
 	display: none;
@@ -203,13 +207,18 @@
 	font-size: 16px;
 	line-height: 120%;
 	color: rgba(18, 18, 18, 0.5);
-
+	
 	position: absolute;
 	transition: 300ms;
 	left: 0;
-	top: 50%;
-	transform: translate(22px, -50%);
+	top: 22px;
+	transform: translate(22px, 0%);
 	z-index: 4;
+
+	sup{
+		position: absolute;
+		transform: translate(0, -5px);
+	}
 }
 .c-form__input-text{
 	width: 100%;
@@ -359,7 +368,11 @@
 	
 	z-index: 1;
 
-	
+	sup{
+		line-height: 1;
+		transform: translate(0, 25%);
+		display: inline-block;
+	}
 }
 
 .c-form__select-wrap{
@@ -541,4 +554,49 @@
     color: #121212;
     margin-left: 12px;
     cursor: pointer;
+}
+
+.c-form__show-hide-password{
+	width: 24px;
+	height: 24px;
+	cursor: pointer;
+	background: url('../img/icons/show-password.svg');
+	background-size: cover;
+	background-position: center;
+
+	position: absolute;
+	right: 18px;
+	top: 20px;
+	
+	z-index: 5;
+}
+
+.c-form__show-hide-password.show{
+	background: url('../img/icons/hide-password.svg');
+	background-size: cover;
+	background-position: center;
+}
+
+.miss-password{
+	font-size: 12px;
+	color: #fff;
+	background-color: #BF573F;
+	padding: 3px 6px;
+	display: none;
+	border-radius: 5px;
+	margin: 2px;
+	animation: showMissPassword .2s forwards;
+	opacity: 0;
+	transform: translate(0, -5px);
+}
+
+.miss-password.show{
+	display: inline-block;
+}
+
+@keyframes showMissPassword{
+	to{
+		opacity: 1;
+		transform: translate(0, 0);
+	}
 }
