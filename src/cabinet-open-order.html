@@ -2,13 +2,13 @@
 @@include('templates/header.html')
 
 
-<main>
+<main class="open-order-page">
     
     <section class="section s-idea">
         <div class="section__inner">
             <nav class="breadcrumbs">
                 <a href="index.html">Главная</a>
-                <a >Мои данные</a>
+                <a >Мои заказы</a>
             </nav>
 
             <div class="cabinet-mob-navigation">
@@ -19,6 +19,8 @@
                 </div>
                 <img src="assets/img/icons/mob-catalog-prev-arrow.svg" alt="">
             </div>
+
+            
 
             <h1 class="h1">Мои заказы</h1>
 
@@ -116,183 +118,210 @@
                             
                         </ul>
                     </div>
-
                 </nav>
                 <div class="cabinet__content">
-
-                    <div class="my-orders-list">
-                        <h2 class="h2">История заказов</h2>
-
-                        <div class="mol-container">
-                            <div class="my-order active">
-                                <div class="my-order__top">
-                                    <div class="my-order__main">
-                                        <a href="cabinet-open-order.html" class="my-order__number">№2565425631</a>
-                                        <p class="my-order__date">от 15.11.2021</p>
-                                    </div>
-                                    <p class="my-order__state">Собран</p>
-                                    <p class="my-order__price">2 895,55 ₽</p>
-                                    <div class="my-order__btns">
-                                        <a class="btn-green" href="#">Оплатить</a>
-                                        <a class="btn-transparent" href="#">Повторить</a>
-                                    </div>
-                                </div>
-                                <div class="my-order__bottom">
-                                    <a href="#">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            
-                                            <path d="M2.88179 13.4721C3.04179 13.4721 3.07379 13.4561 3.21779 13.4241L6.09779 12.8481C6.40179 12.7681 6.70579 12.6241 6.94579 12.3841L13.9218 5.40809C14.9938 4.33609 14.9938 2.49609 13.9218 1.42409L13.3298 0.800094C12.2578 -0.271906 10.4018 -0.271906 9.32979 0.800094L2.35379 7.79209C2.12979 8.01609 1.96979 8.33609 1.88979 8.64009L1.28179 11.5521C1.20179 12.0961 1.36179 12.6241 1.74579 13.0081C2.04979 13.3121 2.49779 13.4721 2.88179 13.4721ZM3.42579 8.94409L10.4018 1.95209C10.8658 1.48809 11.7138 1.48809 12.1618 1.95209L12.7698 2.56009C13.3138 3.10409 13.3138 3.87209 12.7698 4.40009L5.80979 11.3921L2.84979 11.8881L3.42579 8.94409Z" fill="#2DA0A6"/>
-                                            <path d="M13.8592 14.4639H2.0512C1.5872 14.4639 1.2832 14.7679 1.2832 15.2319C1.2832 15.6959 1.6672 15.9999 2.0512 15.9999H13.7952C14.2592 15.9999 14.6432 15.6959 14.6432 15.2319C14.6272 14.7679 14.2432 14.4639 13.8592 14.4639Z" fill="#2DA0A6"/>
-                                            
-                                        </svg>
-                                        Редактировать
-                                    </a>
+                    <a href="cabinet-my-orders.html" class="cc-prev-page transparent">
+                        <img src="assets/img/icons/arrow-prev-page.svg" alt="">
+                        <span>Все заказы</span>
+                    </a>
+                    <div class="open-order">
+                        <div class="cc-prev-page-container">
+                            <a href="cabinet-my-orders.html" class="cc-prev-page transparent">
+                                <img src="assets/img/icons/arrow-prev-page.svg" alt="">
+                                <span>Все заказы</span>
+                            </a>
+                        </div>
+                        <div class="or-top">
+                            <div class="or-top__title-block">
+                                <h2 class="h2">Заказ №2565425631 <span>от 15.11.2021</span></h2>
+                                <p class="h2">1 703,30 ₽</p>
+                            </div>
+                            <div class="or-top__controls-block">
+                                <div class="or-top__controls-block--left">
+                                    <p class="or-state">Собран</p>
                                     <button class="delete-my-order">
                                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0.292893 0.292893C0.683418 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L8.77817 7.36396C9.1687 7.75449 9.1687 8.38765 8.77817 8.77817C8.38765 9.1687 7.75449 9.1687 7.36396 8.77817L0.292893 1.70711C-0.0976312 1.31658 -0.097631 0.683417 0.292893 0.292893Z" fill="#A0A0A0"/>
-                                            <path d="M8.7784 0.292893C8.38787 -0.0976311 7.75471 -0.0976311 7.36418 0.292893L0.293114 7.36396C-0.0974098 7.75449 -0.0974096 8.38765 0.293115 8.77817C0.683639 9.1687 1.3168 9.1687 1.70733 8.77817L8.7784 1.70711C9.16892 1.31658 9.16892 0.683417 8.7784 0.292893Z" fill="#A0A0A0"/>
+                                            <path d="M0.292893 0.292893C0.683418 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L8.77817 7.36396C9.1687 7.75449 9.1687 8.38765 8.77817 8.77817C8.38765 9.1687 7.75449 9.1687 7.36396 8.77817L0.292893 1.70711C-0.0976312 1.31658 -0.097631 0.683417 0.292893 0.292893Z" fill="#A0A0A0"></path>
+                                            <path d="M8.7784 0.292893C8.38787 -0.0976311 7.75471 -0.0976311 7.36418 0.292893L0.293114 7.36396C-0.0974098 7.75449 -0.0974096 8.38765 0.293115 8.77817C0.683639 9.1687 1.3168 9.1687 1.70733 8.77817L8.7784 1.70711C9.16892 1.31658 9.16892 0.683417 8.7784 0.292893Z" fill="#A0A0A0"></path>
                                         </svg>
                                         Отменить заказ
                                     </button>
+                                </div>
+                                
+
+                                <div class="or-top__btns-group">
                                     
-                                </div>
-                                
-                            </div>
 
-                            <div class="my-order">
-                                <div class="my-order__top">
-                                    <div class="my-order__main">
-                                        <a href="cabinet-open-order.html" class="my-order__number">№2565425631</a>
-                                        <p class="my-order__date">от 15.11.2021</p>
+                                    <div class="or-top__buy-btns">
+                                        <a class="btn-green" href="#">Оплатить онлайн</a>
+                                        <button class="btn-transparent">Повторить заказ</button>
                                     </div>
-                                    <p class="my-order__state canceled">Отменен клиентом</p>
-                                    <p class="my-order__price">2 895,55 ₽</p>
-                                    <div class="my-order__btns">
-                                        <a class="btn-transparent" href="#">Повторить</a>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <div class="my-order">
-                                <div class="my-order__top">
-                                    <div class="my-order__main">
-                                        <a href="cabinet-open-order.html" class="my-order__number">№2565425631</a>
-                                        <p class="my-order__date">от 15.11.2021</p>
-                                    </div>
-                                    <p class="my-order__state">Доставлен</p>
-                                    <p class="my-order__price">2 895,55 ₽</p>
-                                    <div class="my-order__btns">
-                                        <a class="btn-transparent" href="#">Повторить</a>
-                                    </div>
-                                </div>
-                                
-                            </div>
-
-                            <div class="my-order">
-                                <div class="my-order__top">
-                                    <div class="my-order__main">
-                                        <a href="cabinet-open-order.html" class="my-order__number">№2565425631</a>
-                                        <p class="my-order__date">от 15.11.2021</p>
-                                    </div>
-                                    <p class="my-order__state">Доставлен</p>
-                                    <p class="my-order__price">2 895,55 ₽</p>
-                                    <div class="my-order__btns">
-                                        <a class="btn-transparent" href="#">Повторить</a>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <div class="my-order">
-                                <div class="my-order__top">
-                                    <div class="my-order__main">
-                                        <a href="cabinet-open-order.html" class="my-order__number">№2565425631</a>
-                                        <p class="my-order__date">от 15.11.2021</p>
-                                    </div>
-                                    <p class="my-order__state canceled">Отменен клиентом</p>
-                                    <p class="my-order__price">2 895,55 ₽</p>
-                                    <div class="my-order__btns">
-                                        <a class="btn-transparent" href="#">Повторить</a>
-                                    </div>
-                                </div>
-                                
-                            </div>
-
-                            <div class="my-order">
-                                <div class="my-order__top">
-                                    <div class="my-order__main">
-                                        <a href="cabinet-open-order.html" class="my-order__number">№2565425631</a>
-                                        <p class="my-order__date">от 15.11.2021</p>
-                                    </div>
-                                    <p class="my-order__state canceled">Отменен клиентом</p>
-                                    <p class="my-order__price">2 895,55 ₽</p>
-                                    <div class="my-order__btns">
-                                        <a class="btn-transparent" href="#">Повторить</a>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <div class="my-order">
-                                <div class="my-order__top">
-                                    <div class="my-order__main">
-                                        <a href="cabinet-open-order.html" class="my-order__number">№2565425631</a>
-                                        <p class="my-order__date">от 15.11.2021</p>
-                                    </div>
-                                    <p class="my-order__state">Доставлен</p>
-                                    <p class="my-order__price">2 895,55 ₽</p>
-                                    <div class="my-order__btns">
-                                        <a class="btn-transparent" href="#">Повторить</a>
-                                    </div>
-                                </div>
-                                
-                            </div>
-
-                            <div class="my-order">
-                                <div class="my-order__top">
-                                    <div class="my-order__main">
-                                        <a href="cabinet-open-order.html" class="my-order__number">№2565425631</a>
-                                        <p class="my-order__date">от 15.11.2021</p>
-                                    </div>
-                                    <p class="my-order__state">Доставлен</p>
-                                    <p class="my-order__price">2 895,55 ₽</p>
-                                    <div class="my-order__btns">
-                                        <a class="btn-transparent" href="#">Повторить</a>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <div class="my-order">
-                                <div class="my-order__top">
-                                    <div class="my-order__main">
-                                        <a href="cabinet-open-order.html" class="my-order__number">№2565425631</a>
-                                        <p class="my-order__date">от 15.11.2021</p>
-                                    </div>
-                                    <p class="my-order__state canceled">Отменен клиентом</p>
-                                    <p class="my-order__price">2 895,55 ₽</p>
-                                    <div class="my-order__btns">
-                                        <a class="btn-transparent" href="#">Повторить</a>
-                                    </div>
-                                </div>
-                                
-                            </div>
-
-
-                        </div>
-
-                        <div class="pagination">
-                            <div class="pagination__inner">
-            
-                                <div class="pagination__pages">
-                                    <a class="pagination__link">1</a>
-                                    <a href="#" class="pagination__link">2</a>
-                                    <a href="#" class="pagination__link">3</a>
-                                    <a href="#" class="pagination__link">4</a>
-                                    <a href="#" class="pagination__link">5</a>
-                                    <a class="pagination__gap">...</a>
-                                    <a href="#" class="pagination__link">Вперед ></a>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="or-delivery-info">
+                            <div class="or-delivery-info__address">
+                                <h3>Адрес доставки</h3>
+                                <a href="cabinet-order-edit-address.html"><span>Новосибирск, ул. Гнесиных, 10/1, 1101</span>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2.88179 13.4721C3.04179 13.4721 3.07379 13.4561 3.21779 13.4241L6.09779 12.8481C6.40179 12.7681 6.70579 12.6241 6.94579 12.3841L13.9218 5.40809C14.9938 4.33609 14.9938 2.49609 13.9218 1.42409L13.3298 0.800094C12.2578 -0.271906 10.4018 -0.271906 9.32979 0.800094L2.35379 7.79209C2.12979 8.01609 1.96979 8.33609 1.88979 8.64009L1.28179 11.5521C1.20179 12.0961 1.36179 12.6241 1.74579 13.0081C2.04979 13.3121 2.49779 13.4721 2.88179 13.4721ZM3.42579 8.94409L10.4018 1.95209C10.8658 1.48809 11.7138 1.48809 12.1618 1.95209L12.7698 2.56009C13.3138 3.10409 13.3138 3.87209 12.7698 4.40009L5.80979 11.3921L2.84979 11.8881L3.42579 8.94409Z" fill="#2DA0A6"/>
+                                        <path d="M13.8592 14.4639H2.0512C1.5872 14.4639 1.2832 14.7679 1.2832 15.2319C1.2832 15.6959 1.6672 15.9999 2.0512 15.9999H13.7952C14.2592 15.9999 14.6432 15.6959 14.6432 15.2319C14.6272 14.7679 14.2432 14.4639 13.8592 14.4639Z" fill="#2DA0A6"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="or-delivery-info__date">
+                                <h3>Время доставки</h3>
+
+                                <a href="cabinet-order-edit-date-delivery.html"><span>15 ноября с 10 до 16 часов</span>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2.88179 13.4721C3.04179 13.4721 3.07379 13.4561 3.21779 13.4241L6.09779 12.8481C6.40179 12.7681 6.70579 12.6241 6.94579 12.3841L13.9218 5.40809C14.9938 4.33609 14.9938 2.49609 13.9218 1.42409L13.3298 0.800094C12.2578 -0.271906 10.4018 -0.271906 9.32979 0.800094L2.35379 7.79209C2.12979 8.01609 1.96979 8.33609 1.88979 8.64009L1.28179 11.5521C1.20179 12.0961 1.36179 12.6241 1.74579 13.0081C2.04979 13.3121 2.49779 13.4721 2.88179 13.4721ZM3.42579 8.94409L10.4018 1.95209C10.8658 1.48809 11.7138 1.48809 12.1618 1.95209L12.7698 2.56009C13.3138 3.10409 13.3138 3.87209 12.7698 4.40009L5.80979 11.3921L2.84979 11.8881L3.42579 8.94409Z" fill="#2DA0A6"/>
+                                        <path d="M13.8592 14.4639H2.0512C1.5872 14.4639 1.2832 14.7679 1.2832 15.2319C1.2832 15.6959 1.6672 15.9999 2.0512 15.9999H13.7952C14.2592 15.9999 14.6432 15.6959 14.6432 15.2319C14.6272 14.7679 14.2432 14.4639 13.8592 14.4639Z" fill="#2DA0A6"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        <div class="or-info">
+                            <h3>Информация о заказе</h3>
+
+                            <div class="or-info-list">
+                                <div class="or-info-list__col">
+                                    <div class="or-info-list__item">
+                                        <p class="or-info-item-title">Получатель</p>
+                                        <p class="or-info-item-value">Александровский Константин</p>
+                                    </div>
+                                    
+                                    <div class="or-info-list__item">
+                                        <p class="or-info-item-title">Телефон</p>
+                                        <a class="or-info-item-value" href="tel:+79639553325">+7 963 955 33 25</a>
+                                    </div>
+
+                                    <div class="or-info-list__item">
+                                        <p class="or-info-item-title">Email</p>
+                                        <a class="or-info-item-value" href="mailto:mailkos@mail.ru">mailkos@mail.ru</a>
+                                    </div>
+                                </div>
+                                <div class="or-info-list__col cur-order-info">
+                                    <div class="or-info-list__item">
+                                        <p class="or-info-item-title">Общий вес</p>
+                                        <p class="or-info-item-value">~3,1 кг</p>
+                                    </div>
+                                    
+                                    <div class="or-info-list__item">
+                                        <p class="or-info-item-title">Стоимость доставки</p>
+                                        <p class="or-info-item-value">Бесплатно</p>
+                                    </div>
+
+                                    <div class="or-info-list__item">
+                                        <p class="or-info-item-title">Товары (6)</p>
+                                        <p class="or-info-item-value">1 777,30 ¤</p>
+                                    </div>
+
+                                    <div class="or-info-list__item">
+                                        <p class="or-info-item-title">Скидка на товары</p>
+                                        <p class="or-info-item-value">-74 ₽</p>
+                                    </div>
+
+                                    <div class="or-info-list__item">
+                                        <p class="or-info-item-title">Итого</p>
+                                        <p class="or-info-item-value">1 703,30 ₽</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="or-products-list">
+                            <h3>Состав заказа</h3>
+
+                            <div class="ordered-products">
+                                <div class="op-product">
+
+                                    <div class="op-product__img">
+                                        <img src="assets/img/products/sosiski/1.jpg" alt="">
+                                    </div>
+                                    <div class="op-product__nw">
+                                        <p class="op-product__name">Сосиски Баварские</p>
+                                        <div class="op-product__weight">0,36 кг </div>
+                                        
+                                    </div>
+                                    <div class="op-product__qty">
+                                        <span>2 шт.</span>
+                                    </div>
+
+                                    <div class="op-product__price-block">
+                                        <p class="op-product__price">260 ₽</p>
+                                        <p class="op-product__price-detail">130 ₽ за 1 шт.</p>
+                                    </div>
+                                </div>
+
+                                <div class="op-product">
+
+                                    <div class="op-product__img">
+                                        <img src="assets/img/products/sosiski/2.jpg" alt="">
+                                    </div>
+                                    <div class="op-product__nw">
+                                        <p class="op-product__name">Сокраменто</p>
+                                        <div class="op-product__weight">~0,7 кг 
+                                            <div class="product-card__question" data-tippy-content="Точная стоимость товара зависит от веса и будет известна после сборки заказа.">?</div>
+                                        </div>                                        
+                                    </div>
+                                    <div class="op-product__qty">
+                                        <span>1шт. ~0,7 кг</span>
+                                    </div>
+                                    <div class="op-product__price-block">
+                                        <p class="op-product__price">622,30 ₽</p>
+                                        <p class="op-product__price-detail">889 ₽ за 1 кг</p>
+                                    </div>
+                                </div>
+
+
+                                <div class="op-product promo">
+
+                                    <div class="op-product__img">
+                                        <div class="promo-label">Акция</div>
+                                        <img src="assets/img/products/sosiski/3.jpg" alt="">
+                                    </div>
+                                    <div class="op-product__nw">
+                                        <p class="op-product__name">Говядина Мякоть</p>
+                                        <div class="op-product__weight">~1 кг 
+                                            <div class="product-card__question" data-tippy-content="Точная стоимость товара зависит от веса и будет известна после сборки заказа.">?</div>
+                                        </div>                                        
+                                    </div>
+                                    <div class="op-product__qty">
+                                        <span>1 шт. ~1 кг</span>
+                                    </div>
+                                    <div class="op-product__price-block">
+                                        <p class="op-product__price">451 ₽ <span class="op-product__old-price">525 ₽/кг</span></p>
+                                        <p class="op-product__price-detail">451 ₽ за 1 шт.</p>
+                                    </div>
+                                </div>
+
+                                <div class="op-product">
+
+                                    <div class="op-product__img">
+                                        <img src="assets/img/products/sosiski/4.jpg" alt="">
+                                    </div>
+                                    <div class="op-product__nw">
+                                        <p class="op-product__name">Сосиски Большая SOSиска</p>
+                                        <div class="op-product__weight">0,34 кг </div>                                        
+                                    </div>
+                                    <div class="op-product__qty">
+                                        <span>2шт.</span>
+                                    </div>
+                                    <div class="op-product__price-block">
+                                        <p class="op-product__price">370 ₽</p>
+                                        <p class="op-product__price-detail">185 ₽ за шт.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
+
+                    
 
                 </div>
             </div>

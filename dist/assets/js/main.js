@@ -2487,9 +2487,15 @@ if ( cruAddressPage ){
 }
 
 
+const cabinetMobNavigation = document.querySelector('.cabinet-mob-navigation');
+const cabinetNav = document.querySelector('.cabinet__nav');
+const hideMobNavigation = document.querySelector('.cn-header__close');
 
-
-
-  
-
-  
+if ( cabinetMobNavigation ) {
+  cabinetMobNavigation.addEventListener('click', function(){
+    cabinetNav.classList.add('show')
+  })  
+  hideMobNavigation.addEventListener('click', function(){
+    cabinetNav.classList.remove('show')
+  })  
+}
