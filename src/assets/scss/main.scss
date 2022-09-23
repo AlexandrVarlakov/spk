@@ -459,10 +459,19 @@ ul{
     transition: 300ms;
     svg{
         transform: translate(0, 1px);
+		transition: 300ms;
     }
     path{
         transition: 300ms;
     }
+	
+	&:hover{
+		border-color: #BF573F;
+		path {
+			
+			stroke: #BF573F;
+		  }	
+	}
 }
 
 .round-add-favorite.favorite{
@@ -471,6 +480,32 @@ ul{
         fill: #BF573F;
         stroke: #BF573F;
       }
+}
+
+.round-remove-product{
+	width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #D0D0D0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms;
+    svg{
+        transform: translate(0, 1px);
+		transition: 300ms;
+    }
+    path{
+        transition: 300ms;
+    }
+	
+	&:hover{
+		border-color: #BF573F;
+		path {
+			
+			fill: #BF573F;
+		  }	
+	}
 }
 
 @import 'vars';
@@ -495,6 +530,7 @@ ul{
 @import 'units/pages/products-list';
 @import 'units/pages/product';
 @import 'units/pages/cabinet';
+@import 'units/pages/cart';
 
 
 @import 'units/swiper/swiper';

@@ -2499,3 +2499,155 @@ if ( cabinetMobNavigation ) {
     cabinetNav.classList.remove('show')
   })  
 }
+
+
+
+const promoFormInput = document.querySelector('.form-promo__input');
+
+if ( promoFormInput ){
+
+  const cartBuyPanel = document.querySelector('.cart-buy-panel');
+  const promoFormPlaceholder = document.querySelector('.form-promo__placeholder');
+  const promoFormApllyBtn = document.querySelector('.form-promo__apply');
+  const promoFormResetBtn = document.querySelector('.form-promo__reset');
+      
+
+  function promoFormFocused(){
+    cartBuyPanel.classList.add('focused');
+    promoFormInput.focus();
+  }
+
+  function  promoFormBlur(){
+    cartBuyPanel.classList.remove('focused');
+  }
+
+  promoFormPlaceholder.addEventListener('click', promoFormFocused);
+
+  promoFormInput.addEventListener('input', function(){
+    if ( this.value.length ){
+      cartBuyPanel.classList.add('no-empty');
+    } else{
+      cartBuyPanel.classList.remove('no-empty');
+    }
+  })
+
+  promoFormApllyBtn.addEventListener('click', function(event){
+    event.preventDefault();
+    cartBuyPanel.classList.add('promo-apply');
+    cartBuyPanel.classList.remove('no-empty');
+  })
+
+
+  promoFormResetBtn.addEventListener('click', function(event){
+    event.preventDefault();
+    promoFormInput.value = '';
+    cartBuyPanel.classList.remove('promo-apply');
+  })
+
+  promoFormInput.addEventListener('focus', promoFormFocused);
+
+  promoFormInput.addEventListener('blur', promoFormBlur);
+
+}
+
+const removeProductOfCartBtns = document.querySelectorAll('.round-remove-product');
+if( removeProductOfCartBtns.length ){
+  removeProductOfCartBtns.forEach( btn => {
+    btn.addEventListener('click', function(){
+      const mainContainer = this.closest('.product-list-group');
+      this.closest('.cpl-product').remove();
+
+      
+
+      let products = mainContainer.querySelectorAll('.cpl-product');
+
+      if ( !products.length ){
+        mainContainer.remove();
+      }
+
+      if ( !document.querySelectorAll('.cpl-product').length ){
+        document.querySelector('.main-cart-content').remove();
+      }
+
+
+      
+    })
+  } )
+}
+
+
+const cartProducts = document.querySelectorAll('.cpl-product');
+
+if ( cartProducts.length ){
+
+
+  const plusProductBtns = document.querySelectorAll('.cpl-product-count__btn.plus'); 
+  const  minusProductBtns = document.querySelectorAll('.cpl-product-count__btn.minus'); 
+
+
+ 
+  plusProductBtns.forEach( btn => {
+    
+    btn.addEventListener( 'click', function(){
+      
+      calcProduct( this, '.cpl-product', '.cpl-product-count__btn.plus', '.cpl-product-count__btn.minus',  '.cpl-product-count__qty', '.cpl-product-price__price', '.cpl-product-count__weight-group .cpl-product-count__qty', '+');
+    });
+    
+  } ) 
+
+  minusProductBtns.forEach( btn => {
+    
+    btn.addEventListener( 'click', function(){
+      
+      calcProduct( this, '.cpl-product', '.cpl-product-count__btn.plus', '.cpl-product-count__btn.minus',  '.cpl-product-count__qty', '.cpl-product-price__price', '.cpl-product-count__weight-group .cpl-product-count__qty', '-');
+    });
+    
+  } ) 
+}
+
+
+function calcProduct(self, mainNodeSelector, incBtnSelector, decBtnSelector,  qtySelector, summPriceSelector, weightSelector, operation){
+  const product =  self.closest(mainNodeSelector);
+
+  let qtyInCart = Number( product.getAttribute('data-in-cart') );
+  let totalQty = Number( product.getAttribute('data-total') );
+  let calcMethod =  Number( product.getAttribute('data-calcmethod') );
+  let price =  Number( product.getAttribute('data-price') );
+  let weight =  Number( product.getAttribute('data-weight') );
+
+  const incBtn = product.querySelector(incBtnSelector);
+  const decBtn =  product.querySelector(decBtnSelector);
+
+
+  switch ( operation ){
+    case '+':
+      qtyInCart++;
+      
+      break;
+    case '-': qtyInCart--;
+
+  }
+
+  if (qtyInCart > 1) {
+    decBtn.removeAttribute('disabled');
+  } else{
+    decBtn.setAttribute('disabled', 'disabled');
+  }
+
+  if ( qtyInCart === totalQty ) incBtn.setAttribute('disabled', 'disabled');
+
+  product.setAttribute('data-in-cart', qtyInCart);
+  product.querySelector(qtySelector).innerHTML = qtyInCart;
+
+  switch ( calcMethod ){
+    case 1: 
+      product.querySelector('.cpl-product-price__price').innerHTML =   (qtyInCart * price).toFixed(2); 
+      break; 
+
+    case 2: 
+      product.querySelector(summPriceSelector).innerHTML =  (qtyInCart * weight * price).toFixed(2); 
+      product.querySelector(weightSelector).innerHTML = (qtyInCart * weight).toFixed(2);            
+    break; 
+
+  }
+}
