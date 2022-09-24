@@ -622,6 +622,52 @@
     }
 
 }
+.cru-address-form__group{
+    & > h3{
+        @media (max-width: 1024px){
+            font-size: 18px !important;
+        }
+    }
+}
+
+
+.cru-address-form__group + .cru-address-form__group{
+    margin-top: 30px;
+}
+
+.cru-address-form__group.f-t{
+    h3{
+        margin-bottom: 9px;
+    }
+
+    & > p{
+        
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 120%;
+        color: rgba(18, 18, 18, 0.4);
+
+        margin-bottom: 20px;
+    }
+}
+
+
+.cbp-approve-rules{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 130%;
+    color: rgba(18, 18, 18, 0.4);
+    margin-top: 24px;
+
+    a{
+        transition: 300ms;
+        color: #121212;
+
+        &:hover{
+            color: #268E94;
+        }
+    }
+}
 
 .cru-address-form, .edit-address-form, .edit-date-delivery-form{
     h3{
@@ -1421,3 +1467,4 @@ a.or-info-item-value{
         display: none;
     }
 }
+

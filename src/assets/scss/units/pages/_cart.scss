@@ -507,6 +507,22 @@
     
 }
 
+.ordering{
+    .cbp-details__item{
+        font-size: 16px;
+
+        @media (max-width: 1024px){
+            font-size: 14px;
+        }
+    }
+
+    .cbp-details{
+        padding-top: 0;
+    }
+}
+
+
+
 .cbp-details__item + .cbp-details__item{
     margin-top: 8px;
 }
@@ -514,7 +530,11 @@
     display: none;
 }
 
-
+.cbp-details__item.free{
+    span{
+        color: #2DA0A6;;
+    }
+}
 
 .cbp-details__item.sale{
     span{

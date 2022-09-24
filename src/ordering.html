@@ -1,0 +1,316 @@
+@@include('templates/head.html')
+@@include('templates/header.html')
+
+
+<main>
+    
+    <section class="section">
+        <div class="section__inner">
+            <nav class="breadcrumbs">
+                <a href="index.html">Главная</a>
+                <a >Оформление заказа</a>
+            </nav>
+
+
+            <div class="ordering-title-block">
+
+                <h1 class="h1">Оформление заказа</h1>
+
+                <div class="cart-title-block__link-block">
+                    <a href="cart.html" class="cc-prev-page transparent">
+                        <img src="assets/img/icons/arrow-prev-page.svg" alt="">
+                        <span>Вернуться в корзину</span>
+                    </a>    
+                </div>
+
+                
+            </div>
+
+
+
+            <div class="ordering">
+                <div class="ordering__form-col">
+                    <div class="sh-note">
+                        <div class="sh-note__img">
+                            <img src="assets/img/help/info.svg" alt="">
+                        </div>
+                        <div class="sh-note__text-block">
+                            <p>Стоимость заказа может измениться и будет окончательно известна только после того, как мы проверим наличие товара и соберём вашу покупку. Мы свяжемся с вами для уточнения деталей заказа.</p>
+                        </div>
+                    </div>
+
+                    <form class="c-form cru-address-form ordering-form">
+
+
+                        <div class="cru-address-form__personal-data cru-address-form__group" >
+                            <h3>Контактные данные</h3>
+                            <div class="c-form__line">
+                                <div class="c-form__inp-wrap">
+                                    <input type="text" class="c-form__input-text c-form__input" placeholder="" required name="name">
+                                    <p class="c-form__placeholder">Имя и отчество<sup>*</sup></p>
+                                </div>
+
+                                <div class="c-form__inp-wrap">
+                                    <input type="text" class="c-form__input-text c-form__input" placeholder=""  name="surname">
+                                    <p class="c-form__placeholder">Фамилия</p>
+                                </div>
+                            </div>
+
+                            <div class="c-form__line">
+                                <div class="c-form__inp-wrap">
+                                    <input type="tel" class="c-form__input-text c-form__input" placeholder=""  required name="phone">
+                                    <p class="c-form__placeholder">Телефон<sup>*</sup></p>
+                                </div>
+
+                                <div class="c-form__inp-wrap">
+                                    <input type="email" class="c-form__input-text c-form__input" placeholder="" required name="email">
+                                    <p class="c-form__placeholder">Email<sup>*</sup></p>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="cru-address-form__group">
+                            <h3>Адрес доставки</h3>
+
+                            <div class="c-form__line select-line">
+                                <div class="c-form__inp-wrap">                
+                                    <div class="c-form__select-wrap">
+    
+                                        <select select-one class="c-form__select select-city" name="city">
+                                            <option value="Новосибирск" >Новосибирск</option>
+                                            <option value="НЕНовосибирск">НЕНовосибирск</option>
+                                            
+                                        </select>
+                                        <p class="c-form__select-label">Город<sup>*</sup></p>
+                                    </div>
+                                </div>
+    
+                                <div class="c-form__inp-wrap">                
+                                    <div class="c-form__select-wrap">
+    
+                                        <select select-one class="c-form__select select-street" name="street">
+                                            <option value="Гнесинных" >Гнесинных</option>
+                                            <option value="Другая улица">Другая улица</option>                                            
+                                        </select>
+                                        <p class="c-form__select-label">Улица<sup>*</sup></p>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="c-form__line">
+                                <div class="c-form__inp-wrap">
+                                    <input type="text" class="c-form__input-text c-form__input" placeholder="" required name="house-number">
+                                    <p class="c-form__placeholder">Дом<sup>*</sup></p>
+                                </div>
+                                <div class="c-form__inp-wrap">
+                                    <input type="text" class="c-form__input-text c-form__input" placeholder=""  name="building">
+                                    <p class="c-form__placeholder">Корпус</p>
+                                </div>
+                            </div>
+    
+                            <div class="c-form__line">
+                                <div class="c-form__inp-wrap">
+                                    <div class="c-form__line inner">
+                                        <div class="c-form__inp-wrap">
+                                            <input type="text" class="c-form__input-text c-form__input" placeholder=""  name="flat-number">
+                                            <p class="c-form__placeholder">Квартира/офис *</p>
+                                        </div>
+                                        <div class="c-form__inp-wrap">
+                                            <div class="c-checkbox-container">
+                                                <input type="checkbox" name="private-house" id="private-house" value="Частный дом" class="c-checkbox">
+                                                <label for="private-house"><img src="assets/img/icons/filter-checkbox-arrow.svg" alt=""></label>
+                                                <label for="private-house">Частный дом</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="c-form__inp-wrap">
+                                    <input type="text" class="c-form__input-text c-form__input" placeholder=""  name="intercom">
+                                    <p class="c-form__placeholder">Домофон</p>
+                                </div>
+                            </div>
+    
+                            <div class="c-form__line">
+                                <div class="c-form__inp-wrap">
+                                    <input type="text" class="c-form__input-text c-form__input" placeholder="" required name="entrance">
+                                    <p class="c-form__placeholder">Подъезд</p>
+                                </div>
+                                <div class="c-form__inp-wrap">
+                                    <input type="text" class="c-form__input-text c-form__input" placeholder=""  name="floor">
+                                    <p class="c-form__placeholder">Этаж</p>
+                                </div>
+                            </div>
+    
+    
+                            <div class="c-form__line width-100">
+                                <div class="c-form__inp-wrap">
+                                    <textarea class="c-form__input-text c-form__textarea" placeholder="" name="comment"></textarea>
+                                    <p class="c-form__placeholder">Ваш комментарий для курьера</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cru-address-form__group">
+                            <h3>Время доставки</h3>
+
+                            <div class="c-form__line select-line">
+                                <div class="c-form__inp-wrap">                
+                                    <div class="c-form__select-wrap">
+
+                                        <div class="c-form__inp-wrap">
+                                            <input type="text" class="c-form__input-text c-form__input" id="datepicker" placeholder=""  required name="date-delivery">
+                                            <p class="c-form__placeholder">Дата доставки</p>
+                                            <div class="c-form__calendar-icon">
+                                                <img src="assets/img/icons/calendar.svg" alt="">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="c-form__inp-wrap">                
+                                    <div class="c-form__select-wrap">
+
+                                        <select select-one class="c-form__select select-time" name="time-delivery">
+                                            <option value="с 10 до 14 часов" selected>с 10 до 14 часов</option>
+                                            <option value="с 14 до 18 часов" >с 14 до 18 часов</option>
+                                            <option value="с 18 до 22 часов" >с 18 до 22 часов</option>
+                                                                               
+                                        </select>
+                                        <p class="c-form__select-label">Время</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cru-address-form__group">
+                            <h3>Оплата</h3>
+
+                            <div class="pay-methods">
+                                <label class="pay-method" for="payment-method-1">
+                                    <div class="pay-method__top c-radio">
+                                        <h3>Банковской картой 
+                                            курьеру</h3>
+                                        <input type="radio" value="0" name="payment-method" id="payment-method-1" checked>
+                                        <div class="c-radio__round">        
+                                        </div>
+                                    </div>
+                                    <p>Картами Visa, MasterCard, Мир </p>
+                                </label>
+
+
+                                <label class="pay-method" for="payment-method-2">
+                                    <div class="pay-method__top c-radio">
+                                        <h3>Наличными курьеру</h3>
+                                        <input type="radio" value="1" name="payment-method" id="payment-method-2" >
+                                        <div class="c-radio__round">        
+                                        </div>
+                                    </div>
+                                    <p>Оплата при получении </p>
+                                </label>
+
+                                <label class="pay-method" for="payment-method-3">
+                                    <div class="pay-method__top c-radio">
+                                        <h3>Банковской картой 
+                                            на сайте</h3>
+                                        <input type="radio" value="2" name="payment-method" id="payment-method-3" >
+                                        <div class="c-radio__round">        
+                                        </div>
+                                    </div>
+                                    <p>Картами Visa, MasterCard, Мир </p>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="cru-address-form__group f-t">
+                            <h3>Обратная связь</h3>
+                            <p>Выберите предпочтительный способ связи по заказу </p>
+
+                            <div class="feedback-types">
+                                <label class="feedback-type" for="feedback-type-1">
+                                        <h3>Телефонный звонок</h3>
+                                        <div class="c-radio">
+                                            <input type="radio" value="0" name="feedback-type" id="feedback-type-1" checked>
+                                            <div class="c-radio__round">        
+                                            </div>
+                                        </div>
+                                </label>
+
+                                <label class="feedback-type" for="feedback-type-2">
+                                    <h3>SMS</h3>
+                                    <div class="c-radio">
+                                        <input type="radio" value="0" name="feedback-type" id="feedback-type-2" >
+                                        <div class="c-radio__round">        
+                                        </div>
+                                    </div>
+                                </label>
+
+                            <label class="feedback-type" for="feedback-type-3">
+                                <h3>WhatsApp</h3>
+                                <div class="c-radio">
+                                    <input type="radio" value="0" name="feedback-type" id="feedback-type-3" >
+                                    <div class="c-radio__round">        
+                                    </div>
+                                </div>
+                            </label>
+
+                                
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="ordering__calc-col">
+                    <div class="cart-buy-panel">
+                        
+                        <ul class="cbp-details">
+                            <li class="cbp-details__item">
+                                Общий вес
+                                <span>~3,1 кг</span>
+                            </li>
+                            <li class="cbp-details__item free">
+                                Стоимость доставки
+                                <span>Бесплатно</span>
+                            </li>
+                            <li class="cbp-details__item">
+                                Товары (6)
+                                <span>1 777,30 ₽</span>
+                            </li>
+                            <li class="cbp-details__item sale">
+                                Скидка на товары
+                                <span>-74 ₽</span>
+                            </li>
+                            <li class="cbp-details__item promocode-sale sale">
+                                Скидка по промокоду
+                                <span>-374 ₽</span>
+                            </li>
+                            
+                        </ul>
+    
+                        <p class="cbp-calcs">
+                            <span>Итого</span>
+                            <span>1 312,30 ₽</span>
+                        </p>
+    
+                        <a href="ordering-thanks.html" class="btn-green">Оформить заказ</a>
+
+                        <p class="cbp-approve-rules">Завершая оформление заказа, я даю своё согласие на обработку персональных данных и подтверждаю ознакомление со сроками хранения товара в соответствии с <a href="#">указанными здесь условиями.</a></p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+</main>
+
+
+@@include('templates/welcome-modal.html')
+@@include('templates/feedback-modal.html')
+
+
+@@include('templates/footer.html')
+@@include('templates/foot.html')  

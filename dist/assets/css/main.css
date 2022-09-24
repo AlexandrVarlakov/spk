@@ -6425,6 +6425,37 @@ input::-webkit-inner-spin-button {
   .cabinet-cru-address .date-delivery {
     color: rgba(18, 18, 18, 0.4); }
 
+@media (max-width: 1024px) {
+  .cru-address-form__group > h3 {
+    font-size: 18px !important; } }
+
+.cru-address-form__group + .cru-address-form__group {
+  margin-top: 30px; }
+
+.cru-address-form__group.f-t h3 {
+  margin-bottom: 9px; }
+
+.cru-address-form__group.f-t > p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 120%;
+  color: rgba(18, 18, 18, 0.4);
+  margin-bottom: 20px; }
+
+.cbp-approve-rules {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 130%;
+  color: rgba(18, 18, 18, 0.4);
+  margin-top: 24px; }
+  .cbp-approve-rules a {
+    -webkit-transition: 300ms;
+    -o-transition: 300ms;
+    transition: 300ms;
+    color: #121212; }
+    .cbp-approve-rules a:hover {
+      color: #268E94; }
+
 .cru-address-form h3, .edit-address-form h3, .edit-date-delivery-form h3 {
   font-weight: 500;
   font-size: 20px;
@@ -7654,11 +7685,23 @@ a.or-info-item-value {
   .cbp-details__item span {
     color: #121212; }
 
+.ordering .cbp-details__item {
+  font-size: 16px; }
+  @media (max-width: 1024px) {
+    .ordering .cbp-details__item {
+      font-size: 14px; } }
+
+.ordering .cbp-details {
+  padding-top: 0; }
+
 .cbp-details__item + .cbp-details__item {
   margin-top: 8px; }
 
 .cbp-details__item.promocode-sale {
   display: none; }
+
+.cbp-details__item.free span {
+  color: #2DA0A6; }
 
 .cbp-details__item.sale span {
   color: #BF573F; }
@@ -7739,6 +7782,174 @@ a.or-info-item-value {
   @media (max-width: 480px) {
     .empty-cart__text-block {
       padding-top: 0px; } }
+
+.ordering-title-block {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 32px; }
+  @media (max-width: 1024px) {
+    .ordering-title-block {
+      margin-bottom: 24px; } }
+  @media (max-width: 680px) {
+    .ordering-title-block {
+      margin-bottom: 16px; } }
+  .ordering-title-block h1 {
+    margin-right: 20px; }
+    @media (max-width: 1024px) {
+      .ordering-title-block h1 {
+        -webkit-box-ordinal-group: 3;
+        -webkit-order: 2;
+            -ms-flex-order: 2;
+                order: 2; } }
+  .ordering-title-block .cc-prev-page {
+    padding: 10px 12px; }
+  @media (max-width: 1024px) {
+    .ordering-title-block {
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap; } }
+
+.cart-title-block__link-block .cc-prev-page {
+  margin-top: 0;
+  margin-bottom: 0; }
+  @media (max-width: 1024px) {
+    .cart-title-block__link-block .cc-prev-page {
+      display: inline-block;
+      font-size: 14px;
+      padding: 8px 14px; } }
+
+@media (max-width: 1024px) {
+  .cart-title-block__link-block {
+    display: initial;
+    width: 100%;
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;
+    margin-bottom: 18px; } }
+
+.ordering {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 20px;
+  -webkit-box-align: start;
+  -webkit-align-items: start;
+      -ms-flex-align: start;
+          align-items: start; }
+  .ordering .sh-note {
+    margin-top: 0; }
+  @media (max-width: 1080px) {
+    .ordering {
+      grid-template-columns: 9fr minmax(320px, 3fr); } }
+  @media (max-width: 680px) {
+    .ordering {
+      grid-gap: 32px;
+      grid-template-columns: 1fr; } }
+
+.ordering__form-col {
+  grid-column: 1 / 8; }
+  @media (max-width: 1280px) {
+    .ordering__form-col {
+      grid-column: 1 / 9; } }
+  @media (max-width: 1080px) {
+    .ordering__form-col {
+      grid-column: initial; }
+      .ordering__form-col .c-form__line.inner {
+        grid-template-columns: 1fr; } }
+  @media (max-width: 680px) {
+    .ordering__form-col .c-form__line.inner {
+      grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 360px) {
+    .ordering__form-col .c-form__line.inner {
+      grid-template-columns: 1fr; } }
+
+@media (max-width: 1080px) {
+  .ordering-form .c-form__line {
+    grid-template-columns: 1fr; } }
+
+.ordering__calc-col {
+  grid-column: 9 / 13; }
+  @media (max-width: 1080px) {
+    .ordering__calc-col {
+      grid-column: initial; } }
+
+.pay-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-gap: 20px; }
+  @media (max-width: 680px) {
+    .pay-methods {
+      grid-gap: 10px; } }
+
+.pay-method {
+  padding: 20px 20px 55px;
+  background: #EFF3F6;
+  border-radius: 8px;
+  cursor: pointer; }
+  @media (max-width: 680px) {
+    .pay-method {
+      padding: 20px 20px 24px; } }
+  .pay-method p {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    color: rgba(18, 18, 18, 0.4); }
+
+.feedback-type {
+  padding: 18px;
+  background: #EFF3F6;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer; }
+  .feedback-type h3 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    color: #121212;
+    margin-bottom: 0 !important; }
+
+.feedback-types {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-gap: 20px; }
+  @media (max-width: 680px) {
+    .feedback-types {
+      grid-gap: 10px; } }
+
+.pay-method__top {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .pay-method__top h3 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    color: #121212; }
+    @media (max-width: 680px) {
+      .pay-method__top h3 {
+        margin-bottom: 9px; } }
 
 @font-face {
   font-family: 'swiper-icons';

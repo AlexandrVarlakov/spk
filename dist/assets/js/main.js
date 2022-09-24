@@ -2457,9 +2457,9 @@ if ( selectTimeDeliveryNode )  {
 
 
 
-const cruAddressPage = document.querySelector('.cru-addreses-page');
+const cruAddressForm = document.querySelector('.cru-address-form');
 
-if ( cruAddressPage ){
+if ( cruAddressForm ){
   
   const selectCityNode = document.querySelector('.select-city');
 
@@ -2590,7 +2590,7 @@ if ( cartProducts.length ){
     
     btn.addEventListener( 'click', function(){
       
-      calcProduct( this, '.cpl-product', '.cpl-product-count__btn.plus', '.cpl-product-count__btn.minus',  '.cpl-product-count__qty', '.cpl-product-price__price', '.cpl-product-count__weight-group .cpl-product-count__qty', '+');
+      calcProductInCart( this, '.cpl-product', '.cpl-product-count__btn.plus', '.cpl-product-count__btn.minus',  '.cpl-product-count__qty', '.cpl-product-price__price', '.cpl-product-count__weight-group .cpl-product-count__qty', '+');
     });
     
   } ) 
@@ -2599,14 +2599,14 @@ if ( cartProducts.length ){
     
     btn.addEventListener( 'click', function(){
       
-      calcProduct( this, '.cpl-product', '.cpl-product-count__btn.plus', '.cpl-product-count__btn.minus',  '.cpl-product-count__qty', '.cpl-product-price__price', '.cpl-product-count__weight-group .cpl-product-count__qty', '-');
+      calcProductInCart( this, '.cpl-product', '.cpl-product-count__btn.plus', '.cpl-product-count__btn.minus',  '.cpl-product-count__qty', '.cpl-product-price__price', '.cpl-product-count__weight-group .cpl-product-count__qty', '-');
     });
     
   } ) 
 }
 
 
-function calcProduct(self, mainNodeSelector, incBtnSelector, decBtnSelector,  qtySelector, summPriceSelector, weightSelector, operation){
+function calcProductInCart(self, mainNodeSelector, incBtnSelector, decBtnSelector,  qtySelector, summPriceSelector, weightSelector, operation){
   
   if (self.hasAttribute('disabled')) return null;
   
