@@ -2607,6 +2607,9 @@ if ( cartProducts.length ){
 
 
 function calcProduct(self, mainNodeSelector, incBtnSelector, decBtnSelector,  qtySelector, summPriceSelector, weightSelector, operation){
+  
+  if (self.hasAttribute('disabled')) return null;
+  
   const product =  self.closest(mainNodeSelector);
 
   let qtyInCart = Number( product.getAttribute('data-in-cart') );
