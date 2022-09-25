@@ -789,277 +789,154 @@
 
             <div class="ordering-title-block">
 
-                <h1 class="h1">Оформление заказа</h1>
+                <h1 class="h1">Спасибо за заказ!</h1>
 
                 <div class="cart-title-block__link-block">
-                    <a href="cart.html" class="cc-prev-page transparent">
+                    <a href="catalog.html" class="cc-prev-page transparent">
                         <img src="assets/img/icons/arrow-prev-page.svg" alt="">
-                        <span>Вернуться в корзину</span>
+                        <span>Перейти в каталог</span>
                     </a>    
                 </div>
 
                 
             </div>
+        
+            <p class="ordering-thanks-text">Номер вашего заказа <b>11256478.</b> Стоимость вашего заказа <b>1703,30 ₽.</b>
+                В ближайшее время мы свяжемся с вами для уточнения деталей. Наш номер телефона <a href="tel:+78001008515">8 800 100 85 15</a>.</p>
 
+            <div class="ordering-thanks">
+                <div class="or-products-list">
+                    <h3>Состав заказа</h3>
 
+                    <div class="ordered-products">
+                        <div class="op-product">
 
-            <div class="ordering">
-                <div class="ordering__form-col">
-                    <div class="sh-note">
-                        <div class="sh-note__img">
-                            <img src="assets/img/help/info.svg" alt="">
-                        </div>
-                        <div class="sh-note__text-block">
-                            <p>Стоимость заказа может измениться и будет окончательно известна только после того, как мы проверим наличие товара и соберём вашу покупку. Мы свяжемся с вами для уточнения деталей заказа.</p>
-                        </div>
-                    </div>
-
-                    <form class="c-form cru-address-form">
-
-
-                        <div class="cru-address-form__personal-data cru-address-form__group" >
-                            <h3>Персональные данные</h3>
-                            <div class="c-form__line">
-                                <div class="c-form__inp-wrap">
-                                    <input type="text" class="c-form__input-text c-form__input" placeholder="" required name="name">
-                                    <p class="c-form__placeholder">Имя и отчество<sup>*</sup></p>
-                                </div>
-
-                                <div class="c-form__inp-wrap">
-                                    <input type="text" class="c-form__input-text c-form__input" placeholder=""  name="surname">
-                                    <p class="c-form__placeholder">Фамилия</p>
-                                </div>
+                            <div class="op-product__img">
+                                <img src="assets/img/products/sosiski/1.jpg" alt="">
                             </div>
-
-                            <div class="c-form__line">
-                                <div class="c-form__inp-wrap">
-                                    <input type="tel" class="c-form__input-text c-form__input" placeholder=""  required name="phone">
-                                    <p class="c-form__placeholder">Телефон<sup>*</sup></p>
-                                </div>
-
-                                <div class="c-form__inp-wrap">
-                                    <input type="email" class="c-form__input-text c-form__input" placeholder="" required name="email">
-                                    <p class="c-form__placeholder">Email<sup>*</sup></p>
-                                </div>
-                            </div>
-
-
-                        </div>
-
-                        <div class="cru-address-form__group">
-                            <h3>Адрес доставки</h3>
-
-                            <div class="c-form__line select-line">
-                                <div class="c-form__inp-wrap">                
-                                    <div class="c-form__select-wrap">
-    
-                                        <select select-one class="c-form__select select-city" name="city">
-                                            <option value="Новосибирск" >Новосибирск</option>
-                                            <option value="НЕНовосибирск">НЕНовосибирск</option>
-                                            
-                                        </select>
-                                        <p class="c-form__select-label">Город<sup>*</sup></p>
-                                    </div>
-                                </div>
-    
-                                <div class="c-form__inp-wrap">                
-                                    <div class="c-form__select-wrap">
-    
-                                        <select select-one class="c-form__select select-street" name="street">
-                                            <option value="Гнесинных" >Гнесинных</option>
-                                            <option value="Другая улица">Другая улица</option>                                            
-                                        </select>
-                                        <p class="c-form__select-label">Улица<sup>*</sup></p>
-                                    </div>
-                                </div>
-                            </div>
-    
-                            <div class="c-form__line">
-                                <div class="c-form__inp-wrap">
-                                    <input type="text" class="c-form__input-text c-form__input" placeholder="" required name="house-number">
-                                    <p class="c-form__placeholder">Дом<sup>*</sup></p>
-                                </div>
-                                <div class="c-form__inp-wrap">
-                                    <input type="text" class="c-form__input-text c-form__input" placeholder=""  name="building">
-                                    <p class="c-form__placeholder">Корпус</p>
-                                </div>
-                            </div>
-    
-                            <div class="c-form__line">
-                                <div class="c-form__inp-wrap">
-                                    <div class="c-form__line inner">
-                                        <div class="c-form__inp-wrap">
-                                            <input type="text" class="c-form__input-text c-form__input" placeholder=""  name="flat-number">
-                                            <p class="c-form__placeholder">Квартира/офис *</p>
-                                        </div>
-                                        <div class="c-form__inp-wrap">
-                                            <div class="c-checkbox-container">
-                                                <input type="checkbox" name="private-house" id="private-house" value="Частный дом" class="c-checkbox">
-                                                <label for="private-house"><img src="assets/img/icons/filter-checkbox-arrow.svg" alt=""></label>
-                                                <label for="private-house">Частный дом</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                                <div class="c-form__inp-wrap">
-                                    <input type="text" class="c-form__input-text c-form__input" placeholder=""  name="intercom">
-                                    <p class="c-form__placeholder">Домофон</p>
-                                </div>
-                            </div>
-    
-                            <div class="c-form__line">
-                                <div class="c-form__inp-wrap">
-                                    <input type="text" class="c-form__input-text c-form__input" placeholder="" required name="entrance">
-                                    <p class="c-form__placeholder">Подъезд</p>
-                                </div>
-                                <div class="c-form__inp-wrap">
-                                    <input type="text" class="c-form__input-text c-form__input" placeholder=""  name="floor">
-                                    <p class="c-form__placeholder">Этаж</p>
-                                </div>
-                            </div>
-    
-    
-                            <div class="c-form__line width-100">
-                                <div class="c-form__inp-wrap">
-                                    <textarea class="c-form__input-text c-form__textarea" placeholder="" name="comment"></textarea>
-                                    <p class="c-form__placeholder">Ваш комментарий для курьера</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="cru-address-form__group">
-                            <h3>Время доставки</h3>
-
-                            <div class="c-form__line select-line">
-                                <div class="c-form__inp-wrap">                
-                                    <div class="c-form__select-wrap">
-
-                                        <div class="c-form__inp-wrap">
-                                            <input type="text" class="c-form__input-text c-form__input" id="datepicker" placeholder=""  required name="date-delivery">
-                                            <p class="c-form__placeholder">Дата доставки</p>
-                                            <div class="c-form__calendar-icon">
-                                                <img src="assets/img/icons/calendar.svg" alt="">
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-
-                                <div class="c-form__inp-wrap">                
-                                    <div class="c-form__select-wrap">
-
-                                        <select select-one class="c-form__select select-time" name="time-delivery">
-                                            <option value="с 10 до 14 часов" selected>с 10 до 14 часов</option>
-                                            <option value="с 14 до 18 часов" >с 14 до 18 часов</option>
-                                            <option value="с 18 до 22 часов" >с 18 до 22 часов</option>
-                                                                               
-                                        </select>
-                                        <p class="c-form__select-label">Время</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="cru-address-form__group">
-                            <h3>Оплата</h3>
-
-                            <div class="pay-methods">
-                                <label class="pay-method" for="payment-method-1">
-                                    <div class="pay-method__top c-radio">
-                                        <h3>Банковской картой 
-                                            курьеру</h3>
-                                        <input type="radio" value="0" name="payment-method" id="payment-method-1" checked>
-                                        <div class="c-radio__round">        
-                                        </div>
-                                    </div>
-                                    <p>Картами Visa, MasterCard, Мир </p>
-                                </label>
-
-
-                                <label class="pay-method" for="payment-method-2">
-                                    <div class="pay-method__top c-radio">
-                                        <h3>Наличными курьеру</h3>
-                                        <input type="radio" value="1" name="payment-method" id="payment-method-2" >
-                                        <div class="c-radio__round">        
-                                        </div>
-                                    </div>
-                                    <p>Оплата при получении </p>
-                                </label>
-
-                                <label class="pay-method" for="payment-method-3">
-                                    <div class="pay-method__top c-radio">
-                                        <h3>Банковской картой 
-                                            на сайте</h3>
-                                        <input type="radio" value="2" name="payment-method" id="payment-method-3" >
-                                        <div class="c-radio__round">        
-                                        </div>
-                                    </div>
-                                    <p>Картами Visa, MasterCard, Мир </p>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <div class="cru-address-form__group f-t">
-                            <h3>Обратная связь</h3>
-                            <p>Выберите предпочтительный способ связи по заказу </p>
-
-                            <div class="feedback-types">
-                                <label class="feedback-type" for="feedback-type-1">
-                                        <h3>Телефонный звонок</h3>
-                                        <div class="c-radio">
-                                            <input type="radio" value="0" name="feedback-type" id="feedback-type-1" checked>
-                                            <div class="c-radio__round">        
-                                            </div>
-                                        </div>
-                                </label>
-
-                                <label class="feedback-type" for="feedback-type-2">
-                                    <h3>SMS</h3>
-                                    <div class="c-radio">
-                                        <input type="radio" value="0" name="feedback-type" id="feedback-type-2" >
-                                        <div class="c-radio__round">        
-                                        </div>
-                                    </div>
-                                </label>
-
-                            <label class="feedback-type" for="feedback-type-3">
-                                <h3>WhatsApp</h3>
-                                <div class="c-radio">
-                                    <input type="radio" value="0" name="feedback-type" id="feedback-type-3" >
-                                    <div class="c-radio__round">        
-                                    </div>
-                                </div>
-                            </label>
-
+                            <div class="op-product__nw">
+                                <p class="op-product__name">Сосиски Баварские</p>
+                                <div class="op-product__weight">0,36 кг </div>
                                 
                             </div>
+                            <div class="op-product__qty">
+                                <span>2 шт.</span>
+                            </div>
+
+                            <div class="op-product__price-block">
+                                <p class="op-product__price">260 ₽</p>
+                                <p class="op-product__price-detail">130 ₽ за 1 шт.</p>
+                            </div>
                         </div>
 
-                    </form>
+                        <div class="op-product">
+
+                            <div class="op-product__img">
+                                <img src="assets/img/products/sosiski/2.jpg" alt="">
+                            </div>
+                            <div class="op-product__nw">
+                                <p class="op-product__name">Сокраменто</p>
+                                <div class="op-product__weight">~0,7 кг 
+                                    <div class="product-card__question" data-tippy-content="Точная стоимость товара зависит от веса и будет известна после сборки заказа.">?</div>
+                                </div>                                        
+                            </div>
+                            <div class="op-product__qty">
+                                <span>1шт. ~0,7 кг</span>
+                            </div>
+                            <div class="op-product__price-block">
+                                <p class="op-product__price">622,30 ₽</p>
+                                <p class="op-product__price-detail">889 ₽ за 1 кг</p>
+                            </div>
+                        </div>
+
+
+                        <div class="op-product promo">
+
+                            <div class="op-product__img">
+                                <div class="promo-label">Акция</div>
+                                <img src="assets/img/products/sosiski/3.jpg" alt="">
+                            </div>
+                            <div class="op-product__nw">
+                                <p class="op-product__name">Говядина Мякоть</p>
+                                <div class="op-product__weight">~1 кг 
+                                    <div class="product-card__question" data-tippy-content="Точная стоимость товара зависит от веса и будет известна после сборки заказа.">?</div>
+                                </div>                                        
+                            </div>
+                            <div class="op-product__qty">
+                                <span>1 шт. ~1 кг</span>
+                            </div>
+                            <div class="op-product__price-block">
+                                <p class="op-product__price">451 ₽ <span class="op-product__old-price">525 ₽/кг</span></p>
+                                <p class="op-product__price-detail">451 ₽ за 1 шт.</p>
+                            </div>
+                        </div>
+
+                        <div class="op-product">
+
+                            <div class="op-product__img">
+                                <img src="assets/img/products/sosiski/4.jpg" alt="">
+                            </div>
+                            <div class="op-product__nw">
+                                <p class="op-product__name">Сосиски Большая SOSиска</p>
+                                <div class="op-product__weight">0,34 кг </div>                                        
+                            </div>
+                            <div class="op-product__qty">
+                                <span>2шт.</span>
+                            </div>
+                            <div class="op-product__price-block">
+                                <p class="op-product__price">370 ₽</p>
+                                <p class="op-product__price-detail">185 ₽ за шт.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="ordering__calc-col">
+
+                <div class="ordering-thanks__ordering-data">
+                    <h3>Детали заказа</h3>
+
                     <div class="cart-buy-panel">
                         
                         <ul class="cbp-details">
+
+
                             <li class="cbp-details__item">
-                                Общий вес
+                                <span class="title">Получатель</span>
+                                <span>Александровский Константин</span>
+                            </li>
+
+                            <li class="cbp-details__item">
+                                <span class="title">Время доставки</span>
+                                <span>Сегодня (9 ноября) с 10 до 14 часов</span>
+                            </li>
+                            <li class="cbp-details__item">
+                                <span class="title">Адрес доставки</span>
+                                <span>Новосибирск, улица Гнесиных, дом 10/1, квартира/офис 1101</span>
+                            </li>
+                            
+                            <li class="cbp-details__item">
+                                <span class="title">Номер заказа</span>
+                                <span>11256478</span>
+                            </li>
+
+                            <li class="cbp-details__item">
+                                <span class="title">Общий вес</span>
                                 <span>~3,1 кг</span>
                             </li>
+
                             <li class="cbp-details__item free">
-                                Доставка
+                                <span class="title">Стоимость доставки</span>
                                 <span>Бесплатно</span>
                             </li>
                             <li class="cbp-details__item">
-                                Товары (6)
+                                <span class="title">Товары (6)</span>
                                 <span>1 777,30 ₽</span>
                             </li>
                             <li class="cbp-details__item sale">
-                                Скидка на товары
+                                <span class="title">Скидка на товары</span>
                                 <span>-74 ₽</span>
                             </li>
                             <li class="cbp-details__item promocode-sale sale">
-                                Скидка по промокоду
+                                <span class="title">Скидка по промокоду</span>
                                 <span>-374 ₽</span>
                             </li>
                             
@@ -1068,9 +945,8 @@
                         <p class="cbp-calcs">
                             <span>Итого</span>
                             <span>1 312,30 ₽</span>
-                        </p>
-    
-                        <a href="orderdering.html" class="btn-green">Оформить заказ</a>
+                        </p>   
+                       
                     </div>
                 </div>
             </div>
@@ -1081,9 +957,9 @@
 </main>
 
 
-<div class="modal welcome-modal">
+<div class="modal welcome-modal ">
     <div class="modal__close"></div>
-    <div class="modal__body">
+    <div class="modal__body welcome-body">
         <h3 class="modal__title">Добро пожаловать!</h3>
 
         <p class="modal__subtitle">Введите ваш номер телефона, чтобы 
@@ -1107,8 +983,40 @@
             </div>
         </form>
     </div>
-    
 
+    <div class="modal__body enter-wp__body">
+        <h3 class="modal__title">Войти с паролем</h3>
+
+        
+        <form class="c-form welcome-form-password">
+            <div class="c-form__line width-100">
+                <div class="c-form__inp-wrap">
+                    <input type="text" class="c-form__input-text c-form__input" placeholder=""  required name="login">
+                    <p class="c-form__placeholder">Номер телефона или Email</p>
+                </div>
+            </div>
+
+            <div class="c-form__line width-100">
+                <div class="c-form__inp-wrap">
+                    <input type="password" class="c-form__input-text c-form__input" placeholder="" minlength="8" required="" name="password">
+                    <p class="c-form__placeholder">Пароль</p>
+                    <button class="c-form__show-hide-password"></button>
+                    <span class="miss-password">Неверный пароль</span>
+                </div>
+            </div>
+
+            <div class="c-form__line width-100">
+                <div class="c-form__inp-wrap">
+                    <button class="c-form__btn">Войти</button>
+
+                    <a class="c-form__forgot-password" href="#">Забыли пароль?</a>
+                </div>
+            </div>
+
+            
+        </form>
+    </div>
+    
     <div class="modal__footer">
         <p>Нажимая на кнопку вы даёте согласие на сбор 
             и обработку <a href="#">персональных данных</a></p>
@@ -1138,14 +1046,14 @@
 
             <div class="c-form__line width-100 type-connect-phone">
                 <div class="c-form__inp-wrap">
-                    <input type="text" class="c-form__input-text c-form__input" placeholder="" minlength="16" required name="phone">
+                    <input type="text" class="c-form__input-text c-form__input" placeholder="" minlength="16"  name="phone">
                     <p class="c-form__placeholder">Номер телефона</p>
                 </div>
             </div>
 
             <div class="c-form__line width-100 hide type-connect-email">
                 <div class="c-form__inp-wrap">
-                    <input type="email" class="c-form__input-text c-form__input" placeholder="" required name="email">
+                    <input type="email" class="c-form__input-text c-form__input" placeholder=""  name="email">
                     <p class="c-form__placeholder">Email</p>
                 </div>
             </div>
@@ -1344,6 +1252,7 @@
             <li><a href="cabinet-feedback.html">cabinet-feedback</a></li>
             <li><a href="cart.html">cart</a></li>
             <li><a href="ordering.html">ordering</a></li>
+            <li><a href="ordering-thanks.html">ordering-thanks</a></li>
         </ol>
         
         

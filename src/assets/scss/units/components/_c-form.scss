@@ -600,3 +600,33 @@
 		transform: translate(0, 0);
 	}
 }
+
+.c-form__forgot-password{
+	display: inline-block;
+	color: #2DA0A6;
+	transition: 300ms;
+	margin-top: 15px;
+	font-size: 14px;
+	&:hover{
+		color: #268E94;
+	}
+}
+.enter-wp__body{
+	display: none;
+}
+.modal.enter-wp{
+	padding-bottom: 40px;
+	.welcome-body{
+		display: none;
+		
+	}
+
+	.enter-wp__body{
+		display: initial;
+	}
+
+	.modal__footer{
+		display: none;
+	}
+
+}

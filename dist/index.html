@@ -2060,9 +2060,9 @@
 
 
 
-<div class="modal welcome-modal">
+<div class="modal welcome-modal ">
     <div class="modal__close"></div>
-    <div class="modal__body">
+    <div class="modal__body welcome-body">
         <h3 class="modal__title">Добро пожаловать!</h3>
 
         <p class="modal__subtitle">Введите ваш номер телефона, чтобы 
@@ -2086,8 +2086,40 @@
             </div>
         </form>
     </div>
-    
 
+    <div class="modal__body enter-wp__body">
+        <h3 class="modal__title">Войти с паролем</h3>
+
+        
+        <form class="c-form welcome-form-password">
+            <div class="c-form__line width-100">
+                <div class="c-form__inp-wrap">
+                    <input type="text" class="c-form__input-text c-form__input" placeholder=""  required name="login">
+                    <p class="c-form__placeholder">Номер телефона или Email</p>
+                </div>
+            </div>
+
+            <div class="c-form__line width-100">
+                <div class="c-form__inp-wrap">
+                    <input type="password" class="c-form__input-text c-form__input" placeholder="" minlength="8" required="" name="password">
+                    <p class="c-form__placeholder">Пароль</p>
+                    <button class="c-form__show-hide-password"></button>
+                    <span class="miss-password">Неверный пароль</span>
+                </div>
+            </div>
+
+            <div class="c-form__line width-100">
+                <div class="c-form__inp-wrap">
+                    <button class="c-form__btn">Войти</button>
+
+                    <a class="c-form__forgot-password" href="#">Забыли пароль?</a>
+                </div>
+            </div>
+
+            
+        </form>
+    </div>
+    
     <div class="modal__footer">
         <p>Нажимая на кнопку вы даёте согласие на сбор 
             и обработку <a href="#">персональных данных</a></p>
@@ -2117,14 +2149,14 @@
 
             <div class="c-form__line width-100 type-connect-phone">
                 <div class="c-form__inp-wrap">
-                    <input type="text" class="c-form__input-text c-form__input" placeholder="" minlength="16" required name="phone">
+                    <input type="text" class="c-form__input-text c-form__input" placeholder="" minlength="16"  name="phone">
                     <p class="c-form__placeholder">Номер телефона</p>
                 </div>
             </div>
 
             <div class="c-form__line width-100 hide type-connect-email">
                 <div class="c-form__inp-wrap">
-                    <input type="email" class="c-form__input-text c-form__input" placeholder="" required name="email">
+                    <input type="email" class="c-form__input-text c-form__input" placeholder=""  name="email">
                     <p class="c-form__placeholder">Email</p>
                 </div>
             </div>
@@ -2323,6 +2355,7 @@
             <li><a href="cabinet-feedback.html">cabinet-feedback</a></li>
             <li><a href="cart.html">cart</a></li>
             <li><a href="ordering.html">ordering</a></li>
+            <li><a href="ordering-thanks.html">ordering-thanks</a></li>
         </ol>
         
         

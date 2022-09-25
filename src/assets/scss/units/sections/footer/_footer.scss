@@ -275,7 +275,7 @@
 .footer__quetstion-block{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    
     padding-top: 12px;
     min-width: 220px;
     p{
@@ -295,7 +295,7 @@
             font-size: 13px;
         }
     }
-
+    
 
     @media (max-width: 480px){
         grid-column: 1 / -1;
@@ -335,7 +335,7 @@
     color: #FFFFFF;
     padding: 12px 0;
 
-    margin-top: 16px;
+    margin-top: 32px;
 
     img{
         margin-right: 8px;
@@ -343,6 +343,10 @@
 
     &:hover{
         background-color: #268E94;;
+    }
+
+    @media (max-width: 680px){
+        margin-top: 24px;   
     }
 }
 

@@ -193,3 +193,116 @@
     
 }
 
+.ordering-thanks-text{    
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+    color: rgba(18, 18, 18, 0.5);
+    white-space: pre-line;
+    a, b{
+        color: #121212;
+        white-space: nowrap;
+    }
+
+    a{
+        transition: 300ms;
+        
+        &:hover{
+            color: #268E94;
+        }
+    }
+
+    @media (max-width: 1024px){
+        font-size: 16px;
+    }
+    @media (max-width: 680px){
+        font-size: 14px;
+    }
+
+    margin-bottom: 48px;
+
+    @media (max-width: 1024px){
+        margin-bottom: 38px;
+    }
+}
+
+.ordering-thanks{
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    grid-gap: 20px;
+
+
+    .or-products-list{
+        margin-top: 0;
+    }
+
+    @media (max-width: 680px){
+        grid-template-columns: 1fr;
+        grid-gap: 24px;
+
+        .cart-buy-panel{
+            max-width: initial;
+        }
+    }
+
+    
+}
+
+.ordering-thanks__ordering-data{
+    h3{
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 130%;
+        color: #121212;
+        margin-bottom: 16px;
+
+        @media (max-width: 1024px){
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+    }
+    .cbp-details__item + .cbp-details__item{
+        margin-top: 10px;
+    }
+    .cbp-details__item{
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        grid-gap: 20px;
+
+        @media (max-width: 680px){
+            grid-template-columns: 1fr 1fr;
+        }
+        .title{
+            color: rgba(18, 18, 18, 0.5);
+        }
+        
+    }
+    .cart-buy-panel{
+        background: #EFF3F6;
+        border-radius: 12px;
+        border: none;    
+        padding: 30px 20px 32px;
+
+        display: grid;
+        
+    }
+
+    
+    .cbp-calcs{
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        grid-gap: 20px;
+
+        @media (max-width: 680px){
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .cbp-details{
+        padding-top: 0;
+    }
+
+    .cbp-calcs{
+        margin-bottom: 0;
+    }
+}

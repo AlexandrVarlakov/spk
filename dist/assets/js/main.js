@@ -69,13 +69,7 @@ hCatalogBtn.addEventListener('mouseenter', function(event){
   if ( windowWidth > 1024 ){
     
     opendesktopCatalog(event)
-  } else{
-    //event.preventDefault();
-    //document.body.classList.add('hide-scroll');
-    //mobileCatalog.classList.add('open');
-    
-  }
-
+  } 
   
 });
 
@@ -88,12 +82,7 @@ hCatalogBtn.addEventListener('click', function(event){
     mobileCatalog.classList.add('open');
     
     event.preventDefault();
-  } else{
-    
-    
-    
-  }
-
+  } 
   
 });
 
@@ -143,8 +132,7 @@ desktopCatalogInner.addEventListener('mouseleave', function(){
   closeDesktopCatalog()
 })
 
-function opendesktopCatalog(event){
-  
+function opendesktopCatalog(event){ 
 
   if (!desktopCatalog.classList.contains('open')){
     hamburgerMenu.classList.remove('open');
@@ -152,10 +140,7 @@ function opendesktopCatalog(event){
     desktopCatalog.classList.add('open');
     dhParentHeight = dhParent.offsetHeight;
     
-  } else {
-    //closeDesktopCatalog()
-  }
-
+  } 
 }
 
 
@@ -268,26 +253,10 @@ deskParentItems.forEach( (item) => {
     }
   })
 
-
-  item.addEventListener('mouseleave', function(event){
-
-    /*
-    dhParent.style.height = dhParentHeight +'px';
-    this.classList.remove('mouseenter');
-    dhParent.classList.remove('has-child');
-    */
-    
-      
-    
-  })
-
-
   item.addEventListener('click', function(event){
     if ( this.classList.contains('mouseenter') ){
       return null
     } else{
-      
-      
       
             
       if ( !this.classList.contains('openclick')){
@@ -375,22 +344,7 @@ dcChildItems.forEach( item => {
 
     
   })
-  item.addEventListener('mouseleave', function(){
-    /*
-    let childContainer = this.closest('.dc-child');
-    this.classList.remove('mouseenter');
-    if ( bufChildHeight <  dhParentHeight){
-      dhParent.style.height = dhParentHeight  + 'px';
-      childContainer.style.height = dhParentHeight  + 'px';
-    } else{
-      dhParent.style.height = bufChildHeight  + 'px';
-      childContainer.style.height = bufChildHeight  + 'px';
-    }*/
-     
-     //dhParent.style.height = dhParentHeight  + 'px';
-  })
-
-
+  
   item.addEventListener('click', function(event){
 
     event.stopPropagation();
@@ -408,22 +362,17 @@ dcChildItems.forEach( item => {
         if ( opened  ){
           opened.classList.remove('openclick');
           
-        }
-        
-        
+        }       
   
         this.classList.add('openclick');
   
   
-        if ( childList ){
-          
+        if ( childList ){          
           
           childContainer.style.height = childList.clientHeight + 'px';
           
           dhParent.style.height = childList.clientHeight + 'px';
-          
-          
-          
+ 
         } else{
           
           if ( bufChildHeight <  dhParentHeight){
@@ -442,8 +391,6 @@ dcChildItems.forEach( item => {
         childContainer.style.height = bufChildHeight  + 'px';
         this.classList.remove('openclick')
       }
-
-
     }
   })
 } )
@@ -554,7 +501,6 @@ let indexPromoSlider = new Swiper(".ia-slider__swiper", {
   Промо-слайдер на index
 */
 
-
 /*Карточки товаров*/
 
 //Слайдеры
@@ -574,14 +520,6 @@ if ( cardProductSliders.length ){
     
   });
 }
-
-
-
-
-
-
-
-
 
 //Добавление в корзину
 const addProductToCartBtns = document.querySelectorAll('.product-card__add-cart');
@@ -669,18 +607,12 @@ if ( plusProductInCartBtns.length ){
   } )
 }
 
-
-
-
 const minusProductInCartBtns = document.querySelectorAll('.product-card__minus');
 
 if ( minusProductInCartBtns.length ){
   minusProductInCartBtns.forEach( btn => {
     let card = btn.closest('.product-card');
 
-    
-
-    
     btn.addEventListener('click', function(){
       
       
@@ -713,9 +645,6 @@ if ( minusProductInCartBtns.length ){
         card.setAttribute('data-in-cart', '0');
       }
       
-      
-
-
     } )
 
   })
@@ -784,8 +713,6 @@ let popularProductsSlider = new Swiper(".popular-products__swiper", {
     }
 })
 
-
-
 /*
   Конец: Слайдер популярные товары
 */
@@ -818,59 +745,7 @@ let ideasSlider = new Swiper(".i-ideas-desk__swiper", {
 
 
 
-/*Форма голосования*/
 
-
-const surveyForm = document.querySelector('.survey-form');
-const surveyResults = document.querySelector('.survey-results')
-
-if ( surveyForm ) {
-  surveyForm.addEventListener( 'submit', function(event){
-    event.preventDefault();
-
-
-    this.classList.add('hide');  
-
-    surveyResults.classList.remove('hide');
-
-
-  } )
-}
-
-
-const surveyRadios = document.querySelectorAll('.survey-form input[type="radio"]');
-const  surveyResultBlock = document.querySelectorAll('.survey-results__block');
-const reSurvey = document.querySelector('.survey-results__resurvey');
-
-
-if ( surveyRadios.length ){
-
-  surveyRadios.forEach( (radio, index) => {
-    radio.addEventListener( 'change', function(){
-      surveyResultBlock.forEach( block => {
-        block.classList.remove('selected');
-      })
-
-      surveyResultBlock[index].classList.add('selected');
-
-    } )
-
-
-    reSurvey.addEventListener('click', function(){
-      surveyForm.classList.remove('hide');
-      surveyResults.classList.add('hide');
-    })
-
-  })
-
-}
-
-/*
-  КОНЕЦ:
-  Форма голосования
-
-  
-*/
 
 /*Слайдер бренды*/
 
@@ -955,11 +830,6 @@ function init () {
 }
 }
 
-
-
-
-
-
 /*
 Конец: карта
 */
@@ -1026,110 +896,6 @@ let  optionsPromoDetail = {
 /*Конец: Настройки модальных окон*/
 
 
-/*Модальная форма Добро пожаловать */
-let singInBtns = document.querySelectorAll('.sing-in-btn');
-
-
-singInBtns.forEach( btn => {
-  btn.addEventListener( 'click', function(event){
-    let welcomeModal = new easyModal('.welcome-modal', options);
-  } )
-} )
-  
-const welcomeForm = document.querySelector('.welcome-form');
-
-welcomeForm.addEventListener('submit', function(event){
-  event.preventDefault();
-})
-
-
-const enterWithPasswordBtn = document.querySelector('.c-form__enter-with-password')
-enterWithPasswordBtn.addEventListener('click', function(event){
-  event.preventDefault();
-})
-
-
-/* 
-  Конец: 
-  Модальная форма Добро пожаловать
-*/
-
-
-
-/*Вызов формы обратной связи*/
-
-const callFeedBackModalBtn = document.querySelector('.f-btn-feedback');
-
-callFeedBackModalBtn.addEventListener('click', function(event){
-  let feedbackModal = new easyModal('.feedback-modal', options);
-})
-  
-  const selectFeedbackTypeNode = document.querySelector('.select-feedback-type');
-  
-  const selectFeedbackType = new Choices(selectFeedbackTypeNode, {
-    searchEnabled: false,
-    itemSelectText: '',
-  });
-
-
-
-
-
-  const feedbackFile = document.querySelectorAll('.feedback-file');
-  const addFeedBackFileBtn = document.querySelectorAll('.c-from__add-file');
-  const clearFile = document.querySelectorAll('.c-from__add-file--clear');
-
-
-  addFeedBackFileBtn.forEach( ( btn, index) => {
-    btn.addEventListener('click', function(){
-      feedbackFile[index].click();
-    })
-  } )
-
-  feedbackFile.forEach( (f, index) => {
-    f.addEventListener('change', function(){
-      let p = addFeedBackFileBtn[index].querySelector('p');
-      p.innerHTML = this.files[0].name;
-      clearFile[index].classList.add('show');
-    })
-  })
-
-  
-  clearFile.forEach( (btn, index) => {
-    btn.addEventListener('click', function(){
-      this.classList.remove('show')
-      let p = addFeedBackFileBtn[index].querySelector('p');
-      p.innerHTML = 'Прикрепить файл';
-      feedbackFile[index].value = '';
-    })
-  })
-
-
-  
-
-
-  selectFeedbackTypeNode.addEventListener('change', function(){
-    const formNode = this.closest('form');
-
-    const emailLine = formNode.querySelector('.type-connect-email');
-    const phoneLine = formNode.querySelector('.type-connect-phone');
-
-    switch (this.value){
-      case '2':
-        emailLine.classList.remove('hide');
-        phoneLine.classList.add('hide');
-      break;
-
-      default: 
-        phoneLine.classList.remove('hide');
-        emailLine.classList.add('hide');
-    }    
-  });
-/*
-КОНЕц
-Вызов формы обратной связи*/
-
-
 /*Подключаем маски */
 const phoneMasks = document.querySelectorAll("input[name='phone']");
 
@@ -1138,10 +904,6 @@ phoneMasks.forEach( (input) => {
         input, {
           mask: '+7(000)000-00-00'
     });
-
-
-   
-
 })
 
 /**/
@@ -1187,7 +949,6 @@ if ( selectHelpTabsNode ){
     shouldSort: false,
   });
 
-
   selectHelpTabsNode.addEventListener( 'change', function(event){
 
     const activeSheet = document.querySelector('.help-sheets__sheet.current');
@@ -1205,8 +966,6 @@ if ( selectHelpTabsNode ){
   } )
 
 }
-
-
 
 
 if ( helpTabs.length ){
@@ -1228,8 +987,6 @@ if ( helpTabs.length ){
       } else {
         return null
       }
-
-
 
     })
 
@@ -1265,7 +1022,6 @@ if ( helpTabs.length ){
   страница Помощь
 
 */
-
 
 /*
   Каталог категории
@@ -1358,8 +1114,6 @@ if ( selectFeedbackTypeNodePage ){
     itemSelectText: '',
   });
 
-
-
   selectFeedbackTypeNodePage.addEventListener('change', function(){
     const formNode = this.closest('form');
   
@@ -1378,8 +1132,6 @@ if ( selectFeedbackTypeNodePage ){
     }    
   });
 }
-
-
 
 /*
 Конец:
@@ -1417,9 +1169,6 @@ if ( showHideFilterBtn.length ){
       }
     }
   })
-
-
-
 
   showHideFilterBtn.forEach( btn => {
 
@@ -1567,19 +1316,12 @@ let proxyFilters = new Proxy(filtersArray, {
     }
     
     //console.log('!!!!!!!!!!!!!!!!!!!!', proxyFilters.clearAllTag);
-    
 
-    
-    
-
-    
-    
     return true;
   },
   
 
 }); 
-
 
 let proxyCheckboxes = new Proxy(proxyFilters.checkboxes, {
   
@@ -1681,9 +1423,6 @@ let proxySlides = new Proxy(proxyFilters.tagSlides, {
     return true;
   }
 })
-
-
-
 
 const rangeSlider = document.getElementById('range-slider');
 let tagClearAllFilters;
@@ -1787,49 +1526,12 @@ if ( rangeSlider ){
     inpStartRangeD.value = value[0];
     inpEndRangeD.value = value[1];
     
-    
-
     proxyFilters.rangeValue = value;
     console.log (proxyFilters.rangeValue);
-    //createRangeTag(value);
-
-        
-
-
+    
   });
 
 }
-
-/*
-function createRangeTag(value){
-  let rangeTag = document.querySelector('.tags-swiper__tag-name.range');
-  let tags = document.querySelectorAll('.swiper-slide.tags-swiper__slide');
-  let swiperWrappper = document.querySelector('.tags-swiper > .swiper-wrapper');
-  
-
-
-  
-  if ( !rangeTag ) {
-    if ( tags.length ){
-      console.log(tagClearAllFilters);
-      tagClearAllFilters.before(createTag(this.id, value, 'range'));
-    } else {
-      tagClearAllFilters = createTag('', 'Очистить все', 'clearAllFilters');
-      
-      swiperWrappper.append(tagClearAllFilters);
-      tagClearAllFilters.before(createTag(this.id, value, 'range'));
-      
-    }
-  } else {
-    let ragneTagMinValue = document.querySelector('.tags-swiper__min-value');
-    let ragneTagMaxValue = document.querySelector('.tags-swiper__max-value');
-    ragneTagMinValue.innerHTML = value[0];
-    ragneTagMaxValue.innerHTML = value[1];
-    
-  }
-}*/
-
-
 
 const filterCheckboxes = document.querySelectorAll('.filter-checkbox');
 
@@ -1877,7 +1579,6 @@ function checkboxUncheck(){
   
 }
 
-
 function resetComponentRangeSlider(){
   const inpStartRangeD = document.querySelector('.prices-inp-ranges__input.start-range-d');   
   const inpEndRangeD = document.querySelector('.prices-inp-ranges__input.end-range-d');  
@@ -1889,7 +1590,6 @@ function resetComponentRangeSlider(){
   rangeSlider.noUiSlider.set([minValue, maxValue]);
 }
 
-
 function resetRangeSlider(){
   
   resetComponentRangeSlider();
@@ -1898,13 +1598,11 @@ function resetRangeSlider(){
   
 }
 
-
 function clearAllFilters(){
   for ( item in proxyCheckboxes) {
     delete proxyCheckboxes[item];
   }
 }
-
 
 function createTag(id, value, type){
 
@@ -1970,20 +1668,13 @@ function createTag(id, value, type){
 }
 
 
-
-
-
 let filterTagsSlider = new Swiper(".tags-swiper", {
     speed: 1000,
     
     slidesPerView: 'auto',
     spaceBetween: 4,
     observer: true,
-    //observeParents: true,
-    //observeSlideChildren: true
 })
-
-
 
 const plSort = document.querySelector('.pl-sort');
 const plSortTitle = document.querySelector('.pl-sort__title');
@@ -2034,9 +1725,6 @@ if ( btnOpenMobFilter ){
   btnOpenMobFilter.addEventListener('click', function(){
     document.querySelector('.container-products-list__filters').classList.add('open')
   })
-
-
-  
 }
 
 /*
@@ -2086,9 +1774,6 @@ const ptSlider = new Swiper(".pt-slider", {
       }
   }
 })
-
-
-
 /*
   Конец:
   Страница продукты
@@ -2096,9 +1781,6 @@ const ptSlider = new Swiper(".pt-slider", {
 
 
 /*Страница продукт*/
-
-
-
 const roundAddFavorite = document.querySelectorAll('.round-add-favorite');
 
 if ( roundAddFavorite.length ){
@@ -2115,10 +1797,6 @@ tippy('.pt-product-question', {
   arrow: false,  
   placement: 'bottom',
 });
-
-
-
-
 
 const addProductToCartBtn = document.querySelector('.product-add-cart');
 const  productBuyBlock = document.querySelector('.pt-buy-block');  
@@ -2230,7 +1908,6 @@ if ( addProductToCartBtn ){
   })
 }
 
-
 /*
 КОНЕЦ:
 Страница продукт*/
@@ -2256,7 +1933,10 @@ codeCopyBtns.forEach( btn => {
 $(function(){
 
 	$("#datepicker").datepicker();
-
+  $('#datepicker').focus(function(){
+    let width = this.offsetWidth;
+    $('.ui-datepicker').css('width', width + 'px');
+  })
 });
 
 $.datepicker.regional['ru'] = {
@@ -2278,8 +1958,6 @@ $.datepicker.regional['ru'] = {
 };
 $.datepicker.setDefaults($.datepicker.regional['ru']);
 
-
-
 const calendarIcons = document.querySelectorAll('.c-form__calendar-icon');
 
 if ( calendarIcons.length ) {
@@ -2291,8 +1969,6 @@ if ( calendarIcons.length ) {
   } )  
   
 }
-
-
 
 const changePasswordBtn = document.querySelector('.change-password');
 if ( changePasswordBtn ){
@@ -2411,7 +2087,6 @@ if ( radioAddresses.length ){
 
 }
 
-
 /*
 КОНЕЦ
 Кабинет*/
@@ -2452,11 +2127,6 @@ if ( selectTimeDeliveryNode )  {
   });
 }
 
-
-
-
-
-
 const cruAddressForm = document.querySelector('.cru-address-form');
 
 if ( cruAddressForm ){
@@ -2470,8 +2140,6 @@ if ( cruAddressForm ){
       itemSelectText: '',
     });
   }
-
-  
 
   const selectStreetNode = document.querySelector('.select-street');
   
@@ -2654,3 +2322,355 @@ function calcProductInCart(self, mainNodeSelector, incBtnSelector, decBtnSelecto
 
   }
 }
+
+
+
+
+
+/*Модальная форма Добро пожаловать */
+let singInBtns = document.querySelectorAll('.sing-in-btn');
+let optionsWelcomeModal = {
+  zIndex: 1000, 
+  
+  background: 'rgba(34, 34, 34, 0.5)', 
+  displayModalContainer: 'flex', 
+  displayModal: 'flex', 
+
+  closeSelectors: ['.modal__close'], 
+  closeModalOnFogClick: true, 
+  showModalAnimation: 'fadeIn', 
+  closeModalAnimation: 'fadeOutTop',  
+  showModalDuration: '300ms',
+  closeModalDuration: '500ms',
+
+  showFogAnimation: 'fadeIn',
+  closeFogAnimation: 'fadeOut',
+  showFogDuration: '300ms',
+  closeFogDuration: '500ms',
+  documentCanScroll: false, 
+
+  // 'modal-first' - сначала скрывается модальное окно - затем туман
+  // 'along' - анимации закрытия тумана и окна происходят параллельно
+  closeMode: 'modal-first',
+  
+  afterClose: function(){
+
+    const ewp = document.querySelector('.modal.enter-wp');
+
+    if ( ewp ){
+      document.querySelector('.modal.enter-wp').classList.remove('enter-wp');
+    }
+
+    
+  }
+  
+
+}
+
+const enterWithPassword = document.querySelector('.c-form__enter-with-password');
+let welcomeModal;
+
+enterWithPassword.addEventListener('click', function(){
+  let modal = this.closest('.modal');
+  modal.classList.add('enter-wp')  ;
+})
+
+
+singInBtns.forEach( btn => {
+  btn.addEventListener( 'click', function(event){
+    welcomeModal = new easyModal('.welcome-modal', optionsWelcomeModal);
+  } )
+} )
+  
+const welcomeForm = document.querySelector('.welcome-form');
+
+welcomeForm.addEventListener('submit', function(event){
+  event.preventDefault();
+
+  
+  let phoneInput = this.querySelector('input[name="phone"]');
+  let data_body = 'phone=' +  phoneInput.value; 
+
+  fetch("script-name.php", {
+      method: "POST",
+      body: data_body,
+      headers:{"content-type": "application/x-www-form-urlencoded"} 
+  })
+  .then( (response) => {
+      if (response.status !== 200) {
+          return Promise.reject();
+      }
+
+      /*  
+        Раскомментировать из catch удалить
+        phoneInput.value = '';
+        welcomeModal.closeModal();
+      */
+      return response.text()
+  })
+  .catch(() => {
+    console.log('ошибка');
+
+
+    phoneInput.value = '';
+    welcomeModal.closeModal();
+
+  });
+
+})
+
+const welcomeFormPassword = document.querySelector('.welcome-form-password');
+
+welcomeFormPassword.addEventListener('submit', function(event){
+  event.preventDefault();
+
+  let loginInput = this.querySelector('input[name="login"]');
+  let passwordInput = this.querySelector('input[name="password"]');
+  let data_body = 'login=' +  loginInput.value + '&password=' +  passwordInput.value;
+
+  fetch("script-name.php", {
+      method: "POST",
+      body: data_body,
+      headers:{"content-type": "application/x-www-form-urlencoded"} 
+  })
+  .then( (response) => {
+      if (response.status !== 200) {
+          return Promise.reject();
+      }
+
+      /*  
+        Раскомментировать из catch удалить
+        loginInput.value = '';
+        passwordInput.value = '';
+        welcomeModal.closeModal();
+      */
+      return response.text()
+  })
+  .catch(() => {
+    console.log('ошибка');
+
+
+    loginInput.value = '';
+    passwordInput.value = '';
+    welcomeModal.closeModal();
+
+  });
+
+});
+
+
+
+const enterWithPasswordBtn = document.querySelector('.c-form__enter-with-password')
+enterWithPasswordBtn.addEventListener('click', function(event){
+  event.preventDefault();
+})
+/* 
+  Конец: 
+  Модальная форма Добро пожаловать
+*/
+
+
+
+/*Форма голосования*/
+
+
+const surveyForm = document.querySelector('.survey-form');
+const surveyResults = document.querySelector('.survey-results')
+
+if ( surveyForm ) {
+  surveyForm.addEventListener( 'submit', function(event){
+    event.preventDefault();
+
+    let voice = this.querySelector('input[name="variants"]:checked');
+    
+    let data_body = "voice=" + voice.value; 
+    fetch("script-name.php", {
+        method: "POST",
+        body: data_body,
+        headers:{"content-type": "application/x-www-form-urlencoded"} 
+    })
+    .then( (response) => {
+        if (response.status !== 200) {
+            return Promise.reject();
+        }
+        /*
+        this.classList.add('hide');  
+        surveyResults.classList.remove('hide');*/
+        return response.text()
+    })
+    .then(i => console.log(i))
+    .catch(() => {
+      
+      console.log('ошибка');
+
+      this.classList.add('hide');  
+      surveyResults.classList.remove('hide');
+    });
+    
+
+    
+  } )
+}
+
+const surveyRadios = document.querySelectorAll('.survey-form input[type="radio"]');
+const  surveyResultBlock = document.querySelectorAll('.survey-results__block');
+const reSurvey = document.querySelector('.survey-results__resurvey');
+
+
+if ( surveyRadios.length ){
+
+  surveyRadios.forEach( (radio, index) => {
+    radio.addEventListener( 'change', function(){
+      surveyResultBlock.forEach( block => {
+        block.classList.remove('selected');
+      })
+
+      surveyResultBlock[index].classList.add('selected');
+
+    } )
+
+
+    reSurvey.addEventListener('click', function(){
+      surveyForm.classList.remove('hide');
+      surveyResults.classList.add('hide');
+    })
+
+  })
+
+}
+
+/*
+  КОНЕЦ:
+  Форма голосования
+
+  
+*/
+
+
+/*Вызов формы обратной связи*/
+
+
+const feedbackForm = document.querySelector('.feedback-form');
+let feedbackModal;
+
+
+
+feedbackForm.addEventListener('submit', function(event){
+  event.preventDefault();
+  
+  const feedbackType = this.querySelector('.select-feedback-type').value;
+  const email = this.querySelector('input[name="email"]').value;
+  const phone = this.querySelector('input[name="phone"]').value;
+  const comment = this.querySelector('textarea').value;
+  
+  const contact = ( email ) ? email : phone;  
+
+  const file = this.querySelector('input[type=file]').files[0];
+
+  let fd = new FormData();
+  fd.append('feedbacktype', feedbackType);
+  fd.append('contact', contact);
+  fd.append('comment', comment);
+  fd.append('file', file);
+
+
+  fetch("script-name.php", {
+    method: "POST",
+    body: fd,
+    headers:{"content-type": "application/x-www-form-urlencoded"} 
+})
+.then( (response) => {
+    if (response.status !== 200) {
+        return Promise.reject();
+    }
+    /*
+    this.querySelector('.select-feedback-type').value = '';
+    this.querySelector('input[name="email"]').value = '';
+    this.querySelector('input[name="phone"]').value = '';
+    this.querySelector('textarea').value = '';
+    this.querySelector('input[type=file]').value = '';
+    feedbackModal.closeModal();
+    */
+    return response.text()
+})
+
+.catch(() => {console.log('ошибка')
+    this.querySelector('.select-feedback-type').value = '';
+    this.querySelector('input[name="email"]').value = '';
+    this.querySelector('input[name="phone"]').value = '';
+    this.querySelector('textarea').value = '';
+    this.querySelector('input[type=file]').value = '';
+    feedbackModal.closeModal();
+});
+
+
+})
+
+
+
+const callFeedBackModalBtn = document.querySelector('.f-btn-feedback');
+
+callFeedBackModalBtn.addEventListener('click', function(event){
+  feedbackModal = new easyModal('.feedback-modal', options);
+})
+  
+  const selectFeedbackTypeNode = document.querySelector('.select-feedback-type');
+  
+  const selectFeedbackType = new Choices(selectFeedbackTypeNode, {
+    searchEnabled: false,
+    itemSelectText: '',
+  });
+
+
+
+
+
+  const feedbackFile = document.querySelectorAll('.feedback-file');
+  const addFeedBackFileBtn = document.querySelectorAll('.c-from__add-file');
+  const clearFile = document.querySelectorAll('.c-from__add-file--clear');
+
+
+  addFeedBackFileBtn.forEach( ( btn, index) => {
+    btn.addEventListener('click', function(){
+      feedbackFile[index].click();
+    })
+  } )
+
+  feedbackFile.forEach( (f, index) => {
+    f.addEventListener('change', function(){
+      let p = addFeedBackFileBtn[index].querySelector('p');
+      p.innerHTML = this.files[0].name;
+      clearFile[index].classList.add('show');
+    })
+  })
+
+  
+  clearFile.forEach( (btn, index) => {
+    btn.addEventListener('click', function(){
+      this.classList.remove('show')
+      let p = addFeedBackFileBtn[index].querySelector('p');
+      p.innerHTML = 'Прикрепить файл';
+      feedbackFile[index].value = '';
+    })
+  })
+
+  selectFeedbackTypeNode.addEventListener('change', function(){
+    const formNode = this.closest('form');
+
+    const emailLine = formNode.querySelector('.type-connect-email');
+    const phoneLine = formNode.querySelector('.type-connect-phone');
+
+    switch (this.value){
+      case '2':
+        emailLine.classList.remove('hide');
+        phoneLine.classList.add('hide');
+      break;
+
+      default: 
+        phoneLine.classList.remove('hide');
+        emailLine.classList.add('hide');
+    }    
+  });
+/*
+КОНЕц
+Вызов формы обратной связи*/
