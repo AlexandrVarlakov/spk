@@ -409,7 +409,6 @@ mobCatalogItems.forEach( item => {
     
 
     const targetSubmenu = document.querySelector(".mc-container[data-name='"+targetSubmenuName+"']");
-    console.log(targetSubmenu);
     targetSubmenu.classList.add('open');
   })
 })
@@ -1047,7 +1046,6 @@ if (  btnShowAllCats.length  ) {
         function blockBtn(){
             btn.removeAttribute('disabled');
             items[items.length - 1].removeEventListener('animationend', blockBtn);
-            console.log('???');
         }
 
         items[items.length - 1].addEventListener('animationend', blockBtn)
@@ -1314,9 +1312,6 @@ let proxyFilters = new Proxy(filtersArray, {
       target[prop] = value;
       
     }
-    
-    //console.log('!!!!!!!!!!!!!!!!!!!!', proxyFilters.clearAllTag);
-
     return true;
   },
   
@@ -1337,7 +1332,6 @@ let proxyCheckboxes = new Proxy(proxyFilters.checkboxes, {
         
         proxyFilters.clearAllTagNode.before(tag);  
         
-        console.log('change!!!');
         break;
 
         case "range": 
@@ -1527,7 +1521,6 @@ if ( rangeSlider ){
     inpEndRangeD.value = value[1];
     
     proxyFilters.rangeValue = value;
-    console.log (proxyFilters.rangeValue);
     
   });
 
@@ -1656,7 +1649,6 @@ function createTag(id, value, type){
     tag.setAttribute('class', 'tags-swiper__tag clear-all');
     closeTag.addEventListener('click', clearAllFilters);
   } else if (type === 'range'){
-    console.log('type^^^^^^^^^^^^^^^', type);
     closeTag.addEventListener('click', resetRangeSlider);
   }
 
