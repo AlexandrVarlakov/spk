@@ -506,19 +506,53 @@ let indexPromoSlider = new Swiper(".ia-slider__swiper", {
 let cardProductSliders = document.querySelectorAll('.pc-slider');
 
 if ( cardProductSliders.length ){
-  cardProductSliders.forEach(n => {
-    const slider = new Swiper(n.querySelector('.pc-slider__swiper'), {
+  cardProductSliders.forEach(itemSlider => {
+    const slider = new Swiper(itemSlider.querySelector('.pc-slider__swiper'), {
       
       spaceBetween: 10,
   
       pagination: {
-        el: n.querySelector('.pc-slider__pagination'),
+        el: itemSlider.querySelector('.pc-slider__pagination'),
         clickable: true,
       },
     });
-    
+    itemSlider.addEventListener('mousemove', function(event){
+      
+        if (this.classList.contains('moved')) return false;
+        
+        
+        const xPosition = event.offsetX==undefined?event.layerX:event.offsetX
+
+        const current = slider.activeIndex;
+        const count = slider.slides.length;
+        const step =  100 / count;
+        
+        
+        const position  = (xPosition / this.offsetWidth) * 100;
+        
+        const movePosition = Math.trunc(position / step);
+        
+        if ( movePosition > count ) return false;
+        if ( movePosition < 0 ) return false;
+
+        if ( movePosition === current ) return false
+        
+        slider.slideTo(movePosition, 0, function(){})
+        this.classList.add('moved');
+        setTimeout(()=>{
+          this.classList.remove('moved');
+        }, 50)
+      
+
+    }, {capture: true})
   });
+
+ 
+
 }
+
+
+
 
 //Добавление в корзину
 const addProductToCartBtns = document.querySelectorAll('.product-card__add-cart');
