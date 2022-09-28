@@ -2666,3 +2666,38 @@ callFeedBackModalBtn.addEventListener('click', function(event){
 /*
 КОНЕц
 Вызов формы обратной связи*/
+
+
+
+
+/*КЛИК по якорной ссылки*/ 
+
+const anchorsLinks = document.querySelectorAll('.anc-link');
+
+if ( anchorsLinks.length ){
+  anchorsLinks.forEach( (link) => {
+    link.onclick = function(e){
+        e.preventDefault();
+        let headerHeight = document.querySelector('.header').offsetHeight;
+        
+  
+        
+        
+        let href = this.getAttribute('href').substring(1);
+        
+        const scrollTarget = document.getElementById(href);
+        
+        const topOffset = headerHeight;
+        // const topOffset = 0; // если не нужен отступ сверху 
+        const elementPosition = scrollTarget.getBoundingClientRect().top;
+        const offsetPosition = elementPosition - topOffset;
+  
+        window.scrollBy({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
+  })
+}
+
+
