@@ -2734,4 +2734,23 @@ if ( anchorsLinks.length ){
   })
 }
 
+let upBtn = document.querySelector('.to-up');
+
+if (upBtn){
+  document.addEventListener('scroll', function(){
+    if ( window.pageYOffset > document.documentElement.clientHeight) {
+      upBtn.classList.add('show')
+      
+    } else{
+      upBtn.classList.remove('show')
+      
+    }
+  })
+  
+
+  upBtn.onclick = function(){
+    window.scrollTo(0, 0);
+  }
+}
+
 
