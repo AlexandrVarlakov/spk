@@ -1574,8 +1574,8 @@ if ( filterCheckboxes.length ){
 
 
       let tagObj = {}
-
-      tagObj.id = this.getAttribute('data-id');
+      
+      tagObj.id = this.id;
       tagObj.name = this.value;
       tagObj.type = 'checkbox';
 
@@ -1588,8 +1588,8 @@ if ( filterCheckboxes.length ){
         proxyCheckboxes[tagObj.id] = tagObj;
 
       } else{
-
-        delete proxyCheckboxes[this.getAttribute('data-id')];
+        
+        delete proxyCheckboxes[this.id];
         
       }
     })
@@ -1601,7 +1601,6 @@ if ( filterCheckboxes.length ){
 function checkboxUncheck(){
   let slide = this.closest('.tags-swiper__slide');
   let slideId = slide.getAttribute('data-id');
-  
   delete proxyCheckboxes[slideId];
   
 }
@@ -2153,9 +2152,9 @@ if ( selectTimeDeliveryNode )  {
   });
 }
 
-const cruAddressForm = document.querySelector('.cru-address-form');
 
-if ( cruAddressForm ){
+
+
   
   const selectCityNode = document.querySelector('.select-city');
 
@@ -2167,8 +2166,7 @@ if ( cruAddressForm ){
     });
   }
 
-  const selectStreetNode = document.querySelector('.select-street');
-  
+  const selectStreetNode = document.querySelector('.select-street'); 
 
   if (selectStreetNode){
     const selectStreet = new Choices(selectStreetNode, {
@@ -2177,8 +2175,6 @@ if ( cruAddressForm ){
     });
   }
 
-  
-}
 
 
 const cabinetMobNavigation = document.querySelector('.cabinet-mob-navigation');
